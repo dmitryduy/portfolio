@@ -1,0 +1,36 @@
+@import "../../global";
+
+
+.skillCircle {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  background-color: $blue;
+  border-radius: 50%;
+  opacity: .8;
+
+  &:after {
+    position: absolute;
+    content: '';
+    width: 180px;
+    height: 360px;
+    border-bottom-right-radius: 185px;
+    border-top-right-radius: 185px;
+    border: 5px solid $blue;
+    border-left: 0;
+    left: 50%;
+    transform: translateY(-30px);
+  }
+
+}
+
+.title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: $fontFira;
+  color: $paragraph;
+  font-size: 35px;
+  white-space: nowrap;
+}

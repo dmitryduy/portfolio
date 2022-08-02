@@ -1,0 +1,17 @@
+@import "../../global";
+
+.socialContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 3px solid $red;
+  background-color: $dark;
+  transition: 0.15s linear;
+  &:hover {
+    transform: scale(1.1);
+  }
+
+}

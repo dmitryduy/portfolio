@@ -1,0 +1,76 @@
+@import "../../global";
+
+.headerWrapper {
+  display: flex;
+  justify-content: center;
+  background-color: $dark;
+  padding: 50px 0;
+}
+
+.headerContainer {
+  display: flex;
+  position: relative;
+  justify-content: flex-end;
+
+}
+
+.backgroundText {
+  position: absolute;
+  font-weight: 700;
+  font-size: 130px;
+  z-index: 1;
+  color: $decoration;
+  font-family: $lobster;
+  transform: rotate(-15deg) translate(0%, 10%);
+  user-select: none;
+  white-space: nowrap;
+}
+
+.leftSide {
+  max-width: 500px;
+  z-index: 2;
+}
+
+.rightSide {
+  z-index: 2;
+}
+
+.social {
+  display: flex;
+  margin-bottom: 20px;
+
+  a {
+    margin-right: 20px;
+  }
+}
+
+.title {
+  font-weight: 700;
+  font-family: $fontFira;
+  color: $white;
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.briefly {
+  color: $paragraph;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.portfolioButton {
+  background-color: transparent;
+  border-radius: 5px;
+  border: 3px solid $red;
+  padding: 10px 20px;
+  font-size: 20px;
+  font-family: $fontFira;
+  color: $white;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.15s linear;
+
+  &:hover {
+    background-color: rgba($red, 0.3);
+  }
+}

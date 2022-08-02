@@ -1,0 +1,15 @@
+@import "../../global";
+
+.coderContainer {
+  background-color: rgba($background, 0.7);
+  color: $paragraph;
+  font-size: 14px;
+  border-radius: 15px;
+  padding: 50px 10px;
+  transform-origin: 0 50%;
+  perspective: 1000px;
+}
+
+.keyword {
+  color: $red;
+}

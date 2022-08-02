@@ -1,0 +1,35 @@
+@import "../../global";
+
+
+.navigationContainer {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  font-weight: 500;
+  font-family: $fontFira;
+  color: $white;
+}
+
+
+.navigationRight {
+  display: flex;
+  justify-content: space-between;
+  li {
+    position: relative;
+    margin-left: 40px;
+    cursor: pointer;
+    padding: 20px 0;
+    &:before {
+      position: absolute;
+      content: '';
+      height: 3px;
+      background-color: $red;
+      bottom: 0;
+      transition: .15s linear;
+      width: 0;
+    }
+    &:hover:before{
+      width: 100%;
+    }
+  }
+}
