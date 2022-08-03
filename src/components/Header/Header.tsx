@@ -1,9 +1,9 @@
 import React from 'react';
 import Social from "../Social/Social";
-import { icons } from "../Social/icons";
 import styles from './Header.module.scss';
 import Coder from "../Coder/Coder";
 import Button from "../../ui/Button/Button";
+import { icons } from "../../icons";
 
 const iconsList: {
   id: number,

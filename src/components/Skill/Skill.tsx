@@ -1,21 +1,27 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect } from 'react';
 
 import styles from './Skill.module.scss';
 import useThrottle from "../../hooks/useThrottle";
-import { THROTTLE_TIMEOUT } from "./Skill.contants";
-import { skills } from "./skills";
+import { DELAY_ANIMATION, THROTTLE_TIMEOUT } from "./Skill.contants";
+import { icons } from "../../icons";
 
 interface ISkillProps {
   id: number
   title: string
   color: string
-  icon: keyof typeof skills
+  icon: keyof typeof icons
   description: string
 }
 
 const Skill: FC<ISkillProps> = ({id, title, color, icon, description}) => {
 
   const [show, setShow] = useThrottle(false, THROTTLE_TIMEOUT);
+
+
+  useEffect(() => {
+    setTimeout(() => setShow(true), (id - 1) * DELAY_ANIMATION);
+  }, []);
+
 
   const openSkill = () => {
     setShow(!show);
@@ -26,7 +32,7 @@ const Skill: FC<ISkillProps> = ({id, title, color, icon, description}) => {
       <div className={`${styles.skill} ${show && styles.show} ${id > 5 ? styles.leftSide : styles.rightSide}`}
            data-number={id}>
         <div className={styles.image}>
-          {skills[icon]}
+          {icons[icon]}
         </div>
         <div className={styles.description}>
           <h4 className={styles.title}>{title}</h4>

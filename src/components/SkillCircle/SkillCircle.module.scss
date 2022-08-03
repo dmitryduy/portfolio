@@ -9,10 +9,10 @@
   border-radius: 50%;
   opacity: .8;
 
-  box-shadow: inset 0 0 30px 10px rgba($background,.8);
+  box-shadow: inset 0 0 30px 10px rgba($background, .8);
 
 
-  &:after {
+  &:before {
     position: absolute;
     content: '';
     width: 180px;
@@ -27,24 +27,46 @@
 
 }
 
+.contentWrapper {
+  overflow: hidden;
+  height: 300px;
+  position: relative;
+  border-radius: 50%;
+}
+
 .content {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   flex-direction: column;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateY(105px);
+  width: 100%;
+  height: calc(100% - 20px);
+  transition: .3s;
+  margin-top: 10px;
+
 }
+
 
 .title {
   font-family: $fontFira;
   color: $white;
-  font-size: 35px;
-  white-space: nowrap;
-  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 20px;
+  opacity: .5;
+  cursor: default;
+  transition: .2s;
+  margin: 0 auto;
+  width: fit-content;
+
+  &:not(.active):hover {
+    cursor: pointer;
+    transform: scale(1.2);
+    opacity: 1;
+  }
+
+  &.active {
+    font-size: 35px;
+    opacity: 1;
+  }
 }
 
-.openButton {
-
-}

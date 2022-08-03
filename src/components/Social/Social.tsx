@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 
 import styles from './Social.module.scss';
-import { icons } from "./icons";
+import { icons } from "../../icons";
 
 
 interface ISocialProps {

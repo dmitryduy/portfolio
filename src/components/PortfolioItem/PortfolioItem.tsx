@@ -1,11 +1,11 @@
-import React, { FC, useRef, useState } from 'react';
+import React, { FC, useState } from 'react';
 
 import styles from './PortfolioItem.module.scss';
 
 import bg from '../../images/test.jpg';
 import bg2 from '../../images/test2.jpg';
 import Button from "../../ui/Button/Button";
-import { icons } from "../Social/icons";
+import { icons } from "../../icons";
 
 interface IPortfolioItemProps {
   id: number
