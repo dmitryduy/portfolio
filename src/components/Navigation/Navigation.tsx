@@ -10,6 +10,7 @@ const Navigation = () => {
           <li>Home</li>
           <li>About</li>
           <li>Skills</li>
+          <li>Code examples</li>
           <li>Portfolio</li>
         </ul>
       </nav>

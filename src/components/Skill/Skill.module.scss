@@ -12,6 +12,18 @@
   }
 }
 
+@mixin absolutePosition($top, $left, $right: auto) {
+  top: $top;
+  left: $left;
+  right: $right;
+}
+
+@mixin absoluteTransform($rotation, $top, $left, $right: auto) {
+  @include absolutePosition($top, $left, $right);
+  transform: rotate($rotation);
+}
+
+
 .skill {
   display: flex;
   align-items: center;
@@ -19,7 +31,7 @@
   width: 0;
   background-color: $decoration;
   overflow: hidden;
-  transition: .3s;
+  transition: .4s;
 
   .description {
     white-space: nowrap;
@@ -68,56 +80,55 @@
 
   &.show {
     width: 334px;
-    transition-delay: .3s;
+    transition-delay: .4s;
   }
 
   &[data-number='1'] {
-    top: -126px;
-    left: 270px;
+    @include absolutePosition(-126px, 270px);
   }
 
   &[data-number='2'] {
-    top: -15px;
-    left: 365px;
+    @include absolutePosition(-15px, 365px);
   }
 
   &[data-number='3'] {
-    top: 96px;
-    left: 390px;
+    @include absolutePosition(96px, 390px);
   }
 
   &[data-number='4'] {
-    top: 207px;
-    left: 375px;
+    @include absolutePosition(207px, 375px);
   }
 
   &[data-number='5'] {
-    top: 318px;
-    left: 290px;
+    @include absolutePosition(318px, 290px);
   }
 
   &[data-number='6'] {
-    top: -50px;
-    right: 300px;
+    @include absolutePosition(-50px, auto, 290px);
   }
 
   &[data-number='7'] {
-    top: 90px;
-    right: 350px;
+    @include absolutePosition(90px, auto, 350px);
   }
 
   &[data-number='8'] {
-    top: 251px;
-    right: 310px;
+    @include absolutePosition(230px, auto, 320px);
   }
 }
 
 
 .image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: $white;
   border-radius: 50%;
   padding: 10px;
   margin: 8px;
+  svg {
+    width: 50px;
+    height: 50px;
+  }
 }
 
 .dot {
@@ -132,44 +143,36 @@
   cursor: pointer;
 
   &[data-number='1'] {
-    top: -6px;
-    right: 35px;
+    @include absolutePosition(-6px, auto, 35px);
   }
 
 
   &[data-number='2'] {
-    top: 50px;
-    right: -18px;
+    @include absolutePosition(50px, auto, -18px);
   }
 
   &[data-number='3'] {
-    top: 135px;
-    right: -45px;
+    @include absolutePosition(135px, auto, -43px);
   }
 
   &[data-number='4'] {
-    top: 220px;
-    right: -27px;
+    @include absolutePosition(220px, auto, -27px);
   }
 
   &[data-number='5'] {
-    top: 276px;
-    right: 12px;
+    @include absolutePosition(276px, auto, 12px);
   }
 
   &[data-number='6'] {
-    top: 30px;
-    left: 40px;
+    @include absolutePosition(30px, 40px);
   }
 
   &[data-number='7'] {
-    top: 130px;
-    left: -10px;
+    @include absolutePosition(130px, -10px);
   }
 
   &[data-number='8'] {
-    top: 230px;
-    left: 20px;
+    @include absolutePosition(230px, 20px);
   }
 
   &.show {
@@ -184,56 +187,40 @@
   height: 0;
   z-index: -1;
   background-color: $white;
-  transition: .3s;
+  transition: .4s;
   transform-origin: top left;
-  transition-delay: .15s;
+  transition-delay: .25s;
 
   &[data-number='1'] {
-    top: 5px;
-    transform: rotate(210deg);
-    right: 40px;
+    @include absoluteTransform(210deg, 5px, auto, 40px);
   }
 
   &[data-number='2'] {
-    top: 59px;
-    transform: rotate(-105deg);
-    right: -15px;
+    @include absoluteTransform(-105deg, 59px, auto, -15px);
   }
 
   &[data-number='3'] {
-    top: 145px;
-    transform: rotate(-90deg);
-    right: -35px;
+    @include absoluteTransform(-90deg, 145px, auto, -35px);
   }
 
   &[data-number='4'] {
-    top: 233px;
-    transform: rotate(-75deg);
-    right: -20px;
+    @include absoluteTransform(-75deg, 233px, auto, -20px);
   }
 
   &[data-number='5'] {
-    top: 285px;
-    transform: rotate(-40deg);
-    right: 20px;
+    @include absoluteTransform(-40deg, 285px, auto, 20px);
   }
 
   &[data-number='6'] {
-    top: 35px;
-    transform: rotate(125deg);
-    left: 49px;
+    @include absoluteTransform(130deg, 35px, 49px);
   }
 
   &[data-number='7'] {
-    top: 137px;
-    transform: rotate(90deg);
-    left: 10px;
+    @include absoluteTransform(90deg, 137px, 10px);
   }
 
   &[data-number='8'] {
-    top: 238px;
-    transform: rotate(50deg);
-    left: 30px;
+    @include absoluteTransform(60deg, 238px, 30px);
   }
 
   &.show {

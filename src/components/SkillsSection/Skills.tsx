@@ -3,9 +3,10 @@ import React from 'react';
 import styles from './Skills.module.scss'
 import SkillCircle from "../SkillCircle/SkillCircle";
 import Coder from "../Coder/Coder";
+import useMatchMedia from "../../hooks/useMatchMedia";
 
 const useThrottleStr = `const useThrottle = < T >(
-defaultValue: T,
+ defaultValue: T,
  timeout: number
  ): [T, (newValue: T) => void] => {
   const[finish, setFinish] = useState(true);
@@ -29,7 +30,7 @@ const usePopupStr = `const usePopup = (
 eventName: typeOfSettings,
  openCb?: () => void,
   closeCb?: () => void
-  W): [boolean, Dispatch<boolean>, string] => {
+  W): [boolean, Dispatch< boolean  >, string] => {
     const [active, setActive] = useState(false);
 
     useEffect(() => {
@@ -51,13 +52,16 @@ eventName: typeOfSettings,
 }`;
 
 const SkillsSection = () => {
+
+  const isPhone = useMatchMedia();
+
   return (
     <section className={styles.skillsContainer}>
       <div className='code-background'>
         <Coder code={useThrottleStr} rotation={30}/>
         <Coder code={usePopupStr} rotation={30}/>
       </div>
-      <SkillCircle/>
+      {!isPhone && <SkillCircle/>}
     </section>
   );
 };

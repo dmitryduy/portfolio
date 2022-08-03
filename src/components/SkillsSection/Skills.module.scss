@@ -1,5 +1,8 @@
 @import "../../global";
 
 .skillsContainer {
-  margin: 150px auto 100px;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  height: 100vh;
 }

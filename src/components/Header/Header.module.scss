@@ -5,6 +5,7 @@
   justify-content: center;
   background-color: $dark;
   padding: 50px 0;
+  height: calc(100vh - 61px);
 }
 
 .headerContainer {
@@ -17,7 +18,7 @@
 .backgroundText {
   position: absolute;
   font-weight: 700;
-  font-size: 130px;
+  font-size: 160px;
   z-index: 1;
   color: $decoration;
   font-family: $lobster;
@@ -29,6 +30,7 @@
 .leftSide {
   max-width: 500px;
   z-index: 2;
+  margin-right: 10px;
 }
 
 .rightSide {
@@ -48,7 +50,7 @@
   font-weight: 700;
   font-family: $fontFira;
   color: $white;
-  font-size: 40px;
+  font-size: 35px;
   margin-bottom: 10px;
 }
 
@@ -58,19 +60,3 @@
   margin-bottom: 20px;
 }
 
-.portfolioButton {
-  background-color: transparent;
-  border-radius: 5px;
-  border: 3px solid $red;
-  padding: 10px 20px;
-  font-size: 20px;
-  font-family: $fontFira;
-  color: $white;
-  cursor: pointer;
-  font-weight: 500;
-  transition: 0.15s linear;
-
-  &:hover {
-    background-color: rgba($red, 0.3);
-  }
-}

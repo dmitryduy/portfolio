@@ -3,6 +3,7 @@ import Social from "../Social/Social";
 import { icons } from "../Social/icons";
 import styles from './Header.module.scss';
 import Coder from "../Coder/Coder";
+import Button from "../../ui/Button/Button";
 
 const iconsList: {
   id: number,
@@ -14,13 +15,26 @@ const iconsList: {
   {id: 3, name: 'mail', link: 'link'}
 ]
 
-const str = `class Person {
-      constructor() {
-        this.name = "Anurag Hazra";
-        this.traits = ["DESIGN", "DEV"];
-        this.age = new Date().getFullYear() - 2001;
-      }
-  }
+const str = `import { useLayoutEffect, useState } from "react";
+
+const useMatchMedia = () => {
+    const phoneMedia = matchMedia('(max-width: 1000px)');
+
+    const [isPhone, setIsPhone] = useState(phoneMedia.matches);
+
+    useLayoutEffect(() => {
+        const handler = () => setIsPhone(phoneMedia.matches);
+
+        phoneMedia.addEventListener('change', handler);
+
+        return () => phoneMedia.removeEventListener('change', handler);
+
+    });
+
+    return isPhone;
+};
+
+export default useMatchMedia;
 `;
 
 const Header = () => {
@@ -35,7 +49,7 @@ const Header = () => {
             </ul>
             <h1 className={styles.title}>I am Johkn JOhanslo</h1>
             <p className={styles.briefly}>Hello I frontend developer. I like pony and something else. Thanks for wathing. See u</p>
-            <button className={styles.portfolioButton}>Portfolio</button>
+            <Button onClick={() => {}} text='Portfolio'/>
           </aside>
           <aside className={styles.rightSide}>
             <Coder code={str}/>
