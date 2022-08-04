@@ -4,6 +4,10 @@ import styles from './Header.module.scss';
 import Coder from "../Coder/Coder";
 import Button from "../../ui/Button/Button";
 import { icons } from "../../icons";
+import { LETTER_ANIMATION_DELAY } from "./Header.constants";
+import cn from "../../utils/cn";
+import noop from "../../utils/noop";
+import TypingText from "../TypingText/TypingText";
 
 const iconsList: {
   id: number,
@@ -37,7 +41,21 @@ const useMatchMedia = () => {
 export default useMatchMedia;
 `;
 
+const greetings = 'I\'m Johkn JOhanslo';
+const briefly = 'Hello I frontend developer. I like pony and something else. Thanks for wathing. See uHello I frontend developer. I like pony and something else. Thanks for wathing. See uHello I frontend developer. I like pony and something else. Thanks for wathing. See uHello I frontend developer. I like pony and something else. Thanks for wathing. See u';
+
 const Header = () => {
+  console.log('render')
+
+  const letterAnimateHandler = (e: React.MouseEvent<HTMLPreElement>) => {
+    const target = e.target as HTMLPreElement;
+
+    target.classList.add(styles.animate);
+
+    setTimeout(() => {
+      target.classList.remove(styles.animate);
+    }, LETTER_ANIMATION_DELAY);
+  }
   return (
     <div className={`fullwidth ${styles.headerWrapper}`}>
       <div className='container'>
@@ -47,13 +65,19 @@ const Header = () => {
             <ul className={styles.social}>
               {iconsList.map(icon => <Social key={icon.id} iconName={icon.name} link={icon.link}/>)}
             </ul>
-            <h1 className={styles.title}>I am Johkn JOhanslo</h1>
-            <p className={styles.briefly}>Hello I frontend developer. I like pony and something else. Thanks for wathing. See u</p>
-            <Button onClick={() => {}} text='Portfolio'/>
+            <span className={styles.letter}></span>
+            <h1 className={styles.title}>{greetings.split('').map((letter, index) => <pre className={cn(styles.letter, {
+              [styles.firstLetter]: !index
+            })}
+                                                                                          onMouseEnter={index ? letterAnimateHandler: noop}
+                                                                                          key={index}>{letter}</pre>)}</h1>
+            <TypingText text={briefly}/>
+            <Button onClick={() => {
+            }} text='Portfolio'/>
           </aside>
-          <aside className={styles.rightSide}>
+          {/*<aside className={styles.rightSide}>
             <Coder code={str}/>
-          </aside>
+          </aside>*/}
         </header>
       </div>
     </div>

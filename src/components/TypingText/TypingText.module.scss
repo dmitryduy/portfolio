@@ -1,0 +1,20 @@
+@import "../../global";
+
+.container {
+  position: relative;
+}
+
+.text {
+  position: absolute;
+  top: 0;
+  color: $paragraph;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.hiddenText {
+  color: $paragraph;
+  font-size: 20px;
+  margin-bottom: 20px;
+  visibility: hidden;
+}

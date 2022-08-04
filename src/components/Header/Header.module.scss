@@ -12,7 +12,7 @@
 .headerContainer {
   display: flex;
   position: relative;
-  justify-content: flex-end;
+  justify-content: space-between;
 
 }
 
@@ -28,10 +28,23 @@
   white-space: nowrap;
 }
 
+.letter {
+  display: inline-block;
+  width: fit-content;
+  transition: .7s;
+  cursor: default;
+  &.firstLetter {
+    color: $darkPurple;
+    font-size: 1.3em;
+  }
+  &.animate {
+    transform: translateY(-0.6em);
+  }
+}
+
 .leftSide {
-  max-width: 500px;
+  max-width: 600px;
   z-index: 2;
-  margin-right: 10px;
 }
 
 .rightSide {
@@ -51,13 +64,8 @@
   font-weight: 700;
   font-family: $fontFira;
   color: $white;
-  font-size: 35px;
+  font-size: 80px;
   margin-bottom: 10px;
 }
 
-.briefly {
-  color: $paragraph;
-  font-size: 20px;
-  margin-bottom: 20px;
-}
 

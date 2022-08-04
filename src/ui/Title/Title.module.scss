@@ -19,17 +19,17 @@
   width: fit-content;
   padding: 10px;
   background:
-          linear-gradient(to right, $transparentPurple 4px, transparent 4px) 0 100%,
-          linear-gradient(to left, $transparentRed 4px, transparent 4px) 100% 4px,
-          linear-gradient(to bottom, $transparentRed 4px, transparent 4px) 100% 0,
-          linear-gradient(to top, $transparentPurple 4px, transparent 4px) 4px 100%;
+          linear-gradient(to right, $lightPurple 4px, transparent 4px) 0 100%,
+          linear-gradient(to left, $darkPurple 4px, transparent 4px) 100% 4px,
+          linear-gradient(to bottom, $darkPurple 4px, transparent 4px) 100% 0,
+          linear-gradient(to top, $lightPurple 4px, transparent 4px) 4px 100%;
 
   background-repeat: no-repeat;
   background-size: 50% 50%;
   &:before, &:after {
     position: absolute;
     content: '';
-    background-color: $transparentPurple;
+    background-color: $lightPurple;
   }
 
   &:before {
@@ -53,7 +53,7 @@
     &:before, &:after {
       position: absolute;
       content: '';
-      background-color: $transparentRed;
+      background-color: $darkPurple;
     }
 
     &:before {
@@ -84,14 +84,14 @@
       right: -15px;
       width: 25px;
       height: 4px;
-      background-color: $transparentRed;
+      background-color: $darkPurple;
     }
     &:after {
       top: calc(60%);
       width: 19px;
       height: 4px;
       left: -29px;
-      background-color: $transparentPurple;
+      background-color: $lightPurple;
     }
   }
 }

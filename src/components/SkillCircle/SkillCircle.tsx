@@ -30,6 +30,8 @@ const skillsArray: {
     {title: 'Git', icon: 'git', description: 'This is paragrahpa sometshi else'},
     {title: 'Angular', icon: 'angular', description: 'This is paragrahpa sometshi else'},
     {title: 'JQuery', icon: 'jquery', description: 'This is paragrahpa sometshi else'},
+    {title: 'npm', icon: 'npm', description: 'This is paragrahpa sometshi else'},
+    {title: 'BEM', icon: 'bem', description: 'This is paragrahpa sometshi else'},
   ],
   [
     {title: 'Python', icon: 'python', description: 'This is paragrahpa sometshi else'},

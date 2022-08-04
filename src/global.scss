@@ -1,13 +1,12 @@
 $dark: #23263a;
 $background: #1f2235;
-$red: #eb4034;
 $white: #ECEBE9;
 $paragraph: #A0C8C3;
 $decoration: #2b2e44;
 $blue: #4C8891;
 $purple: #5865f2;
-$transparentPurple: rgba(149, 87, 191,.6);
-$transparentRed: rgba($red, .7);
+$lightPurple: #c89afc;
+$darkPurple: #7c6afa;
 
 $fontFira: 'Fira Code', monospace;
 $lobster: 'Lobster', cursive;
@@ -16,5 +15,5 @@ $containerWidth: 1100px;
 $titlePadding: 20px;
 
 @mixin setGradient($degrees){
-  background: linear-gradient($degrees, $transparentPurple 0%, rgba(250,250,250,.1) 50%, $transparentRed 100%);
+  background: linear-gradient($degrees, $lightPurple 0%, $darkPurple 100%);
 }
