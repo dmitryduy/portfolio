@@ -3,6 +3,7 @@
 .headerWrapper {
   display: flex;
   justify-content: center;
+  clip-path: polygon(0 0, 100% 0, 100% 100px, 100% calc(100vh - 150px), 70% 100%, 30% 100%, 0 calc(100vh - 150px));
   background-color: $dark;
   padding: 50px 0;
   height: calc(100vh - 61px);

@@ -1,4 +1,4 @@
-import React, { FC, useEffect } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 
 import styles from './Skill.module.scss';
 import useThrottle from "../../hooks/useThrottle";
@@ -16,10 +16,15 @@ interface ISkillProps {
 const Skill: FC<ISkillProps> = ({id, title, color, icon, description}) => {
 
   const [show, setShow] = useThrottle(false, THROTTLE_TIMEOUT);
+  const [showDot, setShowDot] = useState(false);
 
 
   useEffect(() => {
-    setTimeout(() => setShow(true), (id - 1) * DELAY_ANIMATION);
+    setTimeout(() => {
+      setShow(true);
+      setShowDot(true);
+    }, (id - 1) * DELAY_ANIMATION);
+
   }, []);
 
 
@@ -40,7 +45,8 @@ const Skill: FC<ISkillProps> = ({id, title, color, icon, description}) => {
         </div>
       </div>
       <span className={`${styles.line} ${show && styles.show}`} data-number={id}/>
-      <span onClick={openSkill} className={`${styles.dot} ${show && styles.show}`} style={{backgroundColor: color}}
+      <span onClick={openSkill} className={`${styles.dot} ${show ? styles.show : ''} ${showDot ? '' : styles.hide}`}
+            style={{backgroundColor: color}}
             data-number={id}/>
     </>
   );

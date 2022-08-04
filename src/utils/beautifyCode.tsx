@@ -6,7 +6,14 @@ const beautifyStringsAndNumbers = (str: string) => {
   }
 }
 
-export const beautifyCode = (lineIndex: number, codeLine: string) => {
+export const beautifyCode = (codeLine: string, lineIndex?: number) => {
+  if (!lineIndex) {
+    return {
+      __html: codeLine
+        .replace(/react|html|css/gi, str => `<span style="color: #eb4034; opacity: .7">${str}</span>`)
+        }
+  }
+
   return {
     __html: lineIndex + ' ' + codeLine
       .replace(/\'.*\'|\".*\"|\d+\.?\d+?/g, beautifyStringsAndNumbers)

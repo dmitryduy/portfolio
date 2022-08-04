@@ -4,6 +4,7 @@ import styles from './Skills.module.scss'
 import SkillCircle from "../SkillCircle/SkillCircle";
 import Coder from "../Coder/Coder";
 import useMatchMedia from "../../hooks/useMatchMedia";
+import Title from "../../ui/Title/Title";
 
 const useThrottleStr = `const useThrottle = < T >(
  defaultValue: T,
@@ -56,13 +57,15 @@ const SkillsSection = () => {
   const isPhone = useMatchMedia();
 
   return (
-    <section className={styles.skillsContainer}>
-      <div className='code-background'>
-        <Coder code={useThrottleStr} rotation={30}/>
-        <Coder code={usePopupStr} rotation={30}/>
+    <div className={`fullwidth ${styles.skillsWrapper}`}>
+      <div className='container'>
+        <section className={styles.skillsContainer}>
+          <Title title='Skills'/>
+          {!isPhone && <SkillCircle/>}
+          <div/>
+        </section>
       </div>
-      {!isPhone && <SkillCircle/>}
-    </section>
+    </div>
   );
 };
 

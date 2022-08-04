@@ -6,6 +6,8 @@ import bg from '../../images/test.jpg';
 import bg2 from '../../images/test2.jpg';
 import Button from "../../ui/Button/Button";
 import { icons } from "../../icons";
+import useIntersectionObserver from "../../hooks/useIntersectionObserver";
+import cn from "../../utils/cn";
 
 interface IPortfolioItemProps {
   id: number
@@ -13,6 +15,9 @@ interface IPortfolioItemProps {
 
 const PortfolioItem: FC<IPortfolioItemProps> = ({id}) => {
   const [activeImage, setActiveImage] = useState(0);
+  const [showAnimation, setShowAnimation] = useState(false);
+
+  const portfolioRef = useIntersectionObserver(() => setShowAnimation(true), {threshold: 0.5});
 
   const moveHandler = (e: React.MouseEvent<HTMLDivElement>) => {
     const target = e.target as HTMLDivElement;
@@ -25,16 +30,24 @@ const PortfolioItem: FC<IPortfolioItemProps> = ({id}) => {
       setActiveImage(imageIndex);
     }
 
-      }
+  }
 
   return (
-    <div className={styles.portfolioItem}>
-      <div className={styles.imageContainer} onMouseMove={moveHandler}>
-        <img className={`${activeImage === 0? styles.active: ''} ${styles.image}`} src={bg} alt="bg"/>
-        <img className={`${activeImage === 1? styles.active: ''} ${styles.image}`} src={bg2} alt="bg"/>
-        <img className={`${activeImage === 2? styles.active: ''} ${styles.image}`} src={bg} alt="bg"/>
+    <div ref={portfolioRef} className={styles.portfolioItem}>
+      <div className={cn(styles.imageContainer, {
+        [styles.leftSide]: id % 2 === 0,
+        [styles.rightSide]: id % 2 !== 0,
+        [styles.show]: showAnimation
+      })} onMouseMove={moveHandler}>
+        <img className={`${activeImage === 0 ? styles.active : ''} ${styles.image}`} src={bg} alt="bg"/>
+        <img className={`${activeImage === 1 ? styles.active : ''} ${styles.image}`} src={bg2} alt="bg"/>
+        <img className={`${activeImage === 2 ? styles.active : ''} ${styles.image}`} src={bg} alt="bg"/>
       </div>
-      <div className={`${styles.contentContainer} ${id % 2 === 0 && styles.reverse}`}>
+      <div className={cn(styles.contentContainer, {
+        [styles.reverse]: id % 2 === 0,
+        [styles.leftSide]: id % 2 !== 0,
+        [styles.show]: showAnimation
+      })}>
         <header className={styles.header}>
           <p className={styles.subtitle}>Subtitle</p>
           <h3 className={styles.title}>SOme Portfolio</h3>

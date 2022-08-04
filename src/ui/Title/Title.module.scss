@@ -1,8 +1,97 @@
 @import "../../global";
 
 .title {
-  text-align: center;
-  font-size: 40px;
-  color: $paragraph;
-  margin-bottom: 30px;
+  position: relative;
+  width: fit-content;
+  user-select: none;
+  font-size: 80px;
+  font-weight: bold;
+  padding: 0 10px;
+  @include setGradient(90deg);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: .8;
+
+}
+
+.decoration {
+  position: relative;
+  width: fit-content;
+  padding: 10px;
+  background:
+          linear-gradient(to right, $transparentPurple 4px, transparent 4px) 0 100%,
+          linear-gradient(to left, $transparentRed 4px, transparent 4px) 100% 4px,
+          linear-gradient(to bottom, $transparentRed 4px, transparent 4px) 100% 0,
+          linear-gradient(to top, $transparentPurple 4px, transparent 4px) 4px 100%;
+
+  background-repeat: no-repeat;
+  background-size: 50% 50%;
+  &:before, &:after {
+    position: absolute;
+    content: '';
+    background-color: $transparentPurple;
+  }
+
+  &:before {
+    top: 0;
+    left: -23px;
+    width: 30%;
+    height: 4px;
+  }
+  &:after {
+    top: 4px;
+    height: 60%;
+    width: 4px;
+    left: -23px;
+  }
+
+  .decorationFirst {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    &:before, &:after {
+      position: absolute;
+      content: '';
+      background-color: $transparentRed;
+    }
+
+    &:before {
+      bottom: 0;
+      right: -15px;
+      width: 30%;
+      height: 4px;
+    }
+    &:after {
+      bottom: 4px;
+      height: 60%;
+      width: 4px;
+      right: -15px;
+    }
+  }
+  .decorationSecond {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    &:before, &:after {
+      position: absolute;
+      content: '';
+    }
+
+    &:before {
+      bottom: calc(60% + 4px);
+      right: -15px;
+      width: 25px;
+      height: 4px;
+      background-color: $transparentRed;
+    }
+    &:after {
+      top: calc(60%);
+      width: 19px;
+      height: 4px;
+      left: -29px;
+      background-color: $transparentPurple;
+    }
+  }
 }

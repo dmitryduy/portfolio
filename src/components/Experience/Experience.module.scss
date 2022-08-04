@@ -1,0 +1,29 @@
+@import "../../global";
+
+
+.experienceContainer {
+  display: flex;
+  position: relative;
+  align-items: center;
+  margin-top: 30px;
+  min-height: 400px;
+}
+
+.titleContainer {
+  transform: translateX(-40%);
+}
+
+.roadmap {
+  margin-left: -200px;
+}
+
+.line {
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  border-radius: 1px;
+  opacity: .6;
+  left: 435px;
+  top: -10px;
+  @include setGradient(0deg);
+}

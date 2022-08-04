@@ -6,16 +6,15 @@ $paragraph: #A0C8C3;
 $decoration: #2b2e44;
 $blue: #4C8891;
 $purple: #5865f2;
-
-/*$dark: #15100A;
-$background: #443927;
-$red: #D38F5E;
-$white: #C7C9C6;
-$paragraph: #9FA194;
-$decoration: #9e7fa9;
-$blue: #423153;*/
+$transparentPurple: rgba(149, 87, 191,.6);
+$transparentRed: rgba($red, .7);
 
 $fontFira: 'Fira Code', monospace;
 $lobster: 'Lobster', cursive;
 
 $containerWidth: 1100px;
+$titlePadding: 20px;
+
+@mixin setGradient($degrees){
+  background: linear-gradient($degrees, $transparentPurple 0%, rgba(250,250,250,.1) 50%, $transparentRed 100%);
+}

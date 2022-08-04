@@ -13,7 +13,7 @@ const Coder: FC<ICoderProps> = ({code, rotation}) => {
   return (
     <div className={styles.coderContainer} style={{transform: `rotateX(${rotation || 0}deg`}}>
       {code.split('\n').map((codeLine, index) => (
-        <pre key={index} dangerouslySetInnerHTML={beautifyCode(index + 1, codeLine)}/>
+        <pre key={index} dangerouslySetInnerHTML={beautifyCode(codeLine, index + 1)}/>
       ))}
     </div>
   );

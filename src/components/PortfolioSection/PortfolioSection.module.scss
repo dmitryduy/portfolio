@@ -1,15 +1,9 @@
 @import "../../global";
 
-
-.portfolioWrapper {
-  background-color: $dark;
-}
-
 .portfolioContainer {
-  padding-top: 40px;
+  padding: $titlePadding;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+.projects {
+  padding-top: 20px;
 }

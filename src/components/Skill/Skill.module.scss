@@ -54,9 +54,9 @@
 
     &:after {
       content: '';
-      border-top: 45px solid $background;
+      border-top: 45px solid $dark;
       border-left: 40px solid $decoration;
-      border-bottom: 45px solid $background;
+      border-bottom: 45px solid $dark;
     }
   }
 
@@ -71,9 +71,9 @@
     &:after {
       order: -2;
       content: '';
-      border-top: 45px solid $background;
+      border-top: 45px solid $dark;
       border-right: 40px solid $decoration;
-      border-bottom: 45px solid $background;
+      border-bottom: 45px solid $dark;
     }
 
   }
@@ -125,6 +125,7 @@
   border-radius: 50%;
   padding: 10px;
   margin: 8px;
+
   svg {
     width: 50px;
     height: 50px;
@@ -141,6 +142,11 @@
   animation-delay: .3s;
   z-index: 1;
   cursor: pointer;
+  transition: .1s;
+
+  &.hide {
+    opacity: 0;
+  }
 
   &[data-number='1'] {
     @include absolutePosition(-6px, auto, 35px);

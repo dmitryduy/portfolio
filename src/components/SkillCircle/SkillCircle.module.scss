@@ -5,7 +5,7 @@
   position: relative;
   width: 300px;
   height: 300px;
-  background-color: $purple;
+  background-color: $transparentPurple;
   border-radius: 50%;
   opacity: .8;
 
@@ -19,7 +19,7 @@
     height: 360px;
     border-bottom-right-radius: 185px;
     border-top-right-radius: 185px;
-    border: 5px solid $purple;
+    border: 5px solid $transparentPurple;
     border-left: 0;
     left: 50%;
     transform: translateY(-30px);
@@ -40,7 +40,7 @@
   flex-direction: column;
   transform: translateY(105px);
   width: 100%;
-  height: calc(100% - 20px);
+  height: calc(100% - 25px + 100px);
   transition: .3s;
   margin-top: 10px;
 
@@ -49,7 +49,7 @@
 
 .title {
   font-family: $fontFira;
-  color: $white;
+  color: #fff;
   font-weight: bold;
   font-size: 20px;
   opacity: .5;
@@ -57,6 +57,7 @@
   transition: .2s;
   margin: 0 auto;
   width: fit-content;
+  user-select: none;
 
   &:not(.active):hover {
     cursor: pointer;
