@@ -3,33 +3,25 @@
 
 .navigationContainer {
   display: flex;
-  justify-content: flex-end;
-  width: 100%;
-  font-weight: 500;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 50px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  background-color: transparent;
+  z-index: 1;
+  margin-left: -10px;
+  width: $navbarWidth;
   font-family: $fontFira;
   color: $white;
+  margin-bottom: 10px;
 }
 
-
-.navigationRight {
+.social {
   display: flex;
-  justify-content: space-between;
-  li {
-    position: relative;
-    margin-left: 40px;
-    cursor: pointer;
-    padding: 20px 0;
-    &:before {
-      position: absolute;
-      content: '';
-      height: 3px;
-      background-color: $darkPurple;
-      bottom: 0;
-      transition: .15s linear;
-      width: 0;
-    }
-    &:hover:before{
-      width: 100%;
-    }
-  }
+  flex-direction: column;
+  width: 100%;
+
 }

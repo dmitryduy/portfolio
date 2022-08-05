@@ -1,16 +1,12 @@
 @import "../../global";
 
-.skillsWrapper {
-  background-color: $dark;
-  clip-path: polygon(30% 0%, 70% 0%, 99% 10%, 100% 100%, 69% 100%, 0% 100%, 0 100%, 0 10%);
-  padding-top: $titlePadding;
-}
-
 .skillsContainer {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  margin: 0 auto;
+  background-color: $dark;
+  clip-path: polygon(30% 0%, 70% 0%, 99% 10%, 100% 100%, 69% 100%, 0% 100%, 0 100%, 0 10%);
   height: min(100vh, 700px);
+  @extend %sectionStyles;
 }

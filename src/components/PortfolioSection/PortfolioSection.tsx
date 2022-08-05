@@ -4,7 +4,7 @@ import PortfolioItem from "../PortfolioItem/PortfolioItem";
 
 import styles from './PortfolioSection.module.scss';
 
-const CodeExampleSection = () => {
+const PortfolioSection = () => {
   return (
     <section className={styles.portfolioContainer}>
       <Title title='Portfolio'/>
@@ -19,4 +19,4 @@ const CodeExampleSection = () => {
   );
 };
 
-export default CodeExampleSection;
+export default PortfolioSection;

@@ -1,0 +1,44 @@
+@import "../../global";
+
+.container {
+  top: 0;
+  left: 0;
+  z-index: 1;
+  height: 0;
+  align-self: flex-start;
+  transition: .3s;
+  user-select: none;
+  &:hover {
+    margin-left: 0;
+  }
+}
+
+.content {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 120px;
+  transition: .3s;
+  span {
+    padding: 5px 10px;
+    text-align: center;
+  }
+  &:before {
+    position: absolute;
+    content: '';
+    height: 50%;
+    background-color: $darkPurple;
+    border-radius: 10px;
+    z-index: -1;
+    transition: .3s;
+    left: 15px;
+    width: calc(100% - 30px);
+  }
+  &.en:before {
+    transform: translateY(0) ;
+  }
+  &.ru:before {
+    transform: translateY(30px);
+  }
+}

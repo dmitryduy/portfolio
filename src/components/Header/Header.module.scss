@@ -13,19 +13,12 @@
   display: flex;
   position: relative;
   justify-content: space-between;
+  clip-path: polygon(0 0, 100% 0, 100% 100px, 100% calc(100vh - 100px), 70% 100%, 30% 100%, 0 calc(100vh - 100px));
+  background-color: $dark;
+  height: 100vh;
+  align-items: center;
+  @extend %sectionStyles;
 
-}
-
-.backgroundText {
-  position: absolute;
-  font-weight: 700;
-  font-size: 160px;
-  z-index: 1;
-  color: $decoration;
-  font-family: $lobster;
-  transform: rotate(-15deg) translate(0%, 10%);
-  user-select: none;
-  white-space: nowrap;
 }
 
 .letter {
@@ -49,15 +42,6 @@
 
 .rightSide {
   z-index: 2;
-}
-
-.social {
-  display: flex;
-  margin-bottom: 20px;
-
-  a {
-    margin-right: 20px;
-  }
 }
 
 .title {

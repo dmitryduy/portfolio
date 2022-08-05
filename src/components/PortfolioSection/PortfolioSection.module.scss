@@ -1,9 +1,15 @@
 @import "../../global";
 
 .portfolioContainer {
-  padding: $titlePadding;
+  @extend %sectionStyles;
 }
 
 .projects {
   padding-top: 20px;
+
+  @media (min-width: $maxWidthContent) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }

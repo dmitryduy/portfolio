@@ -3,21 +3,10 @@ import Social from "../Social/Social";
 import styles from './Header.module.scss';
 import Coder from "../Coder/Coder";
 import Button from "../../ui/Button/Button";
-import { icons } from "../../icons";
 import { LETTER_ANIMATION_DELAY } from "./Header.constants";
 import cn from "../../utils/cn";
 import noop from "../../utils/noop";
 import TypingText from "../TypingText/TypingText";
-
-const iconsList: {
-  id: number,
-  name: keyof typeof icons,
-  link: string
-}[] = [
-  {id: 1, name: 'telegram', link: 'link'},
-  {id: 2, name: 'github', link: 'link'},
-  {id: 3, name: 'mail', link: 'link'}
-]
 
 const str = `import { useLayoutEffect, useState } from "react";
 
@@ -45,7 +34,6 @@ const greetings = 'I\'m Johkn JOhanslo';
 const briefly = 'Hello I frontend developer. I like pony and something else. Thanks for wathing. See uHello I frontend developer. I like pony and something else. Thanks for wathing. See uHello I frontend developer. I like pony and something else. Thanks for wathing. See uHello I frontend developer. I like pony and something else. Thanks for wathing. See u';
 
 const Header = () => {
-  console.log('render')
 
   const letterAnimateHandler = (e: React.MouseEvent<HTMLPreElement>) => {
     const target = e.target as HTMLPreElement;
@@ -57,15 +45,8 @@ const Header = () => {
     }, LETTER_ANIMATION_DELAY);
   }
   return (
-    <div className={`fullwidth ${styles.headerWrapper}`}>
-      <div className='container'>
         <header className={styles.headerContainer}>
-          <span className={styles.backgroundText}>Johkn JOhanslo</span>
           <aside className={styles.leftSide}>
-            <ul className={styles.social}>
-              {iconsList.map(icon => <Social key={icon.id} iconName={icon.name} link={icon.link}/>)}
-            </ul>
-            <span className={styles.letter}></span>
             <h1 className={styles.title}>{greetings.split('').map((letter, index) => <pre className={cn(styles.letter, {
               [styles.firstLetter]: !index
             })}
@@ -75,12 +56,10 @@ const Header = () => {
             <Button onClick={() => {
             }} text='Portfolio'/>
           </aside>
-          {/*<aside className={styles.rightSide}>
+          <aside className={styles.rightSide}>
             <Coder code={str}/>
-          </aside>*/}
+          </aside>
         </header>
-      </div>
-    </div>
   );
 };
 

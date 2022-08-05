@@ -10,12 +10,10 @@ function App() {
   return (
     <>
       <Navigation/>
-      <Header/>
       <div className='container'>
+        <Header/>
         <About/>
-      </div>
-      <SkillsSection/>
-      <div className='container'>
+        <SkillsSection/>
         <PortfolioSection/>
       </div>
     </>

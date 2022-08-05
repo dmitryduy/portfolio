@@ -2,19 +2,19 @@ import React, { FC } from 'react';
 
 import styles from './Coder.module.scss';
 import { beautifyCode } from "../../utils/beautifyCode";
+import useTyping from "../../hooks/useTyping";
 
 interface ICoderProps {
   code: string
-  rotation?: number
 }
 
 
-const Coder: FC<ICoderProps> = ({code, rotation}) => {
+const Coder: FC<ICoderProps> = ({code}) => {
+  const actualText = useTyping(code, 5);
   return (
-    <div className={styles.coderContainer} style={{transform: `rotateX(${rotation || 0}deg`}}>
-      {code.split('\n').map((codeLine, index) => (
-        <pre key={index} dangerouslySetInnerHTML={beautifyCode(codeLine, index + 1)}/>
-      ))}
+    <div className={styles.coderContainer}>
+      <pre className={styles.hidden} dangerouslySetInnerHTML={beautifyCode(code, true)}/>
+      <pre className={styles.text} dangerouslySetInnerHTML={beautifyCode(actualText, true)}/>
     </div>
   );
 };

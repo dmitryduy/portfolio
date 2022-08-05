@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 
 import styles from './Social.module.scss';
 import { icons } from "../../icons";
+import Button3d from "../../ui/Button3d/Button3d";
 
 
 interface ISocialProps {
@@ -11,9 +12,13 @@ interface ISocialProps {
 
 const Social: FC<ISocialProps> = ({link, iconName}) => {
   return (
-    <a href={link} className={styles.socialContainer}>
-      {icons[iconName]}
-    </a>
+    <div className={styles.socialWrapper}>
+      <Button3d>
+        <a href={link} className={styles.socialContainer}>
+          {icons[iconName]}
+        </a>
+      </Button3d>
+    </div>
   );
 };
 

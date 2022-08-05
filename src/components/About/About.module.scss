@@ -2,5 +2,5 @@
 
 
 .aboutContainer {
-  padding: $titlePadding 0;
+  @extend %sectionStyles;
 }

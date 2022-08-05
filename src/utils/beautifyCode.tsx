@@ -6,8 +6,8 @@ const beautifyStringsAndNumbers = (str: string) => {
   }
 }
 
-export const beautifyCode = (codeLine: string, lineIndex?: number) => {
-  if (!lineIndex) {
+export const beautifyCode = (codeLine: string, code: boolean) => {
+  if (!code) {
     return {
       __html: codeLine
         .replace(/react|html|css/gi, str => `<span style="color: #eb4034; opacity: .7">${str}</span>`)
@@ -15,7 +15,7 @@ export const beautifyCode = (codeLine: string, lineIndex?: number) => {
   }
 
   return {
-    __html: lineIndex + ' ' + codeLine
+    __html: codeLine
       .replace(/\'.*\'|\".*\"|\d+\.?\d+?/g, beautifyStringsAndNumbers)
       .replace(/constructor|class|this|for|if|else|while|new |const|let|var|return|void|false|true|export|default|import|from/g, str => `<span style="color: #a154cb">${str}</span>`)
       .replace(/Date/g, str => `<span style="color: #eb4034">${str}</span>`)

@@ -11,9 +11,15 @@ $darkPurple: #7c6afa;
 $fontFira: 'Fira Code', monospace;
 $lobster: 'Lobster', cursive;
 
-$containerWidth: 1100px;
+$navbarWidth: 120px;
+$containerPadding: 140px;
 $titlePadding: 20px;
+$maxWidthContent: 1400px;
 
 @mixin setGradient($degrees){
   background: linear-gradient($degrees, $lightPurple 0%, $darkPurple 100%);
+}
+
+%sectionStyles {
+  padding: 30px 120px 30px 160px;
 }

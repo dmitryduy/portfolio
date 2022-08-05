@@ -8,7 +8,7 @@ import cn from "../../utils/cn";
 const ExperienceItem = () => {
   const [showAnimation, setShowAnimation] = useState(false);
 
-  const textRef = useIntersectionObserver(() => setShowAnimation(true), {threshold: 1});
+  const textRef = useIntersectionObserver(() => setShowAnimation(true), {threshold: 0.5});
 
   return (
     <div className={styles.item}>

@@ -142,10 +142,10 @@
   animation-delay: .3s;
   z-index: 1;
   cursor: pointer;
-  transition: .1s;
-
+  transition: .3s;
+  transform: scale(1);
   &.hide {
-    opacity: 0;
+    transform: scale(0);
   }
 
   &[data-number='1'] {

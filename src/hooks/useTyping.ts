@@ -5,10 +5,10 @@ const useTyping = (text: string, timeout: number) => {
   const [actualText, setActualText] = useState('');
 
   useEffect(() => {
-    if (actualText.length <  text.length) {
+    if (actualText.length < text.length) {
 
       setTimeout(() => {
-        setActualText(text.slice(0, actualText.length) + '|');
+        setActualText(text.slice(0, actualText.length + 1));
       }, timeout);
 
     } else {

@@ -7,7 +7,6 @@ const About = () => {
   return (
     <section className={styles.aboutContainer} >
         <Experience/>
-
     </section>
   );
 };

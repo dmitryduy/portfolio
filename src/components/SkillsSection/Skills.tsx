@@ -57,15 +57,11 @@ const SkillsSection = () => {
   const isPhone = useMatchMedia();
 
   return (
-    <div className={`fullwidth ${styles.skillsWrapper}`}>
-      <div className='container'>
-        <section className={styles.skillsContainer}>
-          <Title title='Skills'/>
-          {!isPhone && <SkillCircle/>}
-          <div/>
-        </section>
-      </div>
-    </div>
+    <section className={styles.skillsContainer}>
+      <Title title='Skills'/>
+      {!isPhone && <SkillCircle/>}
+      <div/>
+    </section>
   );
 };
 

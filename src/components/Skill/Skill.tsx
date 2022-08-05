@@ -11,9 +11,10 @@ interface ISkillProps {
   color: string
   icon: keyof typeof icons
   description: string
+  timerIndex: number
 }
 
-const Skill: FC<ISkillProps> = ({id, title, color, icon, description}) => {
+const Skill: FC<ISkillProps> = ({id, title, color, icon, description, timerIndex}) => {
 
   const [show, setShow] = useThrottle(false, THROTTLE_TIMEOUT);
   const [showDot, setShowDot] = useState(false);
@@ -23,7 +24,7 @@ const Skill: FC<ISkillProps> = ({id, title, color, icon, description}) => {
     setTimeout(() => {
       setShow(true);
       setShowDot(true);
-    }, (id - 1) * DELAY_ANIMATION);
+    }, (timerIndex - 1) * DELAY_ANIMATION);
 
   }, []);
 
