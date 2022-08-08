@@ -54,7 +54,7 @@ eventName: typeOfSettings,
 
 const SkillsSection = () => {
 
-  const isPhone = useMatchMedia();
+  const isPhone = useMatchMedia('max-width: 1000px');
 
   return (
     <section className={styles.skillsContainer}>

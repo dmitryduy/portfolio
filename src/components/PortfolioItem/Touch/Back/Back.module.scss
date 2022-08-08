@@ -1,0 +1,46 @@
+@import "../../../../global";
+@import "../Touch.module";
+
+.back {
+  transform: rotateY( 90deg) translateZ(200px);
+
+  .backContainer {
+    transition: $smoothAnimation;
+    height: 450px;
+    overflow: hidden;
+    background-color: $background;
+  }
+  .closeButton {
+    position: absolute;
+    cursor: pointer;
+    color: $white;
+    font-size: 30px;
+    right: 0;
+    top: 0;
+    z-index: 100;
+  }
+  .counter {
+    @extend %counterStyles;
+    padding-top: 10px;
+  }
+
+  .title {
+    @extend %titleStyles;
+    border-bottom: 1px solid $purple;
+    margin-left: -20px;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+  }
+
+  .description {
+    color: $paragraph;
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+}

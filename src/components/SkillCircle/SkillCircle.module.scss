@@ -42,7 +42,7 @@
   transform: translateY(105px);
   width: 100%;
   height: calc(100% - 25px + 100px);
-  transition: .3s;
+  transition: $smoothAnimation;
   margin-top: 10px;
 
 }

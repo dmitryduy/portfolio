@@ -1,12 +1,11 @@
 import React from 'react';
-import Social from "../Social/Social";
+
 import styles from './Header.module.scss';
 import Coder from "../Coder/Coder";
 import Button from "../../ui/Button/Button";
-import { LETTER_ANIMATION_DELAY } from "./Header.constants";
-import cn from "../../utils/cn";
-import noop from "../../utils/noop";
 import TypingText from "../TypingText/TypingText";
+import Greeting from "../Greeting/Greeting";
+import useMatchMedia from "../../hooks/useMatchMedia";
 
 const str = `import { useLayoutEffect, useState } from "react";
 
@@ -30,36 +29,23 @@ const useMatchMedia = () => {
 export default useMatchMedia;
 `;
 
-const greetings = 'I\'m Johkn JOhanslo';
 const briefly = 'Hello I frontend developer. I like pony and something else. Thanks for wathing. See uHello I frontend developer. I like pony and something else. Thanks for wathing. See uHello I frontend developer. I like pony and something else. Thanks for wathing. See uHello I frontend developer. I like pony and something else. Thanks for wathing. See u';
 
 const Header = () => {
-
-  const letterAnimateHandler = (e: React.MouseEvent<HTMLPreElement>) => {
-    const target = e.target as HTMLPreElement;
-
-    target.classList.add(styles.animate);
-
-    setTimeout(() => {
-      target.classList.remove(styles.animate);
-    }, LETTER_ANIMATION_DELAY);
-  }
+  const isTablet = useMatchMedia('(max-width: 1200px)');
+  console.log(isTablet)
   return (
-        <header className={styles.headerContainer}>
-          <aside className={styles.leftSide}>
-            <h1 className={styles.title}>{greetings.split('').map((letter, index) => <pre className={cn(styles.letter, {
-              [styles.firstLetter]: !index
-            })}
-                                                                                          onMouseEnter={index ? letterAnimateHandler: noop}
-                                                                                          key={index}>{letter}</pre>)}</h1>
-            <TypingText text={briefly}/>
-            <Button onClick={() => {
-            }} text='Portfolio'/>
-          </aside>
-          <aside className={styles.rightSide}>
-            <Coder code={str}/>
-          </aside>
-        </header>
+    <header className={styles.headerContainer}>
+      <aside className={styles.leftSide}>
+        <Greeting/>
+        <TypingText text={briefly}/>
+        <Button onClick={() => {
+        }} text='Portfolio'/>
+      </aside>
+      {!isTablet && <aside className={styles.rightSide}>
+        <Coder code={str}/>
+      </aside>}
+    </header>
   );
 };
 

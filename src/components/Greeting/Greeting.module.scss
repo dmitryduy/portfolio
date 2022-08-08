@@ -1,0 +1,28 @@
+@import "../../global";
+
+.title {
+  font-weight: 700;
+  font-family: $fontFira;
+  color: $white;
+  font-size: 70px;
+  margin-bottom: 10px;
+  text-shadow: 5px 5px 10px rgba($purple, .2) ;
+  &:first-letter {
+    color: $darkPurple;
+    font-size: 1.3em;
+  }
+
+  @media (max-width: $tabletSize) {
+    font-size: 80px;
+  }
+
+  @media (max-width: $phoneLandscape) {
+
+   font-size: 60px;
+  }
+
+  @media (max-width: $phone) {
+
+    font-size: 40px;
+  }
+}

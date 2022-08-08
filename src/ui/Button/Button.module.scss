@@ -1,7 +1,7 @@
 @import "../../global";
 
 .wrapper {
-  transition: .3s;
+  transition: $smoothAnimation;
   &:hover {
     transform: translateY(-50%);
   }

@@ -1,20 +1,24 @@
 import { useLayoutEffect, useState } from "react";
 
-const useMatchMedia = () => {
-  const phoneMedia = matchMedia('(max-width: 1200px)');
+const useMatchMedia = (query: string) => {
 
-  const [isPhone, setIsPhone] = useState(phoneMedia.matches);
+  const media = matchMedia(query);
+
+  const [isMedia, setIsMedia] = useState(media.matches);
 
   useLayoutEffect(() => {
-    const handler = () => setIsPhone(phoneMedia.matches);
+    const handler = () => {
+      console.log(10)
+      setIsMedia(media.matches);
+    }
 
-    phoneMedia.addEventListener('change', handler);
+    media.addEventListener('change', handler);
 
-    return () => phoneMedia.removeEventListener('change', handler);
+    return () => media.removeEventListener('change', handler);
 
   });
 
-  return isPhone;
+  return isMedia;
 };
 
 export default useMatchMedia;

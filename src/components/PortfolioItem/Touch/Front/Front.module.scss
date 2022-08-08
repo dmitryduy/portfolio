@@ -1,0 +1,32 @@
+@import "../../../../global";
+@import "../Touch.module";
+
+.front{
+  border-left: 2px solid $purple;
+  transform: rotateY(0deg) translateZ(200px);
+  padding: 10px;
+  .counter {
+    @extend %counterStyles;
+    border-bottom: 2px solid $purple;
+  }
+
+  .image {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    filter: grayscale(.4);
+    margin-bottom: 20px;
+  }
+
+  .subtitle {
+    color: $darkPurple;
+    font-family: $fontFira;
+    font-size: 20px;
+  }
+
+  .title {
+    @extend %titleStyles;
+    margin-bottom: 20px;
+  }
+
+}

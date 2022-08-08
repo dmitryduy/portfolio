@@ -16,10 +16,20 @@ $containerPadding: 140px;
 $titlePadding: 20px;
 $maxWidthContent: 1400px;
 
+$tabletSize: 1200px;
+$phoneLandscape: 900px;
+$phone: 450px;
+
+$smoothAnimation: .4s;
+
 @mixin setGradient($degrees){
   background: linear-gradient($degrees, $lightPurple 0%, $darkPurple 100%);
 }
 
 %sectionStyles {
   padding: 30px 120px 30px 160px;
+
+  @media (max-width: $phoneLandscape) {
+    padding: 30px 20px 30px 20px;
+  }
 }

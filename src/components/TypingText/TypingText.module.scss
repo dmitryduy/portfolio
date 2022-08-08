@@ -2,19 +2,26 @@
 
 .container {
   position: relative;
+  font-size: 20px;
+  @media (max-width: $tabletSize) {
+    font-size: 25px;
+  }
+
+  @media (max-width: $phoneLandscape) {
+
+    font-size: 20px;
+  }
 }
 
 .text {
   position: absolute;
   top: 0;
   color: $paragraph;
-  font-size: 20px;
   margin-bottom: 20px;
 }
 
 .hiddenText {
   color: $paragraph;
-  font-size: 20px;
   margin-bottom: 20px;
   visibility: hidden;
 }

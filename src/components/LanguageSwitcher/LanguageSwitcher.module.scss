@@ -6,7 +6,7 @@
   z-index: 1;
   height: 0;
   align-self: flex-start;
-  transition: .3s;
+  transition: $smoothAnimation;
   user-select: none;
   &:hover {
     margin-left: 0;
@@ -19,7 +19,7 @@
   justify-content: space-between;
   flex-direction: column;
   width: 120px;
-  transition: .3s;
+  transition: $smoothAnimation;
   span {
     padding: 5px 10px;
     text-align: center;
@@ -31,7 +31,7 @@
     background-color: $darkPurple;
     border-radius: 10px;
     z-index: -1;
-    transition: .3s;
+    transition: $smoothAnimation;
     left: 15px;
     width: calc(100% - 30px);
   }

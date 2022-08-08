@@ -6,10 +6,17 @@
 
 .projects {
   padding-top: 20px;
-
-  @media (min-width: $maxWidthContent) {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  /*@media (min-width: $maxWidthContent) {
     display: flex;
     flex-direction: column;
     align-items: center;
+  }*/
+
+  @media (max-width: $phoneLandscape) {
+    display: flex;
+    flex-direction: row;
   }
 }

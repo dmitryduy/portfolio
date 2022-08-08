@@ -1,13 +1,5 @@
 @import "../../global";
 
-.headerWrapper {
-  display: flex;
-  justify-content: center;
-  clip-path: polygon(0 0, 100% 0, 100% 100px, 100% calc(100vh - 150px), 70% 100%, 30% 100%, 0 calc(100vh - 150px));
-  background-color: $dark;
-  padding: 50px 0;
-  height: calc(100vh - 61px);
-}
 
 .headerContainer {
   display: flex;
@@ -19,37 +11,25 @@
   align-items: center;
   @extend %sectionStyles;
 
-}
 
-.letter {
-  display: inline-block;
-  width: fit-content;
-  transition: .7s;
-  cursor: default;
-  &.firstLetter {
-    color: $darkPurple;
-    font-size: 1.3em;
-  }
-  &.animate {
-    transform: translateY(-0.6em);
-  }
 }
 
 .leftSide {
-  max-width: 600px;
+  max-width: 650px;
   z-index: 2;
+  margin-right: 20px;
+  @media (max-width: $tabletSize) {
+    margin-right: 0;
+    max-width: 700px;
+  }
+  @media (max-width: $phoneLandscape) {
+
+    max-width: none;
+  }
 }
 
 .rightSide {
   z-index: 2;
-}
-
-.title {
-  font-weight: 700;
-  font-family: $fontFira;
-  color: $white;
-  font-size: 80px;
-  margin-bottom: 10px;
 }
 
 

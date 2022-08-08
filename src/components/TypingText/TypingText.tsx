@@ -11,7 +11,7 @@ const TypingText: FC<ITypingTextProps> = ({text}) => {
 
   return (
     <div className={styles.container}>
-      <p  className={styles.hiddenText}>{text}</p>
+      <p className={styles.hiddenText}>{text}</p>
       <p className={styles.text}>{actualText}</p>
     </div>
   );

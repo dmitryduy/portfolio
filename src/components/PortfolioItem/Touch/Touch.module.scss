@@ -1,0 +1,44 @@
+@import "../../../global";
+
+.touchContainer {
+  width: 400px;
+  height: 450px;
+  perspective: 800px;
+  transition: $smoothAnimation;
+  margin-bottom: 20px;
+}
+
+.touchWrapper {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  transform-style: preserve-3d;
+  transform: translateZ(-200px);
+  transition: transform $smoothAnimation;
+
+  &.showInfo {
+    transform: translateZ(-200px) rotateY( -90deg);
+  }
+}
+
+.face {
+  position: absolute;
+  width: 400px;
+  height: 450px;
+  background-color: $background;
+  transition: $smoothAnimation;
+}
+
+%counterStyles {
+  font-family: $fontFira;
+  color: $white;
+  padding-bottom: 20px;
+  width: fit-content;
+  margin-bottom: 20px;
+}
+
+
+%titleStyles {
+  color: $white;
+  font-size: 30px;
+}

@@ -1,4 +1,4 @@
-@import "../../global";
+@import "../../../global";
 
 .portfolioItem {
   display: flex;
@@ -39,7 +39,7 @@
   object-fit: cover;
   position: absolute;
   top: 50%;
-  transition: .3s;
+  transition: $smoothAnimation;
   transform: translateY(-50%);
   opacity: 0;
   visibility: hidden;
@@ -135,19 +135,6 @@
 
 
 .footer {
-  .stack {
-    display: flex;
-    justify-content: flex-end;
-    color: $white;
-    font-size: 18px;
-    font-weight: $fontFira;
-    margin-bottom: 20px;
-
-    li {
-      margin-right: 10px;
-    }
-  }
-
   .buttons {
     display: flex;
     justify-content: flex-end;

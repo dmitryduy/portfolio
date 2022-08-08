@@ -1,0 +1,14 @@
+@import "../../global";
+
+.list {
+  display: flex;
+  justify-content: flex-end;
+  color: $white;
+  font-size: 18px;
+  font-weight: $fontFira;
+  margin-bottom: 20px;
+
+  .listItem {
+    margin-right: 10px;
+  }
+}
