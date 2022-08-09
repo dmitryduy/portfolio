@@ -1,17 +1,5 @@
 @import "../../global";
 
-.container {
-  top: 0;
-  left: 0;
-  z-index: 1;
-  height: 0;
-  align-self: flex-start;
-  transition: $smoothAnimation;
-  user-select: none;
-  &:hover {
-    margin-left: 0;
-  }
-}
 
 .content {
   display: flex;
@@ -19,16 +7,21 @@
   justify-content: space-between;
   flex-direction: column;
   width: 120px;
+  border-radius: 0 0 10px 0;
+  padding: 5px 0;
   transition: $smoothAnimation;
   span {
     padding: 5px 10px;
     text-align: center;
+    cursor: pointer;
+    font-weight: bold;
+    transition: $smoothAnimation;
   }
   &:before {
     position: absolute;
     content: '';
-    height: 50%;
-    background-color: $darkPurple;
+    height: calc(50% - 5px);
+    background-color: $white;
     border-radius: 10px;
     z-index: -1;
     transition: $smoothAnimation;
@@ -38,7 +31,14 @@
   &.en:before {
     transform: translateY(0) ;
   }
+  &.en span:first-child {
+    color: $background;
+  }
   &.ru:before {
     transform: translateY(30px);
+  }
+
+  &.ru span:last-child {
+    color: $background;
   }
 }

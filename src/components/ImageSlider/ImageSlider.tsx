@@ -1,21 +1,19 @@
 import React, { FC } from 'react';
 import styles from "./ImageSlider.module.scss";
-import bg from "../../images/test.jpg";
 import useThrottle from "../../hooks/useThrottle";
 import { icons } from "../../icons";
 
 interface IImageSliderProps {
-  imagesCount: number
-  startImage: number
+  images: string[]
   containerWidth: number
 }
 
-const ImageSlider: FC<IImageSliderProps> = ({imagesCount, startImage, containerWidth}) => {
-  const [currentImage, setCurrentImage] = useThrottle(startImage, 300);
+const ImageSlider: FC<IImageSliderProps> = ({images, containerWidth}) => {
+  const [currentImage, setCurrentImage] = useThrottle(0, 300);
 
   const prevImage = () => {
     if (currentImage === 0) {
-      setCurrentImage(imagesCount - 1);
+      setCurrentImage(images.length - 1);
       return;
     }
 
@@ -24,7 +22,7 @@ const ImageSlider: FC<IImageSliderProps> = ({imagesCount, startImage, containerW
 
 
   const nextImage = () => {
-    if (currentImage === imagesCount - 1) {
+    if (currentImage === images.length - 1) {
       setCurrentImage(0);
       return;
     }
@@ -37,16 +35,14 @@ const ImageSlider: FC<IImageSliderProps> = ({imagesCount, startImage, containerW
       <div className={styles.navigationLine} style={{width: containerWidth}}>
         <div className={styles.scroller}
              style={{
-               width: `${containerWidth / imagesCount}px`,
-               transform: `translateX(${containerWidth / imagesCount * currentImage}px)`
+               width: `${containerWidth / images.length - 2}px`,
+               transform: `translateX(${containerWidth / images.length * currentImage + 1}px)`
              }}/>
+        {images.map((_, index) => <div key={index} className={styles.text}/>)}
       </div>
       <div className={styles.imageContainer} style={{width: containerWidth}}>
         <div className={styles.imageWrapper} style={{transform: `translateX(-${currentImage * containerWidth}px`}}>
-          <img className={styles.image} src='https://raw.githubusercontent.com/dmitryduy/portfolio/master/src/images/test.jpg' alt=""/>
-          <img className={styles.image} src='https://raw.githubusercontent.com/dmitryduy/portfolio/master/src/images/test.jpg' alt=""/>
-          <img className={styles.image}  src='https://raw.githubusercontent.com/dmitryduy/portfolio/master/src/images/test.jpg' alt=""/>
-          <img className={styles.image}  src='https://raw.githubusercontent.com/dmitryduy/portfolio/master/src/images/test.jpg' alt=""/>
+          {images.map(image => <img className={styles.image} src={image} alt=""/>)}
         </div>
         <div className={styles.imageNavigation}>
           <button onClick={prevImage}>{icons.arrow}</button>

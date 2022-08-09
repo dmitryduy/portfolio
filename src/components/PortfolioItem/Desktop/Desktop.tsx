@@ -59,7 +59,7 @@ const Desktop: FC<IDesktopProps> = ({id}) => {
             error, facere ipsam iste iusto maiores, molestiae non nostrum officiis, quod sed.</p>
         </div>
         <footer className={styles.footer}>
-         <SkillList/>
+         <SkillList skills={[]}/>
           <div className={styles.buttons}>
             <Button text='Github' onClick={() => {
             }}>{icons.github}</Button>

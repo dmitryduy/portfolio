@@ -2,13 +2,13 @@
 
 export class Emitter {
   listeners: {[key: string]: any[]} = {}
-  on<T extends object>(eventName: string, cb: (data?: T) => void) {
+  on(eventName: string, cb: (data?: {[key: string]: any}) => void) {
     if (!this.listeners[eventName]) {
       this.listeners[eventName] = [];
     }
     this.listeners[eventName].push(cb);
   }
-  emit<T extends object>(eventName: string, data?: T) {
+  emit(eventName: string, data?: {[key: string]: any}) {
     if (this.listeners[eventName]) {
       for (let cb of this.listeners[eventName]) {
         cb(data);

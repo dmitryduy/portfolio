@@ -2,7 +2,7 @@
 @import "../Touch.module";
 
 .back {
-  transform: rotateY( 90deg) translateZ(200px);
+  transform: rotateY(90deg) translateZ(200px);
 
   .backContainer {
     transition: $smoothAnimation;

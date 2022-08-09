@@ -3,33 +3,7 @@
 
 .headerContainer {
   display: flex;
-  position: relative;
-  justify-content: space-between;
-  clip-path: polygon(0 0, 100% 0, 100% 100px, 100% calc(100vh - 100px), 70% 100%, 30% 100%, 0 calc(100vh - 100px));
-  background-color: $dark;
-  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  @extend %sectionStyles;
-
-
 }
-
-.leftSide {
-  max-width: 650px;
-  z-index: 2;
-  margin-right: 20px;
-  @media (max-width: $tabletSize) {
-    margin-right: 0;
-    max-width: 700px;
-  }
-  @media (max-width: $phoneLandscape) {
-
-    max-width: none;
-  }
-}
-
-.rightSide {
-  z-index: 2;
-}
-
-

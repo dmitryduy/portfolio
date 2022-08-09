@@ -1,4 +1,4 @@
-import React, { useCallback, useRef, useState } from 'react';
+import React, { FC, useCallback, useRef, useState } from 'react';
 
 import styles from './Touch.module.scss';
 import cn from "../../../utils/cn";
@@ -6,9 +6,13 @@ import cn from "../../../utils/cn";
 import { BLOCK_HEIGHT } from "./Touch.contants";
 import Front from "./Front/Front";
 import Back from "./Back/Back";
+import { IProject } from "../../../data";
 
+interface ITouchProps {
+  project: IProject
+}
 
-const Touch = () => {
+const Touch: FC<ITouchProps> = ({project}) => {
 
   const [showInfo, setShowInfo] = useState(false);
 
@@ -38,8 +42,8 @@ const Touch = () => {
   return (
     <div ref={containerRef} className={styles.touchContainer}>
       <div className={cn(styles.touchWrapper, {[styles.showInfo]: showInfo})}>
-        <Front ref={frontRef} className={styles.face} openInfo={openInfo}/>
-        <Back ref={backRef} closeInfo={closeInfo} className={styles.face} imagesCount={4}/>
+        <Front ref={frontRef} className={styles.face} openInfo={openInfo} project={project}/>
+        <Back ref={backRef} closeInfo={closeInfo} className={styles.face} project={project}/>
       </div>
     </div>
   );

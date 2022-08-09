@@ -2,9 +2,10 @@ import React from 'react';
 
 import styles from './Skills.module.scss'
 import SkillCircle from "../SkillCircle/SkillCircle";
-import Coder from "../Coder/Coder";
 import useMatchMedia from "../../hooks/useMatchMedia";
 import Title from "../../ui/Title/Title";
+import Section from "../Section/Section";
+import { Page } from "../../data";
 
 const useThrottleStr = `const useThrottle = < T >(
  defaultValue: T,
@@ -57,11 +58,11 @@ const SkillsSection = () => {
   const isPhone = useMatchMedia('max-width: 1000px');
 
   return (
-    <section className={styles.skillsContainer}>
+    <Section sectionName={Page.SKILLS} className={styles.skillsContainer}>
       <Title title='Skills'/>
       {!isPhone && <SkillCircle/>}
       <div/>
-    </section>
+    </Section>
   );
 };
 

@@ -15,6 +15,7 @@ const iconsList: {
   {id: 3, name: 'mail', link: 'link'}
 ]
 const Navigation = () => {
+
   return (
     <div className={styles.navigationContainer}>
       <LanguageSwitcher/>

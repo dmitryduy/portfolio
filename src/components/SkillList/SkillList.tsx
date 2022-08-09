@@ -1,13 +1,14 @@
-import React from 'react';
+import React, { FC } from 'react';
 import styles from "./SkillList.module.scss";
 
-const SkillList = () => {
+interface ISkillListProps {
+  skills: string[]
+}
+
+const SkillList: FC<ISkillListProps> = ({skills}) => {
   return (
     <ul className={styles.list}>
-      <li className={styles.listItem}>Css</li>
-      <li className={styles.listItem}>Css</li>
-      <li className={styles.listItem}>Css</li>
-      <li className={styles.listItem}>Css</li>
+      {skills.map(skill => <li className={styles.listItem} key={skill}>{skill}</li>)}
     </ul>
   );
 };

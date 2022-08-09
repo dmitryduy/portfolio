@@ -4,25 +4,94 @@
   font-weight: 700;
   font-family: $fontFira;
   color: $white;
-  font-size: 70px;
-  margin-bottom: 10px;
-  text-shadow: 5px 5px 10px rgba($purple, .2) ;
-  &:first-letter {
-    color: $darkPurple;
-    font-size: 1.3em;
+  font-size: calc(10px + 4vw);
+
+  .text {
+    position: relative;
+    text-align: center;
   }
 
-  @media (max-width: $tabletSize) {
-    font-size: 80px;
+
+  .decorateText {
+    position: relative;
+    span:first-child {
+      -webkit-text-stroke: 1px $purple;
+      color: transparent;
+      filter: blur(1px);
+    }
+    span:last-child {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: linear-gradient(-125deg, #ee7752, #e73c7e, #23a6d5, #23d5ab, $purple, $darkPurple);
+      background-color: red;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-size: 300% 300%;
+      animation: text-animate 5s ease-in-out infinite;
+    }
   }
 
-  @media (max-width: $phoneLandscape) {
+  .lines {
+    position: absolute;
+    width: 100%;
 
-   font-size: 60px;
   }
 
-  @media (max-width: $phone) {
+  .line {
+    margin: 40px auto;
+    height: 3px;
+    border-radius: 3px;
+    background-color: rgba($white, .5);
+    animation: line-animate 3s ease infinite;
 
-    font-size: 40px;
+    &:nth-child(2) {
+      animation-delay: .4s;
+    }
+
+    &:nth-child(3) {
+      animation-delay: .8s;
+    }
+
+    &:nth-child(4) {
+      animation-delay: 1.2s;
+    }
+
+    &:nth-child(5) {
+      animation-delay: 1.6s;
+    }
+
+    &:nth-child(6) {
+      animation-delay: 2s;
+    }
   }
+}
+
+@keyframes line-animate {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+
+@keyframes text-animate {
+  0% {
+    background-position: 0% 50%;
+    clip-path: polygon(16% 0, 46% 0, 60% 0, 71% 0, 86% 0, 100% 0, 100% 79%, 100% 100%, 0 100%, 0 0);
+  }
+  50% {
+    background-position: 100% 100%;
+    clip-path: polygon(11% 79%, 29% 88%, 49% 93%, 64% 94%, 79% 91%, 88% 84%, 100% 79%, 100% 100%, 0 100%, 0 65%);
+  }
+  100% {
+    clip-path: polygon(16% 0, 46% 0, 60% 0, 71% 0, 86% 0, 100% 0, 100% 79%, 100% 100%, 0 100%, 0 0);
+    background-position: 0% 50%;
+  }
+
 }

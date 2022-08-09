@@ -3,19 +3,20 @@ import Title from "../../ui/Title/Title";
 import PortfolioItem from "../PortfolioItem/PortfolioItem";
 
 import styles from './PortfolioSection.module.scss';
+import { data, Page } from "../../data";
+import Section from "../Section/Section";
+
+const portfolio = data.portfolio;
 
 const PortfolioSection = () => {
   return (
-    <section className={styles.portfolioContainer}>
+    <Section sectionName={Page.PORTFOLIO} className={styles.portfolioContainer}>
       <Title title='Portfolio'/>
       <div className={styles.projects}>
-        <PortfolioItem id={0}/>
-        <PortfolioItem id={1}/>
-        <PortfolioItem id={2}/>
-        <PortfolioItem id={3}/>
+        {portfolio.map(project => <PortfolioItem project={project}/>)}
       </div>
+    </Section>
 
-    </section>
   );
 };
 

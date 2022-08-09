@@ -12,7 +12,7 @@ interface ISocialProps {
 
 const Social: FC<ISocialProps> = ({link, iconName}) => {
   return (
-    <div className={styles.socialWrapper}>
+    <div>
       <Button3d>
         <a href={link} className={styles.socialContainer}>
           {icons[iconName]}

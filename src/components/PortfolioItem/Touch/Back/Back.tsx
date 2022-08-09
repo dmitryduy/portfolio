@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import cn from "../../../../utils/cn";
 import Button from "../../../../ui/Button/Button";
 import { icons } from "../../../../icons";
@@ -6,43 +6,33 @@ import { icons } from "../../../../icons";
 import styles from './Back.module.scss'
 import ImageSlider from "../../../ImageSlider/ImageSlider";
 import SkillList from "../../../SkillList/SkillList";
+import { IProject } from "../../../../data";
+import { useAppSelector } from "../../../../hooks/useAppSelector";
 
 interface IBackProps {
   closeInfo: () => void
   className: string
-  imagesCount: number
+  project: IProject
 }
 
-const Back = React.forwardRef<HTMLDivElement, IBackProps>(({closeInfo, className, imagesCount}, ref) => {
-  const [startImage, setStartImage] = useState(0);
 
-  const close = () => {
-    setTimeout(() => {
-     setStartImage(0);
-    }, 300);
-    closeInfo();
-  }
+
+
+const Back = React.forwardRef<HTMLDivElement, IBackProps>(({closeInfo, className, project}, ref) => {
+  const language = useAppSelector(state =>state.settings.language);
 
   return (
-    <div className={cn(styles.back, className)}>
+    <div className={cn(styles.back, className, )}>
       <div ref={ref} className={styles.backContainer}>
-        <span className={styles.closeButton} onClick={close}>&times;</span>
-        <p className={styles.counter}>01</p>
-        <ImageSlider imagesCount={4} startImage={startImage} containerWidth={400}/>
-        <h5 className={styles.title}>Telerama onlnint</h5>
-        <p className={styles.description}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aut consequatur
-          corporis delectus ducimus fugiat iste laudantium minima molestias, nemo non, quas quod, rem sit voluptatum?
-          Sequi suscipit unde veniam!</p>
-       <SkillList/>
+        <span className={styles.closeButton} onClick={closeInfo}>&times;</span>
+        <p className={styles.counter}>0{project.id}</p>
+        <ImageSlider images={project.images} containerWidth={400}/>
+        <h5 className={styles.title}>{project.title[language]}</h5>
+        <p className={styles.description}>{project.description[language]}</p>
+       <SkillList skills={project.skills}/>
         <div className={styles.buttons}>
-          <Button text='github' onClick={() => {
-          }}>
-            {icons.github}
-          </Button>
-          <Button text='Link' onClick={() => {
-          }}>
-            {icons.link}
-          </Button>
+          <Button text='Github' onClick={() => {}}>{icons.github}</Button>
+          <Button text={language === 'en'? 'Link': 'Ссылка'} onClick={() => {}}>{icons.link}</Button>
         </div>
       </div>
     </div>

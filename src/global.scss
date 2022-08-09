@@ -1,5 +1,5 @@
 $dark: #23263a;
-$background: #1f2235;
+$background: #111;
 $white: #ECEBE9;
 $paragraph: #A0C8C3;
 $decoration: #2b2e44;
@@ -31,5 +31,19 @@ $smoothAnimation: .4s;
 
   @media (max-width: $phoneLandscape) {
     padding: 30px 20px 30px 20px;
+  }
+}
+
+
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba($white, 0.2);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba($white, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba($white, 0);
   }
 }

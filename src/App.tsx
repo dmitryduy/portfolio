@@ -1,25 +1,22 @@
 import React from 'react';
 
-import Navigation from "./components/Navigation/Navigation";
 import Header from "./components/Header/Header";
 import SkillsSection from "./components/SkillsSection/Skills";
 import PortfolioSection from "./components/PortfolioSection/PortfolioSection";
 import About from "./components/About/About";
 import { Emitter } from "./utils/emitter";
+import Layout from "./components/Layout/Layout";
 
-// @ts-ignore
 window.emitter = new Emitter();
 
 function App() {
   return (
     <>
-      <Navigation/>
-      <div className='container'>
+      <Layout/>
         <Header/>
         <About/>
         <SkillsSection/>
         <PortfolioSection/>
-      </div>
     </>
   )
     ;

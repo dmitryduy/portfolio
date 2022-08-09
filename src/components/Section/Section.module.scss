@@ -1,0 +1,17 @@
+@import "../../global";
+
+.sectionContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: $smoothAnimation;
+  &.hide {
+    transform: scaleX(.8)  translateY(300px);
+  }
+
+  &.bottom {
+    transform: translateY(100%) scaleX(0.5);
+  }
+}

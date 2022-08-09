@@ -10,10 +10,16 @@
   transform: rotateX(50deg) rotateZ(50deg);
   transform-style: preserve-3d;
   border-radius: 15px;
-  box-shadow: 1px 1px 0 2px $purple, -1px 0 28px 0 rgba(34, 33, 81, 0.01), 28px 28px 28px 0 rgba(34, 33, 81, 0.25);
+  box-shadow: 1px 1px 0 2px $white, -1px 0 28px 0 rgba(34, 33, 81, 0.01);
+  svg {
+    transition: $smoothAnimation;
+  }
   &:hover {
     transform: translate3d(0px, -20px, 0px) rotateX(0deg) rotateZ(0deg);
-    background-color: rgba($purple, .7);
+    background-color: rgba($white, .9);
     box-shadow: 0 0 0 transparent;
+  }
+  &:hover svg {
+    fill: $background;
   }
 }
