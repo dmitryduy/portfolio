@@ -7,14 +7,12 @@
   width: 100%;
   height: 400px;
   margin-bottom: 30px;
-  max-width: $maxWidthContent;
 }
 
 .imageContainer {
   flex: 1;
-  height: 10px;
-  opacity: 0;
   transition: .5s;
+  height: 100%;
 
   &.leftSide {
     transform: translateX(50%);
@@ -33,9 +31,8 @@
 .image {
   filter: brightness(0.4);
   border-radius: 5px;
-  box-shadow: 0 0 20px rgba($dark, 0.4);
-  height: 400px;
-  width: 102%;
+  height: 100%;
+  width: 100%;
   object-fit: cover;
   position: absolute;
   top: 50%;
@@ -52,8 +49,10 @@
 }
 
 .contentContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
   flex: 1;
-  z-index: 100;
   opacity: 0;
   transition: .5s;
 
@@ -71,20 +70,20 @@
   order: -1;
   transform: translateX(-50%);
 
+  .skillList {
+    align-self: flex-start;
+  }
   .header {
     align-items: flex-start;
   }
 
   .about {
     text-align: left;
-    width: calc(100% + 50px);
     transform: translateX(0);
+    align-self: flex-start;
   }
 
   .footer {
-    .stack {
-      justify-content: flex-start;
-    }
 
     .buttons {
       justify-content: flex-start;
@@ -118,23 +117,28 @@
 }
 
 .about {
+  color: $white;
   text-align: right;
   line-height: 23px;
-  width: calc(100% + 50px);
-  transform: translateX(-50px);
+  align-self: flex-end;
+  max-width: calc(100% + 50px);
+  width: fit-content;
   background-color: $decoration;
   border-radius: 5px;
   padding: 10px 20px;
   margin-bottom: 20px;
-
-  p {
-    color: $white;
-
-  }
 }
 
 
+
+.skillList {
+  align-self: flex-end;
+}
+
 .footer {
+  display: flex;
+  flex-direction: column;
+
   .buttons {
     display: flex;
     justify-content: flex-end;
@@ -143,6 +147,7 @@
       margin-left: 20px;
     }
   }
+
 }
 
 

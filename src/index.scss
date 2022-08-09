@@ -39,12 +39,6 @@ pre {
   visibility: visible;
 }
 
-.section-container {
-  width: 100vw;
-  height: 100vh;
-  background-color: $background;
-}
-
 @keyframes bg-animation {
   0% {
     transform: translate(0, 0)

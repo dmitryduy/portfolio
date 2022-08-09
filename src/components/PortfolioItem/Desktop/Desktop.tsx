@@ -5,19 +5,21 @@ import useIntersectionObserver from "../../../hooks/useIntersectionObserver";
 import cn from "../../../utils/cn";
 import { icons } from "../../../icons";
 import Button from "../../../ui/Button/Button";
-import bg from '../../../images/test.jpg';
-import bg2 from '../../../images/test2.jpg';
 import SkillList from "../../SkillList/SkillList";
+import { IProject } from "../../../data";
+import { useAppSelector } from "../../../hooks/useAppSelector";
+import noop from "../../../utils/noop";
 
 interface IDesktopProps {
-  id: number
+  project: IProject
 }
 
 
 
-const Desktop: FC<IDesktopProps> = ({id}) => {
+const Desktop: FC<IDesktopProps> = ({ project}) => {
   const [activeImage, setActiveImage] = useState(0);
   const [showAnimation, setShowAnimation] = useState(false);
+  const language = useAppSelector(state => state.settings.language);
 
   const portfolioRef = useIntersectionObserver(() => setShowAnimation(true), {threshold: 0.5});
 
@@ -37,34 +39,31 @@ const Desktop: FC<IDesktopProps> = ({id}) => {
   return (
     <div ref={portfolioRef} className={styles.portfolioItem}>
       <div className={cn(styles.imageContainer, {
-        [styles.leftSide]: id % 2 === 0,
-        [styles.rightSide]: id % 2 !== 0,
+        [styles.leftSide]: project.id % 2 === 0,
+        [styles.rightSide]: project.id % 2 !== 0,
         [styles.show]: showAnimation
       })} onMouseMove={moveHandler}>
-        <img className={`${activeImage === 0 ? styles.active : ''} ${styles.image}`} src={bg} alt="bg"/>
-        <img className={`${activeImage === 1 ? styles.active : ''} ${styles.image}`} src={bg2} alt="bg"/>
-        <img className={`${activeImage === 2 ? styles.active : ''} ${styles.image}`} src={bg} alt="bg"/>
+        {project.images.map((image, index) =>
+          <img key={index} className={cn(styles.image, {[styles.active]: index === activeImage})} src={image} alt=""/>
+        )}
       </div>
       <div className={cn(styles.contentContainer, {
-        [styles.reverse]: id % 2 === 0,
-        [styles.leftSide]: id % 2 !== 0,
+        [styles.reverse]: project.id % 2 === 0,
+        [styles.leftSide]: project.id % 2 !== 0,
         [styles.show]: showAnimation
       })}>
         <header className={styles.header}>
-          <p className={styles.subtitle}>Subtitle</p>
-          <h3 className={styles.title}>SOme Portfolio</h3>
+          <p className={styles.subtitle}>{project.subtitle[language]}</p>
+          <h3 className={styles.title}>{project.title[language]}</h3>
         </header>
-        <div className={styles.about}>
-          <p>SOme text that i dont know thoaumenda cupiditate incidunt iste? Adipisci aperiam assumenda at deleniti
-            error, facere ipsam iste iusto maiores, molestiae non nostrum officiis, quod sed.</p>
-        </div>
+          <p className={styles.about}>{project.description[language]}</p>
         <footer className={styles.footer}>
-         <SkillList skills={[]}/>
+          <div className={styles.skillList}>
+            <SkillList skills={project.skills}/>
+          </div>
           <div className={styles.buttons}>
-            <Button text='Github' onClick={() => {
-            }}>{icons.github}</Button>
-            <Button text='Link' onClick={() => {
-            }}>{icons.link}</Button>
+            <Button text='Github' onClick={noop}>{icons.github}</Button>
+            <Button text='Link' onClick={noop}>{icons.link}</Button>
           </div>
         </footer>
       </div>

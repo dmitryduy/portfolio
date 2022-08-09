@@ -12,7 +12,7 @@ interface IPortfolioItemProps {
 const PortfolioItem: FC<IPortfolioItemProps> = ({project}) => {
   const isPhoneLandscape = useMatchMedia('(max-width: 900px)');
 
-  return isPhoneLandscape ? <Touch project={project}/> : <Touch project={project}/>;
+  return isPhoneLandscape ? <Touch project={project}/> : <Desktop project={project}/>;
 };
 
 export default PortfolioItem;

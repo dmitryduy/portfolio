@@ -4,17 +4,17 @@ import styles from './Skill.module.scss';
 import useThrottle from "../../hooks/useThrottle";
 import { DELAY_ANIMATION, THROTTLE_TIMEOUT } from "./Skill.contants";
 import { icons } from "../../icons";
+import cn from "../../utils/cn";
 
 interface ISkillProps {
   id: number
   title: string
-  color: string
   icon: keyof typeof icons
   description: string
   timerIndex: number
 }
 
-const Skill: FC<ISkillProps> = ({id, title, color, icon, description, timerIndex}) => {
+const Skill: FC<ISkillProps> = ({id, title, icon, description, timerIndex}) => {
 
   const [show, setShow] = useThrottle(false, THROTTLE_TIMEOUT);
   const [showDot, setShowDot] = useState(false);
@@ -35,19 +35,20 @@ const Skill: FC<ISkillProps> = ({id, title, color, icon, description, timerIndex
 
   return (
     <>
-      <div className={`${styles.skill} ${show && styles.show} ${id > 5 ? styles.leftSide : styles.rightSide}`}
+      <div className={cn(styles.skill, {
+        [styles.show]: show,
+        [styles.leftSide]: id > 5,
+        [styles.rightSide]: id <= 5
+      })}
            data-number={id}>
-        <div className={styles.image}>
-          {icons[icon]}
-        </div>
+        <span className={styles.image}>{icons[icon]}</span>
         <div className={styles.description}>
           <h4 className={styles.title}>{title}</h4>
           <p className={styles.paragraph}>{description}</p>
         </div>
       </div>
-      <span className={`${styles.line} ${show && styles.show}`} data-number={id}/>
-      <span onClick={openSkill} className={`${styles.dot} ${show ? styles.show : ''} ${showDot ? '' : styles.hide}`}
-            style={{backgroundColor: color}}
+      <span className={cn(styles.line, {[styles.show]: show})} data-number={id}/>
+      <span onClick={openSkill} className={cn(styles.dot, {[styles.show]: show, [styles.hide]: !showDot})}
             data-number={id}/>
     </>
   );

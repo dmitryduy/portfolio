@@ -19,55 +19,40 @@
   width: 0;
   background-color: $decoration;
   overflow: hidden;
-  transition: .4s;
+  transition: $smoothAnimation;
+  z-index: 1;
 
   .description {
     white-space: nowrap;
-
+    color: $white;
     .title {
-      color: $white;
       font-size: 16px;
       font-family: $fontFira;
       margin-bottom: 5px;
     }
 
-    .paragraph {
-      color: $paragraph;
-    }
   }
 
   &.rightSide {
     border-top-left-radius: 50px;
     border-bottom-left-radius: 50px;
-
-    &:after {
-      content: '';
-      border-top: 45px solid $dark;
-      border-left: 40px solid $decoration;
-      border-bottom: 45px solid $dark;
-    }
+    clip-path: polygon(calc(100% - 45px) 0, 100% 50%, calc(100% - 45px) 100%, 0 100%, 0 0);
   }
 
   &.leftSide {
+    justify-content: flex-end;
     border-top-right-radius: 50px;
     border-bottom-right-radius: 50px;
+    clip-path: polygon(45px 0, 0 50%, 45px 100%, 100% 100%, 99% 0);
 
     .description {
       order: -1;
     }
 
-    &:after {
-      order: -2;
-      content: '';
-      border-top: 45px solid $dark;
-      border-right: 40px solid $decoration;
-      border-bottom: 45px solid $dark;
-    }
-
   }
 
   &.show {
-    width: 334px;
+    width: calc(100% + 45px);
     transition-delay: .4s;
   }
 
@@ -128,10 +113,10 @@
   background-color: $white;
   animation: pulse 1.5s infinite;
   animation-delay: .3s;
-  z-index: 1;
   cursor: pointer;
-  transition: .3s;
+  transition: $smoothAnimation;
   transform: scale(1);
+
   &.hide {
     transform: scale(0);
   }
@@ -179,9 +164,8 @@
   content: '';
   width: 3px;
   height: 0;
-  z-index: -1;
   background-color: $white;
-  transition: .4s;
+  transition: $smoothAnimation;
   transform-origin: top left;
   transition-delay: .25s;
 
@@ -218,7 +202,7 @@
   }
 
   &.show {
-    transition-delay: 0s;
-    height: 60px;
+
+    height: 70px;
   }
 }

@@ -4,14 +4,17 @@
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
+  background-color: $background;
   transition: $smoothAnimation;
+  overflow: auto;
+  height: 100vh;
+  width: 100vw;
   &.hide {
     transform: scaleX(.8)  translateY(300px);
   }
 
-  &.bottom {
+  &.toBottom {
     transform: translateY(100%) scaleX(0.5);
+    z-index: -100;
   }
 }

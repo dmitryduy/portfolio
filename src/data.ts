@@ -1,15 +1,52 @@
+export interface i18n {
+  en: string,
+  ru: string
+}
+
 export const data: {
-  i18n: {
-    [key: string]: any,
-  },
+  headerTitle: i18n
+  headerSubtitle: i18n
   portfolio: IProject[]
+  experience: {
+    id: number,
+    date: i18n,
+    description: i18n
+  }[]
 } = {
-  i18n: {
-    headerTitle: {
-      ru: `I'm Джош вашингтон`,
-      en: `I'm djothc vasitngot`
-    },
+  headerTitle: {
+    ru: 'фронденд разработчик',
+    en: 'frontend developer.'
   },
+  headerSubtitle: {
+    ru: 'Я Джош вашингтон',
+    en: 'I\'m djothc vasitngot'
+  },
+
+  experience: [
+    {
+      id: 1,
+      date: {
+        ru: 'Сентябрь 2021 - Ноябрь 2021',
+        en: 'September 2021 - November 2021'
+      },
+      description: {
+        ru: 'Здесь я чем то занался, знаю, что это полезно, но все же',
+        en: 'is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but als'
+      }
+    },
+    {
+      id: 2,
+      date: {
+        ru: 'Декабрь 2021 - Февраль 2022',
+        en: 'December 2021 - February 2022'
+      },
+      description: {
+        ru: 'Здесь я чем то занался, знаю, что это полезно, но все же',
+        en: 'is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but als'
+      }
+    }
+  ],
+
   portfolio: [
     {
       id: 1,

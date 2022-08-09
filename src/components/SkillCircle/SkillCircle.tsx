@@ -5,6 +5,7 @@ import Skill from "../Skill/Skill";
 import { icons } from "../../icons";
 import useIntersectionObserver from "../../hooks/useIntersectionObserver";
 import { START_ANIMATION_DELAY } from "./SkillCircle.contants";
+import cn from "../../utils/cn";
 
 const skillsArray: {
   id: number
@@ -42,10 +43,14 @@ const skillsArray: {
 
 ]
 
+const skillSection = ['Frontend', 'Backend', 'Other', 'Not Web']
+
 const SkillCircle = () => {
-  const [activeSkills, setActiveSkills] = useState('0');
+  const [activeSkills, setActiveSkills] = useState(0);
   const [showSkills, setShowSkills] = useState(false);
+
   const skillsRef = useIntersectionObserver(() => {
+
     setTimeout(() => setShowSkills(true), START_ANIMATION_DELAY);
 
   }, {threshold: 0});
@@ -54,8 +59,8 @@ const SkillCircle = () => {
     const target = e.target as HTMLUListElement;
     const id = target.dataset.id;
 
-    if (id && id !== activeSkills) {
-      setActiveSkills(id);
+    if (id && +id !== activeSkills) {
+      setActiveSkills(+id);
     }
   }
 
@@ -64,18 +69,18 @@ const SkillCircle = () => {
       <div className={styles.contentWrapper}>
         <ul ref={skillsRef} className={styles.content} onClick={changeSkills}
             style={{transform: `translateY(${110 - ((+activeSkills) * (150 - 40))}px)`}}>
-          <li data-id={0} className={`${activeSkills === '0' ? styles.active : ''} ${styles.title}`}>Frontend</li>
-          <li data-id={1} className={`${activeSkills === '1' ? styles.active : ''} ${styles.title}`}>Backend</li>
-          <li data-id={2} className={`${activeSkills === '2' ? styles.active : ''} ${styles.title}`}>Other</li>
-          <li data-id={3} className={`${activeSkills === '3' ? styles.active : ''} ${styles.title}`}>Not Web</li>
+          {skillSection.map((item, index) => (
+            <li data-id={index} key={index}
+                className={cn(styles.title, {[styles.active]: activeSkills === index})}>
+              {item}
+            </li>
+          ))}
         </ul>
       </div>
-      {showSkills && <div>
-        {skillsArray[+activeSkills].map((
-          skill, index) =>
-          <Skill key={skill.title} id={skill.id} timerIndex={index + 1} title={skill.title} color='#fff'
-                 icon={skill.icon} description={skill.description}/>)}
-      </div>}
+      {showSkills && skillsArray[activeSkills].map((skill, index) =>
+        <Skill key={skill.title} id={skill.id} timerIndex={index + 1} title={skill.title}
+               icon={skill.icon} description={skill.description}/>)
+      }
     </div>
   );
 };

@@ -9,13 +9,13 @@ const useSectionAnimate = (section: Page) => {
   useEffect(() => {
 
     window.emitter.on('page', (data) => {
-      if (data!.prevPage === section) {
+      if (data!.prevPage === section && data!.newPage !== section) {
         setHide(true);
         setTimeout(()=> {
           setToBottom(true);
         }, 300);
       }
-      if (data!.newPage === section) {
+      if (data!.newPage === section && data!.prevPage !== section) {
         setTimeout(()=> {
           setHide(false);
           setToBottom(false);

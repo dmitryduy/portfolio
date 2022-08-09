@@ -4,7 +4,6 @@
   display: flex;
   font-size: 18px;
   align-items: center;
-  margin-bottom: 20px;
 
 
   .date {
@@ -31,6 +30,7 @@
     position: relative;
     color: $paragraph;
     margin-left: 50px;
+    margin-bottom: 40px;
 
     opacity: 0;
     transform: translateX(100px);
@@ -59,7 +59,6 @@
       height: 7px;
       background-color: $white;
       filter: blur(1px);
-      z-index: 1;
       top: 11px;
       left: -60px;
       transform: translateY(-50%);

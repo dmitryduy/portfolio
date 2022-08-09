@@ -13,7 +13,7 @@ interface ISectionProps {
 const Section: FC<ISectionProps> = ({ children, sectionName, className}) => {
   const [hide, toBottom] = useSectionAnimate(sectionName);
   return (
-    <section className={cn('section-container', className, styles.sectionContainer, {[styles.hide]: hide, [styles.bottom]: toBottom})}>
+    <section className={cn(className, styles.sectionContainer, {[styles.hide]: hide, [styles.toBottom]: toBottom})}>
       {children}
     </section>
   );
