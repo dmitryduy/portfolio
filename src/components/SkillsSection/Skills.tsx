@@ -1,23 +1,14 @@
 import React from 'react';
 
-import styles from './Skills.module.scss'
-import SkillCircle from "../SkillCircle/SkillCircle";
 import useMatchMedia from "../../hooks/useMatchMedia";
-import Title from "../../ui/Title/Title";
-import Section from "../Section/Section";
-import { Page } from "../../data";
+import Touch from "./Touch/Touch";
+import Desktop from "./Desktop/Desktop";
+import { PHONE_BREAKPOINT } from "../../data";
 
 const SkillsSection = () => {
+  const isTouch = useMatchMedia(`(max-width: ${PHONE_BREAKPOINT}px)`);
 
-  const isPhone = useMatchMedia('max-width: 1000px');
-
-  return (
-    <Section sectionName={Page.SKILLS} className={styles.skillsContainer}>
-      <Title title='Skills'/>
-      {!isPhone && <SkillCircle/>}
-      <div/>
-    </Section>
-  );
+  return isTouch ? <Touch/> : <Desktop/>;
 };
 
 export default SkillsSection;

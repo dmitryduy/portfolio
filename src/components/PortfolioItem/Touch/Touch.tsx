@@ -1,12 +1,12 @@
 import React, { FC, useCallback, useRef, useState } from 'react';
 
 import styles from './Touch.module.scss';
-import cn from "../../../utils/cn";
 
 import { BLOCK_HEIGHT } from "./Touch.contants";
 import Front from "./Front/Front";
 import Back from "./Back/Back";
-import { IProject } from "../../../data";
+import { IProject, TOUCH_CONTAINER_PADDING } from "../../../data";
+import useResize from "../../../hooks/useResize";
 
 interface ITouchProps {
   project: IProject
@@ -15,6 +15,7 @@ interface ITouchProps {
 const Touch: FC<ITouchProps> = ({project}) => {
 
   const [showInfo, setShowInfo] = useState(false);
+  const width = useResize() + TOUCH_CONTAINER_PADDING * 2;
 
   const backRef = useRef<HTMLDivElement>(null);
   const frontRef = useRef<HTMLDivElement>(null);
@@ -41,7 +42,10 @@ const Touch: FC<ITouchProps> = ({project}) => {
 
   return (
     <div ref={containerRef} className={styles.touchContainer}>
-      <div className={cn(styles.touchWrapper, {[styles.showInfo]: showInfo})}>
+      <div className={styles.touchWrapper} style={{
+        transform:
+          showInfo ? `translateZ(-${width / 2}px) rotateY(-90deg)` : `translateZ(${-width / 2}px)`
+      }}>
         <Front ref={frontRef} className={styles.face} openInfo={openInfo} project={project}/>
         <Back ref={backRef} closeInfo={closeInfo} className={styles.face} project={project}/>
       </div>

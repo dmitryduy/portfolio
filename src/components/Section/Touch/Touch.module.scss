@@ -1,0 +1,28 @@
+@import "../../../global";
+
+.sectionContainer {
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: flex-start;
+  width: 100vw;
+  height: calc(100vh - 105px);
+  padding: 0 $touchContainerPadding;
+  overflow: scroll;
+  opacity: 0;
+  visibility: hidden;
+  transition: $smoothAnimation;
+
+  @media (max-width: 550px) {
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+}
+
+
+.show {
+  opacity: 1;
+  visibility: visible;
+}

@@ -1,6 +1,15 @@
+import { icons } from "./icons";
+
 export interface i18n {
   en: string,
   ru: string
+}
+
+export enum SkillType {
+  FRONTEND,
+  BACKEND,
+  OTHER,
+  NOT_WEB
 }
 
 export const data: {
@@ -11,7 +20,16 @@ export const data: {
     id: number,
     date: i18n,
     description: i18n
-  }[]
+    title: i18n
+  }[],
+  skills: {
+    id: number
+    title: string
+    icon: keyof typeof icons
+    description: i18n
+    type: SkillType
+    position: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8
+  }[],
 } = {
   headerTitle: {
     ru: 'фронденд разработчик',
@@ -29,6 +47,10 @@ export const data: {
         ru: 'Сентябрь 2021 - Ноябрь 2021',
         en: 'September 2021 - November 2021'
       },
+      title: {
+        ru: 'Разработчик интерфесков',
+        en: 'Enterphae fronedner'
+      },
       description: {
         ru: 'Здесь я чем то занался, знаю, что это полезно, но все же',
         en: 'is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but als'
@@ -40,8 +62,27 @@ export const data: {
         ru: 'Декабрь 2021 - Февраль 2022',
         en: 'December 2021 - February 2022'
       },
+      title: {
+        ru: 'Разработчик интерфесков',
+        en: 'Enterphae fronedner'
+      },
       description: {
         ru: 'Здесь я чем то занался, знаю, что это полезно, но все же',
+        en: 'is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but als'
+      }
+    },
+    {
+      id: 3,
+      date: {
+        ru: 'Декабрь 2021 - Февраль 2022',
+        en: 'December 2021 - February 2022'
+      },
+      title: {
+        ru: 'Разработчик интерфесков',
+        en: 'Enterphae fronedner'
+      },
+      description: {
+        ru: 'Здесь я чем то занался, знаю, что это полезно, но все жеЗдесь я чем то занался, знаю, что это полезно, но все жеЗдесь я чеЗдесь я чем то занался, знаю, что это полезно, но все жеЗдесь я чем то занался, знаю, что это полезно, но все жеЗдесь я чем то занался, знаю, что это полезно, но все жеЗдесь я чем то занался, знаю, что это полезно, но все жеЗдесь я чем то занался, знаю, что это полезно, но все жем то занался, знаю, что это полезно, но все жеЗдесь я чем то занался, знаю, что это полезно, но все же',
         en: 'is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but als'
       }
     }
@@ -160,6 +201,142 @@ export const data: {
 
       ]
     }
+  ],
+  skills: [
+    {
+      id: 0,
+      type: SkillType.FRONTEND,
+      position: 1,
+      title: 'JavaScript',
+      icon: 'javaScript',
+      description: {
+        ru: 'Какой-то скилл',
+        en: 'This is paragrahpa sometshi else'
+      }
+    },
+    {
+      id: 1, type: SkillType.FRONTEND, position: 6, title: 'React', icon: 'react', description: {
+        ru: 'Какой-то скилл',
+        en: 'This is paragrahpa sometshi else'
+      }
+    },
+    {
+      id: 2, type: SkillType.FRONTEND, position: 2, title: 'CSS', icon: 'css', description: {
+        ru: 'Какой-то скилл',
+        en: 'This is paragrahpa sometshi else'
+      }
+    },
+    {
+      id: 3,
+      type: SkillType.FRONTEND,
+      position: 7,
+      title: 'Styled-Components',
+      icon: 'styledComponents',
+      description: {
+        ru: 'Какой-то скилл',
+        en: 'This is paragrahpa sometshi else'
+      }
+    },
+    {
+      id: 4, type: SkillType.FRONTEND, position: 3, title: 'HTML', icon: 'html', description: {
+        ru: 'Какой-то скилл, о котором я ничего не знаю, поэтому буду просто молчат. Спасибо за внимание',
+        en: 'This is paragrahpa sometshi else'
+      }
+    },
+    {
+      id: 5,
+      type: SkillType.FRONTEND,
+      position: 4,
+      title: 'Scss, Sass, Less',
+      icon: 'sass',
+      description: {
+        ru: 'Какой-то скилл',
+        en: 'This is paragrahpa sometshi else'
+      }
+    },
+    {
+      id: 6, type: SkillType.FRONTEND, position: 8, title: 'Redux', icon: 'redux', description: {
+        ru: 'Какой-то скилл',
+        en: 'This is paragrahpa sometshi else'
+      }
+    },
+    {
+      id: 7,
+      type: SkillType.FRONTEND,
+      position: 5,
+      title: 'TypeScript',
+      icon: 'typeScript',
+      description: {
+        ru: 'Какой-то скилл',
+        en: 'This is paragrahpa sometshi else'
+      }
+    },
+    {
+      id: 8, position: 1, type: SkillType.BACKEND, title: 'Express.js', icon: 'express', description: {
+        ru: 'Какой-то скилл',
+        en: 'This is paragrahpa sometshi else'
+      }
+    },
+    {
+      id: 9, type: SkillType.BACKEND, position: 7, title: 'Nest.js', icon: 'nestjs', description: {
+        ru: 'Какой-то скилл',
+        en: 'This is paragrahpa sometshi else'
+      }
+    },
+    {
+      id: 10, position: 5, type: SkillType.BACKEND, title: 'Node.js', icon: 'nodejs', description: {
+        ru: 'Какой-то скилл',
+        en: 'This is paragrahpa sometshi else'
+      }
+    },
+    {
+      id: 11, position: 1, type: SkillType.OTHER, title: 'Git', icon: 'git', description: {
+        ru: 'Какой-то скилл',
+        en: 'This is paragrahpa sometshi else'
+      }
+    },
+    {
+      id: 12, position: 3, type: SkillType.OTHER, title: 'Angular', icon: 'angular', description: {
+        ru: 'Какой-то скилл',
+        en: 'This is paragrahpa sometshi else'
+      }
+    },
+    {
+      id: 13, position: 5, type: SkillType.OTHER, title: 'JQuery', icon: 'jquery', description: {
+        ru: 'Какой-то скилл',
+        en: 'This is paragrahpa sometshi else'
+      }
+    },
+    {
+      id: 14, position: 6, type: SkillType.OTHER, title: 'npm', icon: 'npm', description: {
+        ru: 'Какой-то скилл',
+        en: 'This is paragrahpa sometshi else'
+      }
+    },
+    {
+      id: 15, position: 8, type: SkillType.OTHER, title: 'BEM', icon: 'bem', description: {
+        ru: 'Какой-то скилл',
+        en: 'This is paragrahpa sometshi else'
+      }
+    },
+    {
+      id: 16, position: 1, type: SkillType.NOT_WEB, title: 'Python', icon: 'python', description: {
+        ru: 'Какой-то скилл',
+        en: 'This is paragrahpa sometshi else'
+      }
+    },
+    {
+      id: 17, position: 5, type: SkillType.NOT_WEB, title: 'C++', icon: 'cpp', description: {
+        ru: 'Какой-то скилл',
+        en: 'This is paragrahpa sometshi else'
+      }
+    },
+    {
+      id: 18, position: 7, type: SkillType.NOT_WEB, title: 'kotlin', icon: 'kotlin', description: {
+        ru: 'Какой-то скилл',
+        en: 'This is paragrahpa sometshi else'
+      }
+    },
   ]
 }
 
@@ -187,5 +364,10 @@ export enum Page {
   HEADER,
   EXPERIENCE,
   SKILLS,
-  PORTFOLIO
+  PORTFOLIO,
+  CONTACTS
 }
+
+export const TOUCH_CONTAINER_PADDING = 10;
+
+export const PHONE_BREAKPOINT = 700;

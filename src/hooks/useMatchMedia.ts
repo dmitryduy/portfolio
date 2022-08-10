@@ -8,7 +8,6 @@ const useMatchMedia = (query: string) => {
 
   useLayoutEffect(() => {
     const handler = () => {
-      console.log(10)
       setIsMedia(media.matches);
     }
 

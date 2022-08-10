@@ -1,29 +1,32 @@
 import { useEffect, useState } from "react";
 import { Page } from "../data";
+import { useAppSelector } from "./useAppSelector";
 
 const useSectionAnimate = (section: Page) => {
+  const pageInfo = useAppSelector(state => state.settings.pageInfo);
+
   const [hide, setHide] = useState(false);
-  const [toBottom , setToBottom] = useState(section !== Page.HEADER);
+  const [toBottom, setToBottom] = useState(section !== pageInfo.activePage);
 
 
   useEffect(() => {
 
-    window.emitter.on('page', (data) => {
-      if (data!.prevPage === section && data!.newPage !== section) {
-        setHide(true);
-        setTimeout(()=> {
-          setToBottom(true);
-        }, 300);
-      }
-      if (data!.newPage === section && data!.prevPage !== section) {
-        setTimeout(()=> {
-          setHide(false);
-          setToBottom(false);
-        }, 300);
-      }
-    })
+    if (pageInfo.previousPage === section && pageInfo.activePage !== section) {
+      setHide(true);
+      setTimeout(() => {
+        setToBottom(true);
+      }, 300);
+    }
 
-  },[]);
+    if (pageInfo.previousPage !== section && pageInfo.activePage === section) {
+      setTimeout(() => {
+        setHide(false);
+        setToBottom(false);
+      }, 300);
+    }
+
+
+  }, [pageInfo, section]);
 
   return [hide, toBottom];
 }

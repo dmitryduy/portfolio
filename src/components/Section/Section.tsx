@@ -1,22 +1,23 @@
-import React, { FC, useEffect, useState } from 'react';
-import { Page } from "../../data";
-import cn from "../../utils/cn";
-import styles from './Section.module.scss';
-import useSectionAnimate from "../../hooks/useSectionAnimate";
+import React, { FC} from 'react';
+import { Page, PHONE_BREAKPOINT } from "../../data";
+
+import useMatchMedia from "../../hooks/useMatchMedia";
+import Desktop from "./Desktop/Desktop";
+import Touch from "./Touch/Touch";
 
 interface ISectionProps {
   children: React.ReactNode
   sectionName: Page
-  className: string
+  className?: string
 }
 
-const Section: FC<ISectionProps> = ({ children, sectionName, className}) => {
-  const [hide, toBottom] = useSectionAnimate(sectionName);
-  return (
-    <section className={cn(className, styles.sectionContainer, {[styles.hide]: hide, [styles.toBottom]: toBottom})}>
-      {children}
-    </section>
-  );
+const Section: FC<ISectionProps> = (props) => {
+  const isTouch = useMatchMedia(`(max-width: ${PHONE_BREAKPOINT}px)`);
+
+  return isTouch ?
+    <Touch {...props}>{props.children}</Touch>
+    :
+    <Desktop {...props}>{props.children}</Desktop>;
 };
 
 export default Section;

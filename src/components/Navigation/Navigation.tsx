@@ -1,30 +1,14 @@
 import React from 'react';
 
-import styles from './Navigation.module.scss';
-import Social from "../Social/Social";
-import { icons } from "../../icons";
-import LanguageSwitcher from "../LanguageSwitcher/LanguageSwitcher";
+import Touch from './Touch/Touch';
+import useMatchMedia from "../../hooks/useMatchMedia";
+import Desktop from "./Desktop/Desktop";
+import { PHONE_BREAKPOINT } from "../../data";
 
-const iconsList: {
-  id: number
-  name: keyof typeof icons
-  link: string
-}[] = [
-  {id: 1, name: 'telegram', link: 'link'},
-  {id: 2, name: 'github', link: 'link'},
-  {id: 3, name: 'mail', link: 'link'}
-]
 const Navigation = () => {
+  const isTouch = useMatchMedia(`(max-width: ${PHONE_BREAKPOINT}px)`);
 
-  return (
-    <div className={styles.navigationContainer}>
-      <LanguageSwitcher/>
-      <ul className={styles.social}>
-        {iconsList.map(icon => <Social key={icon.id} iconName={icon.name} link={icon.link}/>)}
-      </ul>
-    </div>
-
-  );
+  return isTouch? <Touch/>: <Desktop/>
 };
 
 export default Navigation;

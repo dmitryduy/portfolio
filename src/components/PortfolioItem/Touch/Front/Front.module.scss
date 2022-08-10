@@ -3,7 +3,6 @@
 
 .front{
   border-left: 2px solid $purple;
-  transform: rotateY(0deg) translateZ(200px);
   padding: 10px;
   .counter {
     @extend %counterStyles;

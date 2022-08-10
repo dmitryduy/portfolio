@@ -1,22 +1,14 @@
 import React from 'react';
 
-import styles from './Experience.module.scss';
-import Title from "../../ui/Title/Title";
-import ExperienceItem from "../ExperienceItem/ExperienceItem";
-import Section from "../Section/Section";
-import { data, Page } from "../../data";
+import useMatchMedia from "../../hooks/useMatchMedia";
+import Touch from "./Touch/Touch";
+import Desktop from "./Desktop/Desktop";
+import { PHONE_BREAKPOINT } from "../../data";
 
 const Experience = () => {
+  const isTouch = useMatchMedia(`(max-width: ${PHONE_BREAKPOINT}px)`);
 
-  return (
-    <Section sectionName={Page.EXPERIENCE} className={styles.experienceContainer}>
-      <Title title='Experience'/>
-      <div className={styles.roadmap}>
-        {data.experience.map(exp => <ExperienceItem key={exp.id} date={exp.date} description={exp.description}/>)}
-        <div className={styles.line}/>
-      </div>
-    </Section>
-  );
+  return isTouch? <Touch/>: <Desktop/>
 };
 
 export default Experience;

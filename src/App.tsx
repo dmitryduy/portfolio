@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import Header from "./components/Header/Header";
 import SkillsSection from "./components/SkillsSection/Skills";
@@ -10,10 +10,11 @@ import Experience from "./components/Experience/Experience";
 window.emitter = new Emitter();
 
 function App() {
+
   return (
     <>
-      <Menu/>
       <Header/>
+      <Menu/>
       <Experience/>
       <SkillsSection/>
       <PortfolioSection/>

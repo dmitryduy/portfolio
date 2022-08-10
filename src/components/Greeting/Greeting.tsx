@@ -9,7 +9,7 @@ const Greeting = () => {
   const language = useAppSelector(state => state.settings.language);
 
   return (
-    <div>
+    <div className={styles.greetingContainer}>
       <h1 className={styles.title}>
         <p className={styles.text}>{data.headerSubtitle[language]}</p>
         <div className={styles.text}>

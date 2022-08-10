@@ -1,7 +1,7 @@
-$dark: #23263a;
-$background: #111;
-$white: #ECEBE9;
-$paragraph: #A0C8C3;
+$dark: #131116;
+$background: #1f1e24;
+$white: #d9d8dd;
+$paragraph: #a2a1a9;
 $decoration: #2b2e44;
 $blue: #4C8891;
 $purple: #5865f2;
@@ -16,9 +16,11 @@ $containerPadding: 140px;
 $titlePadding: 20px;
 $maxWidthContent: 1400px;
 
+$touchContainerPadding: 10px;
+
 $tabletSize: 1200px;
-$phoneLandscape: 900px;
-$phone: 450px;
+$phoneBreakpoint: 700px;
+$tabletBreakpoint: 800px;
 
 $smoothAnimation: .4s;
 
@@ -29,7 +31,7 @@ $smoothAnimation: .4s;
 %sectionStyles {
   padding: 30px 120px 30px 160px;
 
-  @media (max-width: $phoneLandscape) {
+  @media (max-width: 550px) {
     padding: 30px 20px 30px 20px;
   }
 }

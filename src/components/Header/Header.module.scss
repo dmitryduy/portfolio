@@ -7,3 +7,25 @@
   justify-content: center;
   align-items: center;
 }
+
+.touchHeaderContainer {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.portfolioButton {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  color: $white;
+  border: none;
+  background-color: $background;
+  padding: 10px;
+  border-radius: 10px 10px 0 0;
+  font-family: $fontFira;
+}

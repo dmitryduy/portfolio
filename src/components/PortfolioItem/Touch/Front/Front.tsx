@@ -2,8 +2,9 @@ import React  from 'react';
 import cn from "../../../../utils/cn";
 import styles from "./Front.module.scss";
 import Button from "../../../../ui/Button/Button";
-import { IProject } from "../../../../data";
+import { IProject, TOUCH_CONTAINER_PADDING } from "../../../../data";
 import { useAppSelector } from "../../../../hooks/useAppSelector";
+import useResize from "../../../../hooks/useResize";
 
 interface IFrontProps {
   openInfo: () => void,
@@ -14,9 +15,10 @@ interface IFrontProps {
 
 const Front = React.forwardRef<HTMLDivElement, IFrontProps>(({ openInfo,className, project }, ref) => {
   const language = useAppSelector(state => state.settings.language);
+  const width = useResize() + TOUCH_CONTAINER_PADDING * 2;
 
   return (
-    <div ref={ref} className={cn(styles.front, className)}>
+    <div ref={ref} className={cn(styles.front, className)} style={{ transform: `rotateY(0deg) translateZ(${width/2}px)`}}>
       <p className={styles.counter}>0{project.id}</p>
       <img className={styles.image} src={project.images[1]} alt=""/>
       <p className={styles.subtitle}>{project.subtitle[language]}</p>

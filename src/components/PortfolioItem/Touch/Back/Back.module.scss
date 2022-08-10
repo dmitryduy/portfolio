@@ -2,9 +2,8 @@
 @import "../Touch.module";
 
 .back {
-  transform: rotateY(90deg) translateZ(200px);
-
   .backContainer {
+    border-radius: 10px;
     transition: $smoothAnimation;
     height: 450px;
     overflow: hidden;
@@ -15,32 +14,35 @@
     cursor: pointer;
     color: $white;
     font-size: 30px;
-    right: 0;
+    right: 10px;
     top: 0;
     z-index: 100;
   }
   .counter {
     @extend %counterStyles;
-    padding-top: 10px;
+    padding: 10px 0 0 10px;
   }
 
   .title {
     @extend %titleStyles;
     border-bottom: 1px solid $purple;
-    margin-left: -20px;
-    padding-left: 20px;
+    padding: 0 20px 5px 10px;
     margin-bottom: 10px;
-    padding-bottom: 5px;
   }
 
   .description {
     color: $paragraph;
     margin-bottom: 10px;
+    margin-left: 10px;
     font-size: 14px;
   }
 
   .buttons {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
+    margin: 0 10px 10px 10px;
+    div~div {
+      margin-left: 20px;
+    }
   }
 }

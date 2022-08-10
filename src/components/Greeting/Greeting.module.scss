@@ -1,5 +1,12 @@
 @import "../../global";
 
+.greetingContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
 .title {
   font-weight: 700;
   font-family: $fontFira;
@@ -50,6 +57,7 @@
     }
   }
 }
+
 
 @keyframes line-animate {
   0%, 100% {
