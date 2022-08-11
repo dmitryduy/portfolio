@@ -4,13 +4,11 @@ import { useAppSelector } from "./useAppSelector";
 
 const useSectionAnimate = (section: Page) => {
   const pageInfo = useAppSelector(state => state.settings.pageInfo);
-
-  const [hide, setHide] = useState(false);
+  const [hide, setHide] = useState(section !== pageInfo.activePage);
   const [toBottom, setToBottom] = useState(section !== pageInfo.activePage);
 
 
   useEffect(() => {
-
     if (pageInfo.previousPage === section && pageInfo.activePage !== section) {
       setHide(true);
       setTimeout(() => {
@@ -26,7 +24,7 @@ const useSectionAnimate = (section: Page) => {
     }
 
 
-  }, [pageInfo, section]);
+  }, [pageInfo]);
 
   return [hide, toBottom];
 }

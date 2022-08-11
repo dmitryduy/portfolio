@@ -30,12 +30,7 @@ const tabs: {
     page: Page.PORTFOLIO,
     icon: 'portfolio',
     text: 'Portfolio'
-  },
-  {
-    page: Page.CONTACTS,
-    icon: 'contacts',
-    text: 'Contacts'
-  },
+  }
 ]
 
 const Touch = () => {
@@ -43,10 +38,6 @@ const Touch = () => {
   const dispatch = useAppDispatch();
 
   const changeTab = (page: Page) => {
-    if (page === Page.HEADER) {
-      window.scrollTo({top: 0, behavior: 'smooth'});
-      return;
-    }
     dispatch(setActivePage(page));
   }
 
@@ -62,6 +53,7 @@ const Touch = () => {
             </li>
           )}
         </ul>
+        <div className={styles.indicator}/>
       </nav>
     </div>
   );

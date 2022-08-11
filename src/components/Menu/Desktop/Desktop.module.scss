@@ -2,7 +2,7 @@
 
 .menuContainer {
   position: fixed;
-  bottom: 20px;
+  bottom: 0;
   z-index: 100;
   width: 100vw;
   display: flex;
@@ -15,16 +15,17 @@
   justify-content: center;
   background-color: $background;
   padding: 15px 0;
-  border-radius: 20px;
+  border-radius: 20px 20px 0 0;
   position: relative;
 
   .indicator {
     position: absolute;
-    height: calc(100% - 10px);
+    height: 100%;
     background-color: $white;
     width: 85px;
-    border-radius: 20px;
+    border-radius: 20px 20px 0 0;
     left: 4px;
+    bottom: 0;
     transition: $smoothAnimation;
   }
 }

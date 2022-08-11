@@ -23,6 +23,7 @@
   background-color: $background;
   transition: $smoothAnimation;
   backface-visibility: hidden;
+  border-radius: 10px;
 }
 
 %counterStyles {

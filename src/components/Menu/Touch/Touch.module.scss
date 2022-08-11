@@ -2,49 +2,43 @@
 
 
 .container {
+  position: fixed;
+  bottom: 0;
+  z-index: 1;
   width: 100vw;
-  padding: 10px 10px 0 10px;
+  background-color: $dark;
 }
 
 
 .menu {
   display: flex;
   justify-content: flex-start;
-  min-width: calc(100vw - 20px);
-  overflow: scroll;
+  width: 100%;
+  padding: 0 5px;
 }
 
 .menuItem {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 10px;
-  font-size: 15px;
+  font-size: 10px;
   color: $white;
-  flex: 1 0 100px;
-  padding: 15px 15px;
-  border-radius: 20px;
+  padding: 10px 0;
   transition: $smoothAnimation;
-  &:first-child {
-    margin-left: 0;
-  }
-  &:nth-child(2) {
-    svg {
-      margin-bottom: 6px;
-    }
-  }
-  &:last-child {
-    margin-right: 0;
-  }
+  flex: 1;
   svg {
     margin-bottom: 5px;
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
     fill: $white;
+    transition: $smoothAnimation;
   }
-  &:not(:first-child).active {
+  &.active {
     background-color: $background;
-    transform: scale(1.1);
+    color: $purple;
+    svg {
+      fill: $purple;
+    }
   }
 
 }

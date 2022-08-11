@@ -1,29 +1,20 @@
 import React, { FC } from 'react';
 
-import styles from './Button.module.scss';
+import useMatchMedia from "../../hooks/useMatchMedia";
+import { PHONE_BREAKPOINT } from "../../data";
+import Desktop from "./Desktop/Desktop";
+import Touch from './Touch/Touch';
 
-interface IButtonProps {
+export interface IButtonProps {
   text: string
   onClick: () => void
   children?: React.ReactNode
 }
 
-const Button: FC<IButtonProps> = ({text, onClick, children}) => {
-  return (
-    <div className={styles.container}>
-      <div className={styles.wrapper}>
-        <button className={styles.button}>
-          <p>{text}</p>
-          {children}
-        </button>
-        <button className={`${styles.button} ${styles.bottomButton}`} onClick={onClick}>
-          <p>{text}</p>
-          {children}
-        </button>
-      </div>
-    </div>
-  );
+const Button: FC<IButtonProps> = (props) => {
+  const isTouch = useMatchMedia(`(max-width: ${PHONE_BREAKPOINT}px)`);
 
+  return isTouch ? <Touch {...props}>{props.children}</Touch> : <Desktop {...props}>{props.children}</Desktop>;
 };
 
 export default Button;

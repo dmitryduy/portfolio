@@ -4,7 +4,7 @@
   position: relative;
   width: fit-content;
   user-select: none;
-  font-size: 80px;
+  font-size: max(6vw, 25px);
   font-weight: bold;
   padding: 0 10px;
   @include setGradient(90deg);

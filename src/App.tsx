@@ -10,7 +10,6 @@ import Experience from "./components/Experience/Experience";
 window.emitter = new Emitter();
 
 function App() {
-
   return (
     <>
       <Header/>

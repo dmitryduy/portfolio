@@ -2,17 +2,19 @@ import React from 'react';
 import { useAppSelector } from "../../../hooks/useAppSelector";
 import { data, Page } from "../../../data";
 
-import InfoCard from "../../InfoCard/InfoCard";
 import Section from '../../Section/Section';
+import SkillCard from "../../SkillCard/SkillCard";
+
+import styles from './Touch.module.scss';
 
 const Touch = () => {
   const language = useAppSelector(state => state.settings.language);
 
   return (
-    <Section sectionName={Page.SKILLS}>
+    <Section sectionName={Page.SKILLS} className={styles.skillsTouchContainer}>
       {data.skills.map(skill =>
-        <InfoCard key={skill.id} title={skill.title}
-                  extraInfo={skill.description[language]} icon={skill.icon} iconColor='#fff'/>)}
+        <SkillCard key={skill.id} title={skill.title} icon={skill.icon} color={skill.color}
+                   description={skill.description[language]}/>)}
     </Section>
 
 

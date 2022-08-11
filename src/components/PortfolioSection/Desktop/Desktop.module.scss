@@ -1,0 +1,17 @@
+@import "../../../global";
+
+.portfolioContainer {
+  padding: 40px 40px 60px 40px;
+  @media (max-width: $phoneBreakpoint) {
+    padding: $touchContainerPadding;
+  }
+}
+
+.projects {
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+  height: auto;
+  width: 100%;
+
+}

@@ -9,11 +9,11 @@ interface IImageSliderProps {
 }
 
 const ImageSlider: FC<IImageSliderProps> = ({images, containerWidth}) => {
-  const [currentImage, setCurrentImage] = useThrottle(0, 300);
+  const [currentImage, setCurrentImage] = useThrottle(0, 200);
+  const [touchPosition, setTouchPosition] = useThrottle({x: 0, y: 0}, 100);
 
   const prevImage = () => {
     if (currentImage === 0) {
-      setCurrentImage(images.length - 1);
       return;
     }
 
@@ -23,11 +23,25 @@ const ImageSlider: FC<IImageSliderProps> = ({images, containerWidth}) => {
 
   const nextImage = () => {
     if (currentImage === images.length - 1) {
-      setCurrentImage(0);
       return;
     }
 
     setCurrentImage(currentImage + 1);
+  }
+
+  const touchStart = (e: React.TouchEvent) => {
+    setTouchPosition({x: e.touches[0].clientX, y: e.touches[0].clientY});
+  }
+
+  const touchEnd = (e: React.TouchEvent) => {
+    const [touchEndPositionX, touchEndPositionY] = [e.changedTouches[0].clientX, e.changedTouches[0].clientY];
+
+    if (Math.abs(touchPosition.y - touchEndPositionY) > 100) {
+      return;
+    }
+
+    touchPosition.x - touchEndPositionX > 50 && nextImage();
+    touchPosition.x - touchEndPositionX < -50 && prevImage();
   }
 
   return (
@@ -40,13 +54,9 @@ const ImageSlider: FC<IImageSliderProps> = ({images, containerWidth}) => {
              }}/>
         {images.map((_, index) => <div key={index} className={styles.text}/>)}
       </div>
-      <div className={styles.imageContainer} style={{width: containerWidth}}>
+      <div className={styles.imageContainer} style={{width: containerWidth}} onTouchStart={touchStart} onTouchEnd={touchEnd}>
         <div className={styles.imageWrapper} style={{transform: `translateX(-${currentImage * containerWidth}px`}}>
-          {images.map(image => <img className={styles.image} src={image} alt=""/>)}
-        </div>
-        <div className={styles.imageNavigation}>
-          <button onClick={prevImage}>{icons.arrow}</button>
-          <button onClick={nextImage}>{icons.arrow}</button>
+          {images.map(image => <img className={styles.image} style={{width: containerWidth}} src={image} alt=""/>)}
         </div>
       </div>
     </>

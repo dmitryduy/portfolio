@@ -1,0 +1,19 @@
+@import "../../../global";
+
+.wrapper {
+  transition: $smoothAnimation;
+  &:hover {
+    transform: translateY(-50%);
+  }
+}
+
+.container {
+  height: 60px;
+  overflow: hidden;
+  width: fit-content;
+}
+
+
+.bottomButton {
+  background-color: rgba($darkPurple, 1);
+}

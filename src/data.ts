@@ -29,6 +29,7 @@ export const data: {
     description: i18n
     type: SkillType
     position: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8
+    color: string
   }[],
 } = {
   headerTitle: {
@@ -209,19 +210,32 @@ export const data: {
       position: 1,
       title: 'JavaScript',
       icon: 'javaScript',
+      color: '#333',
       description: {
         ru: 'Какой-то скилл',
         en: 'This is paragrahpa sometshi else'
       }
     },
     {
-      id: 1, type: SkillType.FRONTEND, position: 6, title: 'React', icon: 'react', description: {
+      id: 1,
+      type: SkillType.FRONTEND,
+      position: 6,
+      title: 'React',
+      icon: 'react',
+      color: '#5ed3f3',
+      description: {
         ru: 'Какой-то скилл',
         en: 'This is paragrahpa sometshi else'
       }
     },
     {
-      id: 2, type: SkillType.FRONTEND, position: 2, title: 'CSS', icon: 'css', description: {
+      id: 2,
+      type: SkillType.FRONTEND,
+      position: 2,
+      title: 'CSS',
+      icon: 'css',
+      color: '#2194f0',
+      description: {
         ru: 'Какой-то скилл',
         en: 'This is paragrahpa sometshi else'
       }
@@ -232,13 +246,20 @@ export const data: {
       position: 7,
       title: 'Styled-Components',
       icon: 'styledComponents',
+      color: '#e4976d',
       description: {
         ru: 'Какой-то скилл',
         en: 'This is paragrahpa sometshi else'
       }
     },
     {
-      id: 4, type: SkillType.FRONTEND, position: 3, title: 'HTML', icon: 'html', description: {
+      id: 4,
+      type: SkillType.FRONTEND,
+      position: 3,
+      title: 'HTML',
+      icon: 'html',
+      color: '#dd4b25',
+      description: {
         ru: 'Какой-то скилл, о котором я ничего не знаю, поэтому буду просто молчат. Спасибо за внимание',
         en: 'This is paragrahpa sometshi else'
       }
@@ -247,15 +268,22 @@ export const data: {
       id: 5,
       type: SkillType.FRONTEND,
       position: 4,
-      title: 'Scss, Sass, Less',
+      title: 'Sass',
       icon: 'sass',
+      color: '#c76395',
       description: {
         ru: 'Какой-то скилл',
         en: 'This is paragrahpa sometshi else'
       }
     },
     {
-      id: 6, type: SkillType.FRONTEND, position: 8, title: 'Redux', icon: 'redux', description: {
+      id: 6,
+      type: SkillType.FRONTEND,
+      position: 8,
+      title: 'Redux',
+      icon: 'redux',
+      color: '#7248b6',
+      description: {
         ru: 'Какой-то скилл',
         en: 'This is paragrahpa sometshi else'
       }
@@ -266,73 +294,140 @@ export const data: {
       position: 5,
       title: 'TypeScript',
       icon: 'typeScript',
+      color: '#2f74c0',
       description: {
         ru: 'Какой-то скилл',
         en: 'This is paragrahpa sometshi else'
       }
     },
     {
-      id: 8, position: 1, type: SkillType.BACKEND, title: 'Express.js', icon: 'express', description: {
+      id: 8,
+      position: 1,
+      type: SkillType.BACKEND,
+      title: 'Express.js',
+      icon: 'express',
+      color: '#7e7e7e',
+      description: {
         ru: 'Какой-то скилл',
         en: 'This is paragrahpa sometshi else'
       }
     },
     {
-      id: 9, type: SkillType.BACKEND, position: 7, title: 'Nest.js', icon: 'nestjs', description: {
+      id: 9,
+      type: SkillType.BACKEND,
+      position: 7,
+      title: 'Nest.js',
+      icon: 'nestjs',
+      color: '#d9224c',
+      description: {
         ru: 'Какой-то скилл',
         en: 'This is paragrahpa sometshi else'
       }
     },
     {
-      id: 10, position: 5, type: SkillType.BACKEND, title: 'Node.js', icon: 'nodejs', description: {
+      id: 10,
+      position: 5,
+      type: SkillType.BACKEND,
+      title: 'Node.js',
+      icon: 'nodejs',
+      color: '#6da35e',
+      description: {
         ru: 'Какой-то скилл',
         en: 'This is paragrahpa sometshi else'
       }
     },
     {
-      id: 11, position: 1, type: SkillType.OTHER, title: 'Git', icon: 'git', description: {
+      id: 11,
+      position: 1,
+      type: SkillType.OTHER,
+      title: 'Git',
+      icon: 'git',
+      color: '#e84e31',
+      description: {
         ru: 'Какой-то скилл',
         en: 'This is paragrahpa sometshi else'
       }
     },
     {
-      id: 12, position: 3, type: SkillType.OTHER, title: 'Angular', icon: 'angular', description: {
+      id: 12,
+      position: 3,
+      type: SkillType.OTHER,
+      title: 'Angular',
+      icon: 'angular',
+      color: '#d6002f',
+      description: {
         ru: 'Какой-то скилл',
         en: 'This is paragrahpa sometshi else'
       }
     },
     {
-      id: 13, position: 5, type: SkillType.OTHER, title: 'JQuery', icon: 'jquery', description: {
+      id: 13,
+      position: 5,
+      type: SkillType.OTHER,
+      title: 'JQuery',
+      icon: 'jquery',
+      color: '#1163a4',
+      description: {
         ru: 'Какой-то скилл',
         en: 'This is paragrahpa sometshi else'
       }
     },
     {
-      id: 14, position: 6, type: SkillType.OTHER, title: 'npm', icon: 'npm', description: {
+      id: 14,
+      position: 6,
+      type: SkillType.OTHER,
+      title: 'npm',
+      icon: 'npm',
+      color: '#c53635',
+      description: {
         ru: 'Какой-то скилл',
         en: 'This is paragrahpa sometshi else'
       }
     },
     {
-      id: 15, position: 8, type: SkillType.OTHER, title: 'BEM', icon: 'bem', description: {
+      id: 15,
+      position: 8,
+      type: SkillType.OTHER,
+      title: 'BEM',
+      icon: 'bem',
+      color: '#333',
+      description: {
         ru: 'Какой-то скилл',
         en: 'This is paragrahpa sometshi else'
       }
     },
     {
-      id: 16, position: 1, type: SkillType.NOT_WEB, title: 'Python', icon: 'python', description: {
+      id: 16,
+      position: 1,
+      type: SkillType.NOT_WEB,
+      title: 'Python',
+      icon: 'python',
+      color: '#686868',
+      description: {
         ru: 'Какой-то скилл',
         en: 'This is paragrahpa sometshi else'
       }
     },
     {
-      id: 17, position: 5, type: SkillType.NOT_WEB, title: 'C++', icon: 'cpp', description: {
+      id: 17,
+      position: 5,
+      type: SkillType.NOT_WEB,
+      title: 'C++',
+      icon: 'cpp',
+      color: '#6195cb',
+      description: {
         ru: 'Какой-то скилл',
         en: 'This is paragrahpa sometshi else'
       }
     },
     {
-      id: 18, position: 7, type: SkillType.NOT_WEB, title: 'kotlin', icon: 'kotlin', description: {
+      id: 18,
+      position: 7,
+      type: SkillType.NOT_WEB,
+      title: 'kotlin',
+      icon: 'kotlin',
+      color: '#e87c2b',
+      description: {
         ru: 'Какой-то скилл',
         en: 'This is paragrahpa sometshi else'
       }
@@ -364,8 +459,7 @@ export enum Page {
   HEADER,
   EXPERIENCE,
   SKILLS,
-  PORTFOLIO,
-  CONTACTS
+  PORTFOLIO
 }
 
 export const TOUCH_CONTAINER_PADDING = 10;

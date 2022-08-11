@@ -16,6 +16,7 @@
     cursor: pointer;
     font-weight: bold;
     transition: $smoothAnimation;
+    color: $white;
   }
   &:before {
     position: absolute;

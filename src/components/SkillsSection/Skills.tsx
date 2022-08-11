@@ -3,10 +3,9 @@ import React from 'react';
 import useMatchMedia from "../../hooks/useMatchMedia";
 import Touch from "./Touch/Touch";
 import Desktop from "./Desktop/Desktop";
-import { PHONE_BREAKPOINT } from "../../data";
 
 const SkillsSection = () => {
-  const isTouch = useMatchMedia(`(max-width: ${PHONE_BREAKPOINT}px)`);
+  const isTouch = useMatchMedia(`(max-width: ${1200}px)`);
 
   return isTouch ? <Touch/> : <Desktop/>;
 };

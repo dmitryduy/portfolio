@@ -1,0 +1,63 @@
+@import "../../../global";
+
+.skillsTouchContainer {
+  display: grid;
+  padding: 10px 0 0 0;
+  grid-gap: 10px;
+  grid-template-columns: repeat(7, 1fr);
+  grid-auto-rows: minmax(100px, auto);
+  grid-template-areas:
+                "javaScript       javaScript       bem              react        react          react       nodejs"
+                "javaScript       javaScript       bem              react        react          react       nodejs"
+                "css              css              css              css          sass           sass        git"
+                "styledComponents styledComponents jquery           html         sass           sass        git"
+                "redux            redux            redux            html         typeScript     typeScript  typeScript"
+                "express          nestjs           nestjs           html         typeScript     typeScript  typeScript"
+                "npm              npm              angular          kotlin       cpp            python      python"
+                "g g g g g g g";
+  @media (max-width: 1000px) {
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-areas:
+                "javaScript       javaScript       javaScript       react        react          react"
+                "javaScript       javaScript       javaScript       react        react          react"
+                "css              css              css              css          sass           sass"
+                "styledComponents styledComponents styledComponents html         sass           sass"
+                "redux            redux            redux            html         typeScript     typeScript"
+                "express          nestjs           nestjs           html         typeScript     typeScript"
+                "nodejs           git              jquery           jquery       jquery         jquery"
+                "nodejs           git              angular          bem          bem            cpp"
+                "npm              npm              kotlin           kotlin       python          python"
+                "g g g g g g g";
+  }
+
+  @media (max-width: 700px) {
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-areas:
+                "javaScript       javaScript       react      react      react"
+                "javaScript       javaScript       react      react      react"
+                "css              css              react      react      react"
+                "styledComponents styledComponents html       html       sass"
+                "redux            redux            typeScript typeScript typeScript"
+                "express          nestjs           typeScript typeScript typeScript"
+                "nodejs           git              typeScript typeScript typeScript"
+                "nodejs           git              angular    jquery     jquery"
+                "npm              git              bem        bem        bem"
+                "kotlin           git              python     python     cpp";
+  };
+
+  @media (max-width: 400px) {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+                "javaScript       javaScript       react                  react"
+                "javaScript       javaScript       react                  react"
+                "css              css              css                    html"
+                "styledComponents styledComponents styledComponents       html"
+                "sass             sass             cpp                    cpp "
+                "redux            redux            typeScript             typeScript"
+                "express          nestjs           typeScript             typeScript"
+                "nodejs           git              typeScript             typeScript"
+                "nodejs           git              angular                jquery"
+                "npm              bem              bem                    jquery"
+                "kotlin           kotlin           python                 python";
+  }
+}

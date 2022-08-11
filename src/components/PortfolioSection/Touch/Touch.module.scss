@@ -1,0 +1,12 @@
+@import "../../../global";
+.portfolioContainer {
+  padding: $touchContainerPadding;
+}
+
+.projects {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: 100%;
+
+}

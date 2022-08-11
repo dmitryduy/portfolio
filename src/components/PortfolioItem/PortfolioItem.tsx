@@ -7,11 +7,10 @@ import { IProject, PHONE_BREAKPOINT } from "../../data";
 
 interface IPortfolioItemProps {
   project: IProject
+  isTouch: boolean
 }
 
-const PortfolioItem: FC<IPortfolioItemProps> = ({project}) => {
-  const isTouch = useMatchMedia(`(max-width: ${PHONE_BREAKPOINT}px)`);
-
+const PortfolioItem: FC<IPortfolioItemProps> = ({project, isTouch}) => {
   return isTouch ? <Touch project={project}/> : <Desktop project={project}/>;
 };
 

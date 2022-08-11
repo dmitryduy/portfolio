@@ -21,7 +21,7 @@ const Desktop: FC<IDesktopProps> = ({ project}) => {
   const [showAnimation, setShowAnimation] = useState(false);
   const language = useAppSelector(state => state.settings.language);
 
-  const portfolioRef = useIntersectionObserver(() => setShowAnimation(true), {threshold: 0.5});
+  const portfolioRef = useIntersectionObserver(() => setShowAnimation(true), {threshold: 0});
 
   const moveHandler = (e: React.MouseEvent<HTMLDivElement>) => {
     const target = e.target as HTMLDivElement;

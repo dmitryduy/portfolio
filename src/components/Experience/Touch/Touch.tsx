@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React  from 'react';
 import InfoCard from "../../InfoCard/InfoCard";
 
 import styles from './Touch.module.scss';

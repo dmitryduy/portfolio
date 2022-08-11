@@ -1,18 +1,19 @@
 @import "../../../global";
 
 .sectionContainer {
-  position: absolute;
+  position: fixed;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-content: flex-start;
   width: 100vw;
-  height: calc(100vh - 105px);
+  height: calc(100% - 56px);
   padding: 0 $touchContainerPadding;
   overflow: scroll;
   opacity: 0;
   visibility: hidden;
   transition: $smoothAnimation;
+  top: 0;
 
   @media (max-width: 550px) {
     flex-wrap: nowrap;

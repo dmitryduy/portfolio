@@ -38,26 +38,3 @@
   object-fit: contain;
   filter: grayscale(.4);
 }
-
-.imageNavigation {
-  display: flex;
-  position: absolute;
-  justify-content: flex-end;
-  bottom: 0;
-  right: 0;
-  button {
-    display: flex;
-    padding: 10px;
-    border: none;
-    outline: none;
-    background-color: $purple;
-    cursor: pointer;
-    &:first-child{
-      transform: rotate(180deg);
-      margin-right: 5px;
-    }
-    svg {
-      fill: $white;
-    }
-  }
-}

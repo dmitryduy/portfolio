@@ -1,18 +1,5 @@
 @import "../../global";
 
-.wrapper {
-  transition: $smoothAnimation;
-  &:hover {
-    transform: translateY(-50%);
-  }
-}
-
-.container {
-  height: 60px;
-  overflow: hidden;
-  width: fit-content;
-}
-
 .button {
 
   display: flex;
@@ -22,7 +9,7 @@
   border-radius: 5px;
   border: 3px solid $darkPurple;
   padding: 0 20px;
-  font-size: min(calc(2vw), 20px);
+  font-size: min(calc(3vw), 20px);
   font-family: $fontFira;
   color: $white;
   cursor: pointer;
@@ -30,8 +17,4 @@
   svg {
     margin-left: 10px;
   }
-}
-
-.bottomButton {
-  background-color: rgba($darkPurple, 1);
 }

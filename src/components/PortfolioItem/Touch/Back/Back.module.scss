@@ -41,7 +41,7 @@
     display: flex;
     justify-content: flex-end;
     margin: 0 10px 10px 10px;
-    div~div {
+    button:last-child {
       margin-left: 20px;
     }
   }
