@@ -1,1 +1,1 @@
-export const BLOCK_HEIGHT = 450;
+export const BLOCK_HEIGHT = 600;

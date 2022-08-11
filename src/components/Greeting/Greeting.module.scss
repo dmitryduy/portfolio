@@ -2,10 +2,29 @@
 
 .greetingContainer {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100%;
   width: 100%;
+}
+
+.social {
+  display: flex;
+  li {
+    padding: 0 20px;
+  }
+
+  li:hover svg {
+    fill: $purple;
+  }
+
+  svg {
+    transition: $smoothAnimation;
+    width: max(4vw, 30px);
+    height: max(4vw, 30px);
+  }
+
 }
 
 .title {
@@ -15,8 +34,8 @@
   font-size: calc(10px + 4vw);
 
   .text {
-    position: relative;
     text-align: center;
+    position: relative;
   }
 
 

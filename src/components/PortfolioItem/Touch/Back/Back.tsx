@@ -21,14 +21,14 @@ interface IBackProps {
 
 const Back = React.forwardRef<HTMLDivElement, IBackProps>(({closeInfo, className, project}, ref) => {
   const language = useAppSelector(state =>state.settings.language);
-  const width = useResize() - TOUCH_CONTAINER_PADDING * 2;
+  const width = useResize();
 
   return (
     <div className={cn(styles.back, className)} style={{ transform: `rotateY(90deg) translateZ(${width/2}px)`}}>
       <div ref={ref} className={styles.backContainer}>
         <span className={styles.closeButton} onClick={closeInfo}>&times;</span>
         <p className={styles.counter}>0{project.id}</p>
-        <ImageSlider images={project.images} containerWidth={width}/>
+        <ImageSlider images={project.images} containerWidth={width <= 750? width - TOUCH_CONTAINER_PADDING * 2: width/2 - TOUCH_CONTAINER_PADDING * 2}/>
         <h5 className={styles.title}>{project.title[language]}</h5>
         <p className={styles.description}>{project.description[language]}</p>
        <SkillList skills={project.skills}/>

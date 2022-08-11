@@ -11,7 +11,7 @@ const Desktop: FC<IButtonProps> = ({ text, onClick, children}) => {
           <p>{text}</p>
           {children}
         </button>
-        <button className={`${styles.button} ${styles.bottomButton}`} onClick={onClick}>
+        <button className={`${commonStyles.button} ${styles.bottomButton}`} onClick={onClick}>
           <p>{text}</p>
           {children}
         </button>

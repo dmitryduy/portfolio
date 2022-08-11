@@ -4,9 +4,11 @@
 }
 
 .projects {
-  display: flex;
-  flex-direction: column;
-  height: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
   width: 100%;
-
+  @media (max-width: 750px) {
+    display: block;
+  }
 }

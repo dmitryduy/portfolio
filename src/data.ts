@@ -5,7 +5,7 @@ export interface i18n {
   ru: string
 }
 
-export enum SkillType {
+export enum SkillTags {
   FRONTEND,
   BACKEND,
   OTHER,
@@ -27,7 +27,7 @@ export const data: {
     title: string
     icon: keyof typeof icons
     description: i18n
-    type: SkillType
+    type: SkillTags
     position: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8
     color: string
   }[],
@@ -156,7 +156,7 @@ export const data: {
   skills: [
     {
       id: 0,
-      type: SkillType.FRONTEND,
+      type: SkillTags.FRONTEND,
       position: 1,
       title: 'JavaScript',
       icon: 'javaScript',
@@ -168,7 +168,7 @@ export const data: {
     },
     {
       id: 1,
-      type: SkillType.FRONTEND,
+      type: SkillTags.FRONTEND,
       position: 6,
       title: 'React',
       icon: 'react',
@@ -180,7 +180,7 @@ export const data: {
     },
     {
       id: 2,
-      type: SkillType.FRONTEND,
+      type: SkillTags.FRONTEND,
       position: 2,
       title: 'CSS',
       icon: 'css',
@@ -192,7 +192,7 @@ export const data: {
     },
     {
       id: 3,
-      type: SkillType.FRONTEND,
+      type: SkillTags.FRONTEND,
       position: 7,
       title: 'Styled-Components',
       icon: 'styledComponents',
@@ -204,7 +204,7 @@ export const data: {
     },
     {
       id: 4,
-      type: SkillType.FRONTEND,
+      type: SkillTags.FRONTEND,
       position: 3,
       title: 'HTML',
       icon: 'html',
@@ -216,7 +216,7 @@ export const data: {
     },
     {
       id: 5,
-      type: SkillType.FRONTEND,
+      type: SkillTags.FRONTEND,
       position: 4,
       title: 'Sass',
       icon: 'sass',
@@ -228,7 +228,7 @@ export const data: {
     },
     {
       id: 6,
-      type: SkillType.FRONTEND,
+      type: SkillTags.FRONTEND,
       position: 8,
       title: 'Redux',
       icon: 'redux',
@@ -240,7 +240,7 @@ export const data: {
     },
     {
       id: 7,
-      type: SkillType.FRONTEND,
+      type: SkillTags.FRONTEND,
       position: 5,
       title: 'TypeScript',
       icon: 'typeScript',
@@ -253,7 +253,7 @@ export const data: {
     {
       id: 8,
       position: 1,
-      type: SkillType.BACKEND,
+      type: SkillTags.BACKEND,
       title: 'Express.js',
       icon: 'express',
       color: '#7e7e7e',
@@ -264,7 +264,7 @@ export const data: {
     },
     {
       id: 9,
-      type: SkillType.BACKEND,
+      type: SkillTags.BACKEND,
       position: 7,
       title: 'Nest.js',
       icon: 'nestjs',
@@ -277,7 +277,7 @@ export const data: {
     {
       id: 10,
       position: 5,
-      type: SkillType.BACKEND,
+      type: SkillTags.BACKEND,
       title: 'Node.js',
       icon: 'nodejs',
       color: '#6da35e',
@@ -289,7 +289,7 @@ export const data: {
     {
       id: 11,
       position: 1,
-      type: SkillType.OTHER,
+      type: SkillTags.OTHER,
       title: 'Git',
       icon: 'git',
       color: '#e84e31',
@@ -301,7 +301,7 @@ export const data: {
     {
       id: 12,
       position: 3,
-      type: SkillType.OTHER,
+      type: SkillTags.OTHER,
       title: 'Angular',
       icon: 'angular',
       color: '#d6002f',
@@ -313,7 +313,7 @@ export const data: {
     {
       id: 13,
       position: 5,
-      type: SkillType.OTHER,
+      type: SkillTags.OTHER,
       title: 'JQuery',
       icon: 'jquery',
       color: '#1163a4',
@@ -325,7 +325,7 @@ export const data: {
     {
       id: 14,
       position: 6,
-      type: SkillType.OTHER,
+      type: SkillTags.OTHER,
       title: 'npm',
       icon: 'npm',
       color: '#c53635',
@@ -337,7 +337,7 @@ export const data: {
     {
       id: 15,
       position: 8,
-      type: SkillType.OTHER,
+      type: SkillTags.OTHER,
       title: 'BEM',
       icon: 'bem',
       color: '#333',
@@ -349,7 +349,7 @@ export const data: {
     {
       id: 16,
       position: 1,
-      type: SkillType.NOT_WEB,
+      type: SkillTags.NOT_WEB,
       title: 'Python',
       icon: 'python',
       color: '#686868',
@@ -361,7 +361,7 @@ export const data: {
     {
       id: 17,
       position: 5,
-      type: SkillType.NOT_WEB,
+      type: SkillTags.NOT_WEB,
       title: 'C++',
       icon: 'cpp',
       color: '#6195cb',
@@ -373,7 +373,7 @@ export const data: {
     {
       id: 18,
       position: 7,
-      type: SkillType.NOT_WEB,
+      type: SkillTags.NOT_WEB,
       title: 'kotlin',
       icon: 'kotlin',
       color: '#e87c2b',

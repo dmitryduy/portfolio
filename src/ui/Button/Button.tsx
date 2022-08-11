@@ -12,7 +12,7 @@ export interface IButtonProps {
 }
 
 const Button: FC<IButtonProps> = (props) => {
-  const isTouch = useMatchMedia(`(max-width: ${PHONE_BREAKPOINT}px)`);
+  const isTouch = useMatchMedia(`(max-width: 1000px)`);
 
   return isTouch ? <Touch {...props}>{props.children}</Touch> : <Desktop {...props}>{props.children}</Desktop>;
 };

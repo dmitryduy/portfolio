@@ -1,8 +1,7 @@
 @import "../../../global";
 
 .touchContainer {
-  width: 100%;
-  height: 450px;
+  height: 600px;
   perspective: 800px;
   transition: $smoothAnimation;
   margin-bottom: 20px;
@@ -19,7 +18,6 @@
 .face {
   position: absolute;
   width: 100%;
-  height: 450px;
   background-color: $background;
   transition: $smoothAnimation;
   backface-visibility: hidden;

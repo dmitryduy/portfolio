@@ -7,7 +7,7 @@ import Desktop from "./Desktop/Desktop";
 
 
 const PortfolioSection = () => {
-  const isTouch = useMatchMedia(`(max-width: ${PHONE_BREAKPOINT}px)`);
+  const isTouch = useMatchMedia(`(max-width: 1000px)`);
 
   return isTouch? <Touch/>: <Desktop/>;
 };
