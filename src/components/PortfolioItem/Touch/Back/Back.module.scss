@@ -3,9 +3,11 @@
 
 .back {
   .backContainer {
+    display: flex;
+    flex-direction: column;
     border-radius: 10px;
     transition: $smoothAnimation;
-    height: 450px;
+    height: 600px;
     overflow: hidden;
     background-color: $background;
   }
@@ -35,6 +37,7 @@
     margin-bottom: 10px;
     margin-left: 10px;
     font-size: 14px;
+    flex: 1 0 auto;
   }
 
   .buttons {

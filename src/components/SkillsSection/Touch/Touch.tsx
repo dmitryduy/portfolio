@@ -38,17 +38,20 @@ const Touch = () => {
     window.emitter.emit('tag-update', {tag})
   }
 
+
   return (
     <>
-      <ul className={styles.skillTags}>
-        {skillTags.map(tag =>
-          <li onClick={tagsHandler.bind(null, tag.skillType)} key={tag.tag}
-              className={cn(styles.skillTag, {[styles.active]: activeTags.includes(tag.skillType)})}>{tag.tag}</li>)}
-      </ul>
-      <Section sectionName={Page.SKILLS} className={styles.skillsTouchContainer}>
-        {data.skills.map(skill =>
-          <SkillCard skillType={skill.type} key={skill.id} title={skill.title} icon={skill.icon} color={skill.color}
-                     description={skill.description[language]}/>)}
+      <Section sectionName={Page.SKILLS}>
+        <ul className={styles.skillTags}>
+          {skillTags.map(tag =>
+            <li onClick={tagsHandler.bind(null, tag.skillType)} key={tag.tag}
+                className={cn(styles.skillTag, {[styles.active]: activeTags.includes(tag.skillType)})}>{tag.tag}</li>)}
+        </ul>
+        <div className={styles.skillsTouchContainer}>
+          {data.skills.map(skill =>
+            <SkillCard skillType={skill.type} key={skill.id} title={skill.title} icon={skill.icon} color={skill.color}
+                       description={skill.description[language]}/>)}
+        </div>
       </Section>
     </>
 

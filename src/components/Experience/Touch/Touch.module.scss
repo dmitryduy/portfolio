@@ -1,0 +1,56 @@
+@import "../../../global";
+
+
+.tabs {
+  position: relative;
+  display: flex;
+  min-width: 100%;
+  color: $white;
+overflow: auto;
+  padding-bottom: 0;
+  margin: 0 -10px 20px;
+}
+
+.tab {
+  display: flex;
+  text-align: center;
+  flex-shrink: 0;
+  flex-basis: 200px;
+  padding: 10px;
+  transition: $smoothAnimation;
+
+  &.active {
+    background-color: rgba($purple, .2);
+  }
+
+}
+
+.indicator {
+  position: absolute;
+  width: 200px;
+  height: 3px;
+  background-color: $purple;
+  bottom: 0;
+  transition: $smoothAnimation;
+}
+
+.content {
+  color: $white;
+  transition: 5s;
+}
+
+.title {
+  font-size: 20px;
+  font-family: $fontFira;
+  margin-bottom: 10px;
+}
+
+.date {
+  color: $paragraph;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.description {
+  font-size: 18px;
+}
