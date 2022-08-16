@@ -24,7 +24,7 @@ const Skill: FC<ISkillProps> = ({id, title, icon, description, timerIndex}) => {
     setTimeout(() => {
       setShow(true);
       setShowDot(true);
-    }, (timerIndex - 1) * 100);
+    }, (timerIndex - 1) * 100 + 100);
 
   }, []);
 

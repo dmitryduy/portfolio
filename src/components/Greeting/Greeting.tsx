@@ -33,11 +33,6 @@ const Greeting = () => {
         <div className={styles.text}>
           <span className={styles.decorateText}>{data.headerTitle[language].split(' ')[0]}&nbsp;</span>
           {data.headerTitle[language].split(' ')[1]}
-          <div className={styles.lines}>
-            {new Array(5).fill(0).map((_, index) =>
-              <div key={index} className={styles.line} style={{width: `${100 - index * 20}%`}}/>
-            )}
-          </div>
         </div>
       </h1>
     </div>

@@ -8,7 +8,7 @@
   flex-direction: column;
   width: 150px;
   border-radius: 0 0 10px 0;
-  padding: 30px 0;
+  justify-self: flex-end;
   transition: $smoothAnimation;
   span {
     padding: 5px 10px;
@@ -17,11 +17,12 @@
     font-weight: bold;
     transition: $smoothAnimation;
     color: $white;
+    font-size: 20px;
   }
   &:before {
     position: absolute;
     content: '';
-    height: calc(50% - 25px);
+    height:50%;
     background-color: $white;
     border-radius: 10px;
     z-index: -1;
@@ -36,10 +37,14 @@
     color: $background;
   }
   &.ru:before {
-    transform: translateY(25px);
+    transform: translateY(35px);
   }
 
   &.ru span:last-child {
     color: $background;
+  }
+
+  @media (min-width: $phoneBreakpoint) {
+    margin-bottom: 51px;
   }
 }
