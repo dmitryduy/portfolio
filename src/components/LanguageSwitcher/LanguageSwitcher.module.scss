@@ -6,9 +6,9 @@
   position: relative;
   justify-content: space-between;
   flex-direction: column;
-  width: 120px;
+  width: 150px;
   border-radius: 0 0 10px 0;
-  padding: 5px 0;
+  padding: 30px 0;
   transition: $smoothAnimation;
   span {
     padding: 5px 10px;
@@ -21,13 +21,13 @@
   &:before {
     position: absolute;
     content: '';
-    height: calc(50% - 5px);
+    height: calc(50% - 25px);
     background-color: $white;
     border-radius: 10px;
     z-index: -1;
     transition: $smoothAnimation;
-    left: 15px;
-    width: calc(100% - 30px);
+    left: 0;
+   width: 100%;
   }
   &.en:before {
     transform: translateY(0) ;
@@ -36,7 +36,7 @@
     color: $background;
   }
   &.ru:before {
-    transform: translateY(30px);
+    transform: translateY(25px);
   }
 
   &.ru span:last-child {

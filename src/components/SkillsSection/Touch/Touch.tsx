@@ -15,7 +15,7 @@ const skillTags = [{
   {
     tag: 'Backend',
     skillType: SkillTags.BACKEND
-  },{
+  }, {
     tag: 'Other',
     skillType: SkillTags.OTHER
   },
@@ -26,7 +26,6 @@ const skillTags = [{
 
 
 const Touch = () => {
-  const language = useAppSelector(state => state.settings.language);
   const [activeTags, setActiveTags] = useState([SkillTags.OTHER, SkillTags.NOT_WEB, SkillTags.BACKEND, SkillTags.FRONTEND]);
 
   const tagsHandler = (tag: number) => {
@@ -35,27 +34,32 @@ const Touch = () => {
     } else {
       setActiveTags([...activeTags, tag]);
     }
-    window.emitter.emit('tag-update', {tag})
   }
 
 
   return (
-    <>
-      <Section sectionName={Page.SKILLS}>
-        <ul className={styles.skillTags}>
-          {skillTags.map(tag =>
-            <li onClick={tagsHandler.bind(null, tag.skillType)} key={tag.tag}
-                className={cn(styles.skillTag, {[styles.active]: activeTags.includes(tag.skillType)})}>{tag.tag}</li>)}
-        </ul>
-        <div className={styles.skillsTouchContainer}>
-          {data.skills.map(skill =>
-            <SkillCard skillType={skill.type} key={skill.id} title={skill.title} icon={skill.icon} color={skill.color}
-                       description={skill.description[language]}/>)}
-        </div>
-      </Section>
-    </>
-
-
+    <Section sectionName={Page.SKILLS}>
+      <ul className={styles.skillTags}>
+        {skillTags.map(tag =>
+          <li onClick={tagsHandler.bind(null, tag.skillType)}
+              key={tag.tag}
+              className={cn(styles.skillTag, {[styles.active]: activeTags.includes(tag.skillType)})}
+          >
+            {tag.tag}
+          </li>
+        )}
+      </ul>
+      <div className={styles.skillsTouchContainer}>
+        {data.skills.map(skill =>
+          <SkillCard activeTags={activeTags}
+                     skillType={skill.type}
+                     key={skill.id}
+                     title={skill.title}
+                     icon={skill.icon}
+                     color={skill.color}
+          />)}
+      </div>
+    </Section>
   );
 };
 

@@ -9,6 +9,7 @@
 overflow: auto;
   padding-bottom: 0;
   margin: 0 -10px 20px;
+  user-select: none;
 }
 
 .tab {
@@ -36,11 +37,11 @@ overflow: auto;
 
 .content {
   color: $white;
-  transition: 5s;
 }
 
 .title {
   font-size: 20px;
+  color: $purple;
   font-family: $fontFira;
   margin-bottom: 10px;
 }

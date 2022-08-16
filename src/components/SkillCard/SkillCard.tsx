@@ -7,28 +7,16 @@ import cn from "../../utils/cn";
 
 interface ISkillCardProps {
   title: string
-  description: string
   icon: keyof typeof icons
   color: string
   skillType: SkillTags
+  activeTags: SkillTags[]
 }
 
-const SkillCard: FC<ISkillCardProps> = ({ color, icon, title, description, skillType}) => {
-  const [hidden, setHidden] = useState(false);
-
-  useEffect(() =>{
-    window.emitter.on('tag-update', (data) => {
-      if (data && data.tag === skillType) {
-        setHidden(prev => !prev);
-      }
-    })
-
-    return () => window.emitter.un('tag-update');
-  }, []);
-  console.log(hidden)
+const SkillCard: FC<ISkillCardProps> = ({activeTags, color, icon, title, skillType}) => {
 
   return (
-    <div className={cn(styles.skillCardContainer, {[styles.hidden]: hidden})} style={{backgroundColor: color, gridArea: `${icon}`}}>
+    <div className={cn(styles.skillCardContainer, {[styles.hidden]: !activeTags.includes(skillType)})} style={{backgroundColor: color, gridArea: `${icon}`}}>
       {icons[icon]}
       <h3 className={styles.title}>{title}</h3>
     </div>

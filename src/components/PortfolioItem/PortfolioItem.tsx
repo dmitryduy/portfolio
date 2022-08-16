@@ -1,9 +1,8 @@
 import React, { FC } from 'react';
 
-import useMatchMedia from "../../hooks/useMatchMedia";
 import Touch from "./Touch/Touch";
 import Desktop from "./Desktop/Desktop";
-import { IProject, PHONE_BREAKPOINT } from "../../data";
+import { IProject } from "../../data";
 
 interface IPortfolioItemProps {
   project: IProject

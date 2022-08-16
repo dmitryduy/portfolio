@@ -7,6 +7,7 @@
   width: 100vw;
   display: flex;
   justify-content: center;
+  font-family: $fontFira;
 }
 
 .menu {
@@ -14,7 +15,6 @@
   align-items: center;
   justify-content: center;
   background-color: $background;
-  padding: 15px 0;
   border-radius: 20px 20px 0 0;
   position: relative;
 
@@ -22,9 +22,9 @@
     position: absolute;
     height: 100%;
     background-color: $white;
-    width: 85px;
+    width: 110px;
     border-radius: 20px 20px 0 0;
-    left: 4px;
+    left: 0;
     bottom: 0;
     transition: $smoothAnimation;
   }
@@ -32,8 +32,8 @@
 
 .menuItem {
   text-align: center;
-  width: 90px;
-  padding: 0 5px;
+  width: 110px;
+  padding: 15px 5px;
   position: relative;
   color: $white;
   cursor: pointer;

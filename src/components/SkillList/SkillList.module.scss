@@ -8,8 +8,11 @@
   font-weight: $fontFira;
   margin-bottom: 20px;
   flex-wrap: wrap;
+  gap: 10px;
 
   .listItem {
-    margin-right: 10px;
+    border: 1px solid $purple;
+    padding: 10px;
+    border-radius: 5px;
   }
 }

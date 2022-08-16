@@ -14,8 +14,10 @@ const Desktop: FC<IDesktopProps> = ({className, sectionName, children}) => {
   const [hide, toBottom] = useSectionAnimate(sectionName);
 
   return (
-    <section className={cn(className, styles.sectionContainer, {[styles.hide]: hide, [styles.toBottom]: toBottom})}>
-      {children}
+    <section className={cn(styles.sectionContainer, {[styles.hide]: hide, [styles.toBottom]: toBottom})}>
+      <div className={cn(className, styles.content)}>
+        {children}
+      </div>
     </section>
   );
 };

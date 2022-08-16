@@ -19,7 +19,7 @@ const Desktop = () => {
   return (
     <nav className={styles.menuContainer}>
       <ul className={styles.menu}>
-        <div className={styles.indicator} style={{transform: `translateX(${activePage * 90}px)`}}/>
+        <div className={styles.indicator} style={{transform: `translateX(${activePage * 110}px)`}}/>
         {tabs.map((tab, index) => (
           <li key={tab} onClick={changeTab.bind(null, index)}
               className={cn(styles.menuItem, {[styles.active]: activePage === index})}>

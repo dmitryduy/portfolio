@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import InfoCard from "../../InfoCard/InfoCard";
 
 import styles from './Touch.module.scss';
 import Section from "../../Section/Section";
@@ -11,6 +10,7 @@ const Touch = () => {
   const language = useAppSelector(state => state.settings.language);
 
   const [activeTab, setActiveTab] = useState({id: data.experience[0].id, index: 0});
+
   const experience = data.experience.find(exp => exp.id === activeTab.id);
 
   if (!experience) return null;

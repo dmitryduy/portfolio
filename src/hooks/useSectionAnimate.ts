@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Page } from "../data";
 import { useAppSelector } from "./useAppSelector";
 
+
 const useSectionAnimate = (section: Page) => {
   const pageInfo = useAppSelector(state => state.settings.pageInfo);
   const [hide, setHide] = useState(section !== pageInfo.activePage);
@@ -20,7 +21,7 @@ const useSectionAnimate = (section: Page) => {
       setTimeout(() => {
         setHide(false);
         setToBottom(false);
-      }, 300);
+      }, 150);
     }
 
 

@@ -21,38 +21,27 @@
   overflow: hidden;
   transition: $smoothAnimation;
   z-index: 1;
-
-  .description {
-    white-space: nowrap;
+  border-radius: 10px;
+  .title {
+    font-size: 16px;
+    font-family: $fontFira;
+    margin-bottom: 5px;
     color: $white;
-    .title {
-      font-size: 16px;
-      font-family: $fontFira;
-      margin-bottom: 5px;
-    }
-
-  }
-
-  &.rightSide {
-    border-top-left-radius: 50px;
-    border-bottom-left-radius: 50px;
-    clip-path: polygon(calc(100% - 45px) 0, 100% 50%, calc(100% - 45px) 100%, 0 100%, 0 0);
+    flex: 1;
+    text-align: center;
+    padding: 5px;
   }
 
   &.leftSide {
-    justify-content: flex-end;
-    border-top-right-radius: 50px;
-    border-bottom-right-radius: 50px;
-    clip-path: polygon(45px 0, 0 50%, 45px 100%, 100% 100%, 99% 0);
 
-    .description {
+    .title {
       order: -1;
     }
 
   }
 
   &.show {
-    width: calc(100% + 45px);
+    width: 250px;
     transition-delay: .4s;
   }
 
@@ -131,23 +120,23 @@
   }
 
   &[data-number='3'] {
-    @include absolutePosition(135px, auto, -43px);
+    @include absolutePosition(135px, auto, -47px);
   }
 
   &[data-number='4'] {
-    @include absolutePosition(220px, auto, -27px);
+    @include absolutePosition(221px, auto, -31px);
   }
 
   &[data-number='5'] {
-    @include absolutePosition(276px, auto, 12px);
+    @include absolutePosition(278px, auto, 10px);
   }
 
   &[data-number='6'] {
-    @include absolutePosition(30px, 40px);
+    @include absolutePosition(26px, 35px);
   }
 
   &[data-number='7'] {
-    @include absolutePosition(130px, -10px);
+    @include absolutePosition(130px, -12px);
   }
 
   &[data-number='8'] {
@@ -194,7 +183,7 @@
   }
 
   &[data-number='7'] {
-    @include absoluteTransform(90deg, 137px, 10px);
+    @include absoluteTransform(90deg, 137px, 5px);
   }
 
   &[data-number='8'] {

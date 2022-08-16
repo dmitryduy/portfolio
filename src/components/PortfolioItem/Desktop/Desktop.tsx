@@ -17,40 +17,20 @@ interface IDesktopProps {
 
 
 const Desktop: FC<IDesktopProps> = ({ project}) => {
-  const [activeImage, setActiveImage] = useState(0);
-  const [showAnimation, setShowAnimation] = useState(false);
   const language = useAppSelector(state => state.settings.language);
 
-  const portfolioRef = useIntersectionObserver(() => setShowAnimation(true), {threshold: 0});
-
-  const moveHandler = (e: React.MouseEvent<HTMLDivElement>) => {
-    const target = e.target as HTMLDivElement;
-    const width = target.clientWidth;
-
-    const leftFromPage = target.getBoundingClientRect().left;
-    const offsetFromLeftBorder = e.clientX - leftFromPage;
-    const imageIndex = Math.floor(offsetFromLeftBorder / (width / 3));
-    if (imageIndex !== activeImage) {
-      setActiveImage(imageIndex);
-    }
-
-  }
 
   return (
-    <div ref={portfolioRef} className={styles.portfolioItem}>
+    <div className={styles.portfolioItem}>
       <div className={cn(styles.imageContainer, {
         [styles.leftSide]: project.id % 2 === 0,
-        [styles.rightSide]: project.id % 2 !== 0,
-        [styles.show]: showAnimation
-      })} onMouseMove={moveHandler}>
-        {project.images.map((image, index) =>
-          <img key={index} className={cn(styles.image, {[styles.active]: index === activeImage})} src={image} alt=""/>
-        )}
+        [styles.rightSide]: project.id % 2 !== 0
+      })}>
+        <img className={styles.image} src={project.images[0]} alt=""/>
       </div>
       <div className={cn(styles.contentContainer, {
         [styles.reverse]: project.id % 2 === 0,
         [styles.leftSide]: project.id % 2 !== 0,
-        [styles.show]: showAnimation
       })}>
         <header className={styles.header}>
           <p className={styles.subtitle}>{project.subtitle[language]}</p>

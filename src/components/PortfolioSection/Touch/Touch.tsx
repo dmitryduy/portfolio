@@ -8,7 +8,7 @@ const Touch = () => {
   return (
     <Section sectionName={Page.PORTFOLIO} className={styles.portfolioContainer}>
       <div className={styles.projects}>
-        {data.portfolio.map(project => <PortfolioItem isTouch={true} project={project}/>)}
+        {data.portfolio.map(project => <PortfolioItem key={project.id} isTouch={true} project={project}/>)}
       </div>
     </Section>
   );

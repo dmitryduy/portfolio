@@ -11,6 +11,7 @@
 
 .social {
   display: flex;
+
   li {
     padding: 0 20px;
   }
@@ -31,7 +32,7 @@
   font-weight: 700;
   font-family: $fontFira;
   color: $white;
-  font-size: calc(10px + 4vw);
+  font-size: min(7vw, 90px);
 
   .text {
     text-align: center;
@@ -91,7 +92,7 @@
 
 @keyframes text-animate {
   0%, 100% {
-    background-position: 0% 50%;
+    background-position: 0 50%;
   }
   50% {
     background-position: 100% 100%;

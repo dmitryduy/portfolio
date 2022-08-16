@@ -54,9 +54,13 @@ const ImageSlider: FC<IImageSliderProps> = ({images, containerWidth}) => {
              }}/>
         {images.map((_, index) => <div key={index} className={styles.text}/>)}
       </div>
-      <div className={styles.imageContainer} style={{width: containerWidth}} onTouchStart={touchStart} onTouchEnd={touchEnd}>
+      <div className={styles.imageContainer}
+           style={{width: containerWidth}}
+           onTouchStart={touchStart}
+           onTouchEnd={touchEnd}>
         <div className={styles.imageWrapper} style={{transform: `translateX(-${currentImage * containerWidth}px`}}>
-          {images.map(image => <img className={styles.image} style={{width: containerWidth}} src={image} alt=""/>)}
+          {images.map(image =>
+            <img key={image} className={styles.image} style={{width: containerWidth}} src={image} alt=""/>)}
         </div>
       </div>
     </>

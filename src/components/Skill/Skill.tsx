@@ -42,10 +42,7 @@ const Skill: FC<ISkillProps> = ({id, title, icon, description, timerIndex}) => {
       })}
            data-number={id}>
         <span className={styles.image}>{icons[icon]}</span>
-        <div className={styles.description}>
-          <h4 className={styles.title}>{title}</h4>
-          <p className={styles.paragraph}>{description}</p>
-        </div>
+        <h4 className={styles.title}>{title}</h4>
       </div>
       <span className={cn(styles.line, {[styles.show]: show})} data-number={id}/>
       <span onClick={openSkill} className={cn(styles.dot, {[styles.show]: show, [styles.hide]: !showDot})}
