@@ -10,7 +10,7 @@ const Desktop = () => {
     <Section sectionName={Page.PORTFOLIO} className={styles.portfolioContainer}>
       <Title title='Portfolio'/>
       <div className={styles.projects}>
-        {data.portfolio.map(project => <PortfolioItem isTouch={false} project={project}/>)}
+        {data.portfolio.map(project => <PortfolioItem key={project.id} isTouch={false} project={project}/>)}
       </div>
     </Section>
   );

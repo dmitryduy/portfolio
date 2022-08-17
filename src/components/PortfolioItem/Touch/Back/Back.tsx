@@ -33,8 +33,12 @@ const Back = React.forwardRef<HTMLDivElement, IBackProps>(({closeInfo, className
         <p className={styles.description}>{project.description[language]}</p>
         <SkillList skills={project.skills}/>
         <div className={styles.buttons}>
-          <Button text='Github' onClick={noop}>{icons.github}</Button>
-          <Button text={language === 'en' ? 'Link' : 'Ссылка'} onClick={noop}>{icons.link}</Button>
+          <a href={project.github} target='_blank'>
+            <Button text='Github' onClick={noop}>{icons.github}</Button>
+          </a>
+          {project.link && <a href={project.link} target='_blank'>
+              <Button text={language === 'en' ? 'Link' : 'Ссылка'} onClick={noop}>{icons.link}</Button>
+          </a>}
         </div>
       </div>
     </div>

@@ -20,7 +20,7 @@ export const data: {
     id: number,
     date: i18n,
     description: i18n
-    title: i18n
+    title: i18n,
   }[],
   skills: {
     id: number
@@ -93,46 +93,198 @@ export const data: {
     {
       id: 1,
       title: {
-        en: 'Telegram clone',
-        ru: 'Клон телеграма'
+        en: 'Porten Site',
+        ru: 'Сайт Porten'
       },
       subtitle: {
-        en: 'Application',
-        ru: 'Приложение'
+        en: 'Site',
+        ru: 'Верстка'
       },
       description: {
-        en: 'This is a telegram.Thanks for watching',
-        ru: 'Это телеграм. Спасибо за просмотр'
+        en: 'Layout of a simple website without adaptive with flexbox and scss preprocessor.I learned how to use the preprocessor',
+        ru: 'Верстка простого сайта без адаптива на флексах и препроцессоре scss. На этой верстке учился пользоваться препроцессором'
       },
-      skills: ['HTML', 'CSS', 'React', 'Redux', 'Express', 'Styled-Components'],
+      skills: ['HTML', 'Flexbox', 'SCSS'],
       images: [
-         'https://st2.depositphotos.com/1000423/7890/i/450/depositphotos_78904978-stock-photo-grunge-styled-lanscape.jpg',
-        'https://img3.goodfon.ru/wallpaper/nbig/d/76/lanscape-snow-winter-mountain.jpg',
-        'https://cdn.dribbble.com/users/642843/screenshots/6428968/tokyo_trystram_4x.png?compress=1&resize=400x300',
-      ]
+        'https://github.com/dmitryduy/portfolio/blob/master/src/images/porten-0.png?raw=true',
+        'https://github.com/dmitryduy/portfolio/blob/master/src/images/porten-1.png?raw=true',
+        'https://github.com/dmitryduy/portfolio/blob/master/src/images/porten-2.png?raw=true',
+        'https://github.com/dmitryduy/portfolio/blob/master/src/images/porten-3.png?raw=true',
+        'https://github.com/dmitryduy/portfolio/blob/master/src/images/porten-4.png?raw=true',
+      ],
+      github: 'https://github.com/dmitryduy/html_code/tree/main/portain',
+      link: 'https://dmitryduy.github.io/html_code/portain/index.html'
     },
     {
       id: 2,
       title: {
-        en: 'Telegram clone',
-        ru: 'Клон телеграма'
+        en: 'Junno site',
+        ru: 'Сайт Junno'
+      },
+      subtitle: {
+        en: 'Application, e-commerce',
+        ru: 'Приложение, e-commerce'
+      },
+      description: {
+        en: 'The first full-fledged application on the react-redux stack. Styles are written in Styled-Components. Added a list of products, there is a possibility' +
+          'mark your favorite products, add to the wishlist, as well as delete from it',
+        ru: 'Первое полноценное приложение на стеке реакте-редакс. стили написаны на Styled-Components. Добавлен список товаров, есть возможность' +
+          ' отмечать понравившиеся товары, добавлять в список желаний, а также удалять из него.'
+      },
+      skills: ['React', 'Redux', 'Styled-Components', 'Redux-thunk'],
+      images: [
+        'https://github.com/dmitryduy/portfolio/blob/master/src/images/junno-0.png?raw=true',
+        'https://github.com/dmitryduy/portfolio/blob/master/src/images/junno-1.png?raw=true',
+        'https://github.com/dmitryduy/portfolio/blob/master/src/images/junno-2.png?raw=true',
+        'https://github.com/dmitryduy/portfolio/blob/master/src/images/junno-3.png?raw=true',
+      ],
+      github: 'https://github.com/dmitryduy/junno',
+      link: 'https://dmitryduy.github.io/junno/'
+    },
+    {
+      id: 3,
+      title: {
+        en: 'Healthy food Site',
+        ru: 'Сайт Healthy food'
+      },
+      subtitle: {
+        en: 'Site',
+        ru: 'Верстка'
+      },
+      description: {
+        en: 'A full-fledged one-page website with an adaptive design. Implemented its own slider, applied BEM methodology for naming classes. Styles are written on the scss preprocessor. Semantic layout. The project is assembled with gulp',
+        ru: 'Полноценный одностраничный сайт с адаптивным дизайном. Реализован свой слайдер, применена методология БЕМ для наименования классов. Стили написаны на препроцессоре scss. Семантическая верстка. Проект собирается при помощи галпа'
+      },
+      skills: ['HTML', 'SCSS', 'JS', 'Gulp', 'Flexbox', 'Grid'],
+      images: [
+        'https://github.com/dmitryduy/portfolio/blob/master/src/images/healthy-0.png?raw=true',
+        'https://github.com/dmitryduy/portfolio/blob/master/src/images/healthy-1.png?raw=true',
+        'https://github.com/dmitryduy/portfolio/blob/master/src/images/healthy-2.png?raw=true',
+        'https://github.com/dmitryduy/portfolio/blob/master/src/images/healthy-3.png?raw=true',
+      ],
+      github: 'https://github.com/dmitryduy/healthyFood',
+      link: 'https://dmitryduy.github.io/healthyFood/app/'
+    },
+    {
+      id: 4,
+      title: {
+        en: 'Dodo clone',
+        ru: 'Клон доо пицца'
       },
       subtitle: {
         en: 'Application',
         ru: 'Приложение'
       },
       description: {
-        en: 'This is a telegram.Thanks for watching',
-        ru: 'Это телеграм. Спасибо за Это телеграм. Спасибо за просмотрЭто телеграм. Спасибо за просмотрЭто телеграм. Спасибо за просмотрЭто телеграм. Спасибо за просмотрЭто телеграм. Спасибо за просмотрЭто телеграм. Спасибо за просмотрЭто телеграм. Спасибо за просмотрЭто телеграм. Спасибо за просмотрЭто телеграм. Спасибо за просмотрЭто телеграм. Спасибо за просмотрЭто телеграм. Спасибо за просмотрЭто телеграм. Спасибо за просмотрЭто телеграм. Спасибо за просмотрЭто телеграм. Спасибо за просмотрЭто телеграм. Спасибо за просмотрЭто телеграм. Спасибо за просмотрЭто телеграм. Спасибо за просмотрЭто телеграм. Спасибо за просмотрЭто телеграм. Спасибо за просмотрЭто телеграм. Спасибо за просмотрЭто телеграм. Спасибо за просмотрЭто телеграм. Спасибо за просмотрЭто телеграм. Спасибо за просмотрЭто телеграм. Спасибо за просмотрЭто телеграм. Спасибо за просмотрЭто телеграм. Спасибо за просмотрЭто телеграм. Спасибо за просмотрЭто телеграм. Спасибо за просмотрЭто телеграм. Спасибо за просмотрЭто телеграм. Спасибо за просмотрЭто телеграм. Спасибо за просмотрЭто телеграм. Спасибо за просмотрЭто телеграм. Спасибо за просмотрпросмотр'
+        en: 'Dodo pizza website written in typescript and react. It is possible to choose the city from which you want to order delivery. A list of pizzas with the ability to collect them is available.',
+        ru: 'Сайт додопиццы, написанный на typescript и реакт. Есть возможность выбрать город, с которого хотите заказать, доставку. Доступен список пицц с возможностю собирать их.'
       },
-      skills: ['HTML', 'CSS', 'React', 'Redux', 'Express', 'Styled-Components', 'Socket.io'],
+      skills: ['Typescript', 'React', 'redux', 'Styled-Components', 'Flexbox'],
       images: [
-        'https://st2.depositphotos.com/1000423/7890/i/450/depositphotos_78904978-stock-photo-grunge-styled-lanscape.jpg',
-        'https://st2.depositphotos.com/1000423/7890/i/450/depositphotos_78904978-stock-photo-grunge-styled-lanscape.jpg',
-      ]
+        'https://github.com/dmitryduy/portfolio/blob/master/src/images/dodo-0.png?raw=true',
+        'https://github.com/dmitryduy/portfolio/blob/master/src/images/dodo-1.png?raw=true',
+        'https://github.com/dmitryduy/portfolio/blob/master/src/images/dodo-2.png?raw=true',
+      ],
+      github: 'https://github.com/dmitryduy/dodo',
+      link: 'https://dmitryduy.github.io/dodo/#'
     },
     {
-      id: 3,
+      id: 5,
+      title: {
+        en: 'Clock',
+        ru: 'Часы'
+      },
+      subtitle: {
+        en: 'Decoration',
+        ru: 'Декорации'
+      },
+      description: {
+        en: 'Custom watches written in pure js',
+        ru: 'Кастомные часы, написанные на чистом js'
+      },
+      skills: ['Javascript', 'HTML', 'CSS'],
+      images: [
+        'https://github.com/dmitryduy/portfolio/blob/master/src/images/clock-0.png?raw=true',
+        'https://github.com/dmitryduy/portfolio/blob/master/src/images/clock-1.png?raw=true',
+      ],
+      github: 'https://github.com/dmitryduy/clocks',
+      link: 'https://dmitryduy.github.io/clocks/'
+    },
+    {
+      id: 6,
+      title: {
+        en: 'Tinkoff Stocks',
+        ru: 'Биржа акций Тинькофф'
+      },
+      subtitle: {
+        en: 'Application',
+        ru: 'Приложение'
+      },
+      description: {
+        en: 'The stock exchange application written on the react. The user can buy and put up for sale shares. The interaction of purchase and sale is implemented on sockets. Test users: admin, user.',
+        ru: 'Приложение биржи акция, написанное на реакте. Пользователь может покупать и выставлять на продажу акции. Взаимодейтсвие купли-продажи реализовано на сокетах. Тестовые пользователи: admin, user.'
+      },
+      skills: ['React', 'Typescript', 'Redux', 'Socket', 'express', 'Styled-components'],
+      images: [
+        'https://github.com/dmitryduy/portfolio/blob/master/src/images/investings-0.png?raw=true',
+        'https://github.com/dmitryduy/portfolio/blob/master/src/images/investings-1.png?raw=true',
+        'https://github.com/dmitryduy/portfolio/blob/master/src/images/investings-2.png?raw=true',
+        'https://github.com/dmitryduy/portfolio/blob/master/src/images/investings-3.png?raw=true',
+        'https://github.com/dmitryduy/portfolio/blob/master/src/images/investings-4.png?raw=true',
+      ],
+      github: 'https://github.com/dmitryduy/investing',
+      link: 'https://dmitryduy.github.io/investing/'
+    },
+    {
+      id: 7,
+      title: {
+        en: 'Tetris',
+        ru: 'Тетрис'
+      },
+      subtitle: {
+        en: 'Game',
+        ru: 'Игра'
+      },
+      description: {
+        en: 'A Tetris game written in pure javascript with canvas. Control of the arrows on the keyboard.',
+        ru: 'Игра тетрис, написанная на чистом javascript с канвасом. Управление стрелочками на клавиатуре.'
+      },
+      skills: ['Javascript', 'Canvas', 'Css'],
+      images: [
+        'https://github.com/dmitryduy/portfolio/blob/master/src/images/tetris-0.png?raw=true',
+      ],
+      github: 'https://github.com/dmitryduy/tetris',
+      link: 'https://dmitryduy.github.io/tetris/'
+    },
+    {
+      id: 8,
+      title: {
+        en: 'Cases',
+        ru: 'Кейсы'
+      },
+      subtitle: {
+        en: 'Application',
+        ru: 'Приложение'
+      },
+      description: {
+        en: 'An application of cases written in react. The user can twist cases and knock out weapons. He can also put them in the contract to get more expensive guns',
+        ru: 'Приложение кейсов, написанное на реакте. Пользователь может крутить кейсы и выбивать оружия. Также он может их класть в контракте, для получения более дорогих орудий'
+      },
+      skills: ['React', 'Redux', 'Styled-Components'],
+      images: [
+        'https://github.com/dmitryduy/portfolio/blob/master/src/images/cases-0.png?raw=true',
+        'https://github.com/dmitryduy/portfolio/blob/master/src/images/cases-1.png?raw=true',
+        'https://github.com/dmitryduy/portfolio/blob/master/src/images/cases-2.png?raw=true',
+        'https://github.com/dmitryduy/portfolio/blob/master/src/images/cases-3.png?raw=true',
+        'https://github.com/dmitryduy/portfolio/blob/master/src/images/cases-4.png?raw=true',
+        'https://github.com/dmitryduy/portfolio/blob/master/src/images/cases-5.png?raw=true',
+        'https://github.com/dmitryduy/portfolio/blob/master/src/images/cases-6.png?raw=true',
+      ],
+      github: 'https://github.com/dmitryduy/cases',
+      link: 'https://dmitryduy.github.io/cases/'
+    },
+    {
+      id: 9,
       title: {
         en: 'Telegram clone',
         ru: 'Клон телеграма'
@@ -142,16 +294,22 @@ export const data: {
         ru: 'Приложение'
       },
       description: {
-        en: 'This is a telegram.Thanks for watching',
-        ru: 'Это телеграм. Спасибо за просмотр'
+        en: 'WIP. A clone of the messenger written in react+typescript. The backend is written in Nestjs. It is possible to search for users, correspond with them. Customize the appearance of the application.',
+        ru: 'На данный момент в разработки. Клон мессенджера, написанный на react+typescript. Бекенд написан на Nestjs. Возможно искать пользователей, переписываться с ними. Кастомизировать внешний вид приложения.'
       },
-      skills: ['HTML', 'CSS', 'React', 'Redux', 'Express', 'Styled-Components'],
+      skills: ['React', 'Redux-toolkit', 'Styled-Components', 'Typescript', 'Socket', 'Nestjs', 'Storybook'],
       images: [
-         'https://st2.depositphotos.com/1000423/7890/i/450/depositphotos_78904978-stock-photo-grunge-styled-lanscape.jpg',
-        'https://img3.goodfon.ru/wallpaper/nbig/d/76/lanscape-snow-winter-mountain.jpg',
+        'https://github.com/dmitryduy/portfolio/blob/master/src/images/telegram-1.png?raw=true',
+        'https://github.com/dmitryduy/portfolio/blob/master/src/images/telegram-2.png?raw=true',
+        'https://github.com/dmitryduy/portfolio/blob/master/src/images/telegram-3.png?raw=true',
+        'https://github.com/dmitryduy/portfolio/blob/master/src/images/telegram-4.png?raw=true',
+        'https://github.com/dmitryduy/portfolio/blob/master/src/images/telegram-5.png?raw=true',
+        'https://github.com/dmitryduy/portfolio/blob/master/src/images/telegram-6.png?raw=true',
+        'https://github.com/dmitryduy/portfolio/blob/master/src/images/telegram-7.png?raw=true'
+      ],
+      github: 'https://github.com/dmitryduy/telegram'
+    },
 
-      ]
-    }
   ],
   skills: [
     {
@@ -402,6 +560,8 @@ export interface IProject {
   }
   skills: string[]
   images: string[]
+  github: string
+  link?: string
 }
 
 

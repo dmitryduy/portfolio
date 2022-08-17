@@ -15,8 +15,7 @@ interface IDesktopProps {
 }
 
 
-
-const Desktop: FC<IDesktopProps> = ({ project}) => {
+const Desktop: FC<IDesktopProps> = ({project}) => {
   const language = useAppSelector(state => state.settings.language);
 
 
@@ -36,14 +35,18 @@ const Desktop: FC<IDesktopProps> = ({ project}) => {
           <p className={styles.subtitle}>{project.subtitle[language]}</p>
           <h3 className={styles.title}>{project.title[language]}</h3>
         </header>
-          <p className={styles.about}>{project.description[language]}</p>
+        <p className={styles.about}>{project.description[language]}</p>
         <footer className={styles.footer}>
           <div className={styles.skillList}>
             <SkillList skills={project.skills}/>
           </div>
           <div className={styles.buttons}>
-            <Button text='Github' onClick={noop}>{icons.github}</Button>
-            <Button text='Link' onClick={noop}>{icons.link}</Button>
+            <a href={project.github} target='_blank'>
+              <Button text='Github' onClick={noop}>{icons.github}</Button>
+            </a>
+            {project.link && <a href={project.link} target='_blank'>
+                <Button text='Link' onClick={noop}>{icons.link}</Button>
+            </a>}
           </div>
         </footer>
       </div>
