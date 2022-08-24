@@ -1,5 +1,13 @@
 import { icons } from "./icons";
 
+export enum Page {
+  HEADER,
+  EXPERIENCE,
+  SKILLS,
+  PORTFOLIO
+}
+
+
 export interface i18n {
   en: string,
   ru: string
@@ -16,6 +24,12 @@ export const data: {
   headerTitle: i18n
   headerSubtitle: i18n
   portfolio: IProject[]
+  menu: {
+    ru: string
+    en: string
+    icon: keyof typeof icons
+    page: Page
+  }[]
   experience: {
     id: number,
     date: i18n,
@@ -37,227 +51,72 @@ export const data: {
     en: 'frontend developer.'
   },
   headerSubtitle: {
-    ru: 'Я Джош вашингтон',
-    en: 'I\'m djothc vasitngot'
+    ru: 'Я Дмитрий Дерюгин',
+    en: 'I\'m Dmitry Deryugin'
   },
-
+  menu: [
+    {
+      ru: 'Главная',
+      en: 'Home',
+      page: Page.HEADER,
+      icon: 'home',
+    },
+    {
+      ru: 'Опыт',
+      en: 'Experience',
+      page: Page.EXPERIENCE,
+      icon: 'experience',
+    },
+    {
+      ru: 'Навыки',
+      en: 'Skills',
+      page:Page.SKILLS,
+      icon: 'skills',
+    },
+    {
+      ru: 'Портфолио',
+      en: 'Portfolio',
+      page: Page.PORTFOLIO,
+      icon: 'portfolio',
+    }
+  ],
   experience: [
     {
       id: 1,
       date: {
-        ru: 'Сентябрь 2021 - Ноябрь 2021',
-        en: 'September 2021 - November 2021'
+        ru: 'Март 2022 - Июль 2022',
+        en: 'March 2022 - July 2022'
       },
       title: {
-        ru: 'Разработчик интерфесков',
-        en: 'Enterphae fronedner'
+        ru: 'Разработчик поисковых интерфесков. Яндекс',
+        en: 'Search interface developer. Yandex'
       },
       description: {
-        ru: 'Здесь я чем то занался, знаю, что это полезно, но все же',
-        en: 'is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but als'
+        ru: 'Разработчик поисковых интервейсов. Яндекс. Моя команда занималась внедрение AJAX в СЕРП(Страница результатов поиска) на мобильных устройствах в браузерах и мобильном приложении. Основной стек технологий: i-bem(фреймворк, разработанный компанией); новый стек: React+Typescript',
+        en: 'Search interface developer. Yandex. My team has been implementing AJAX in SERP(Search Results Page) on mobile devices in browsers and mobile application. Main technology stack: i-bem (framework developed by the company); new stack: React+Typescript'
       }
     },
     {
       id: 2,
       date: {
-        ru: 'Декабрь 2021 - Февраль 2022',
-        en: 'December 2021 - February 2022'
+        ru: 'Июнь 2021 - Март 2022',
+        en: 'June 2021 - March 2022'
       },
       title: {
-        ru: 'Разработчик интерфесков',
-        en: 'Enterphae fronedner'
+        ru: 'Разработка своих проектов',
+        en: 'Pet projects'
       },
       description: {
-        ru: 'Здесь я чем то занался, знаю, что это полезно, но все же',
-        en: 'is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but als'
+        ru: 'В данный период времени углубился в разработку, начал делать пет проекты, изучил html, css и препроцессоры, react и технологие, связанные с ним. Получил начальные знания разработки бекенд части приложений на node+express. Пробовал pug, Nest, jquery, Angular, SQL',
+        en: 'During this period of time, I delve into development, started making pet projects, studied html, css and preprocessors, react and technologies related to it. Gained basic knowledge of developing back-end applications on node+express. Tried pug, Nest, jquery, Angular, SQL'
       }
     },
-    {
-      id: 3,
-      date: {
-        ru: 'Декабрь 2021 - Февраль 2022',
-        en: 'December 2021 - February 2022'
-      },
-      title: {
-        ru: 'Разработчик интерфесков',
-        en: 'Enterphae fronedner'
-      },
-      description: {
-        ru: 'Здесь я чем то занался, знаю, что это полезно, но все жеЗдесь я чем то занался, знаю, что это полезно, но все жеЗдесь я чеЗдесь я чем то занался, знаю, что это полезно, но все жеЗдесь я чем то занался, знаю, что это полезно, но все жеЗдесь я чем то занался, знаю, что это полезно, но все жеЗдесь я чем то занался, знаю, что это полезно, но все жеЗдесь я чем то занался, знаю, что это полезно, но все жем то занался, знаю, что это полезно, но все жеЗдесь я чем то занался, знаю, что это полезно, но все же',
-        en: 'is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but als'
-      }
-    }
+
   ],
 
   portfolio: [
     {
       id: 1,
-      title: {
-        en: 'Porten Site',
-        ru: 'Сайт Porten'
-      },
-      subtitle: {
-        en: 'Site',
-        ru: 'Верстка'
-      },
-      description: {
-        en: 'Layout of a simple website without adaptive with flexbox and scss preprocessor.I learned how to use the preprocessor',
-        ru: 'Верстка простого сайта без адаптива на флексах и препроцессоре scss. На этой верстке учился пользоваться препроцессором'
-      },
-      skills: ['HTML', 'Flexbox', 'SCSS'],
-      images: [
-        'https://github.com/dmitryduy/portfolio/blob/master/src/images/porten-0.png?raw=true',
-        'https://github.com/dmitryduy/portfolio/blob/master/src/images/porten-1.png?raw=true',
-        'https://github.com/dmitryduy/portfolio/blob/master/src/images/porten-2.png?raw=true',
-        'https://github.com/dmitryduy/portfolio/blob/master/src/images/porten-3.png?raw=true',
-        'https://github.com/dmitryduy/portfolio/blob/master/src/images/porten-4.png?raw=true',
-      ],
-      github: 'https://github.com/dmitryduy/html_code/tree/main/portain',
-      link: 'https://dmitryduy.github.io/html_code/portain/index.html'
-    },
-    {
-      id: 2,
-      title: {
-        en: 'Junno site',
-        ru: 'Сайт Junno'
-      },
-      subtitle: {
-        en: 'Application, e-commerce',
-        ru: 'Приложение, e-commerce'
-      },
-      description: {
-        en: 'The first full-fledged application on the react-redux stack. Styles are written in Styled-Components. Added a list of products, there is a possibility' +
-          'mark your favorite products, add to the wishlist, as well as delete from it',
-        ru: 'Первое полноценное приложение на стеке реакте-редакс. стили написаны на Styled-Components. Добавлен список товаров, есть возможность' +
-          ' отмечать понравившиеся товары, добавлять в список желаний, а также удалять из него.'
-      },
-      skills: ['React', 'Redux', 'Styled-Components', 'Redux-thunk'],
-      images: [
-        'https://github.com/dmitryduy/portfolio/blob/master/src/images/junno-0.png?raw=true',
-        'https://github.com/dmitryduy/portfolio/blob/master/src/images/junno-1.png?raw=true',
-        'https://github.com/dmitryduy/portfolio/blob/master/src/images/junno-2.png?raw=true',
-        'https://github.com/dmitryduy/portfolio/blob/master/src/images/junno-3.png?raw=true',
-      ],
-      github: 'https://github.com/dmitryduy/junno',
-      link: 'https://dmitryduy.github.io/junno/'
-    },
-    {
-      id: 3,
-      title: {
-        en: 'Healthy food Site',
-        ru: 'Сайт Healthy food'
-      },
-      subtitle: {
-        en: 'Site',
-        ru: 'Верстка'
-      },
-      description: {
-        en: 'A full-fledged one-page website with an adaptive design. Implemented its own slider, applied BEM methodology for naming classes. Styles are written on the scss preprocessor. Semantic layout. The project is assembled with gulp',
-        ru: 'Полноценный одностраничный сайт с адаптивным дизайном. Реализован свой слайдер, применена методология БЕМ для наименования классов. Стили написаны на препроцессоре scss. Семантическая верстка. Проект собирается при помощи галпа'
-      },
-      skills: ['HTML', 'SCSS', 'JS', 'Gulp', 'Flexbox', 'Grid'],
-      images: [
-        'https://github.com/dmitryduy/portfolio/blob/master/src/images/healthy-0.png?raw=true',
-        'https://github.com/dmitryduy/portfolio/blob/master/src/images/healthy-1.png?raw=true',
-        'https://github.com/dmitryduy/portfolio/blob/master/src/images/healthy-2.png?raw=true',
-        'https://github.com/dmitryduy/portfolio/blob/master/src/images/healthy-3.png?raw=true',
-      ],
-      github: 'https://github.com/dmitryduy/healthyFood',
-      link: 'https://dmitryduy.github.io/healthyFood/app/'
-    },
-    {
-      id: 4,
-      title: {
-        en: 'Dodo clone',
-        ru: 'Клон доо пицца'
-      },
-      subtitle: {
-        en: 'Application',
-        ru: 'Приложение'
-      },
-      description: {
-        en: 'Dodo pizza website written in typescript and react. It is possible to choose the city from which you want to order delivery. A list of pizzas with the ability to collect them is available.',
-        ru: 'Сайт додопиццы, написанный на typescript и реакт. Есть возможность выбрать город, с которого хотите заказать, доставку. Доступен список пицц с возможностю собирать их.'
-      },
-      skills: ['Typescript', 'React', 'redux', 'Styled-Components', 'Flexbox'],
-      images: [
-        'https://github.com/dmitryduy/portfolio/blob/master/src/images/dodo-0.png?raw=true',
-        'https://github.com/dmitryduy/portfolio/blob/master/src/images/dodo-1.png?raw=true',
-        'https://github.com/dmitryduy/portfolio/blob/master/src/images/dodo-2.png?raw=true',
-      ],
-      github: 'https://github.com/dmitryduy/dodo',
-      link: 'https://dmitryduy.github.io/dodo/#'
-    },
-    {
-      id: 5,
-      title: {
-        en: 'Clock',
-        ru: 'Часы'
-      },
-      subtitle: {
-        en: 'Decoration',
-        ru: 'Декорации'
-      },
-      description: {
-        en: 'Custom watches written in pure js',
-        ru: 'Кастомные часы, написанные на чистом js'
-      },
-      skills: ['Javascript', 'HTML', 'CSS'],
-      images: [
-        'https://github.com/dmitryduy/portfolio/blob/master/src/images/clock-0.png?raw=true',
-        'https://github.com/dmitryduy/portfolio/blob/master/src/images/clock-1.png?raw=true',
-      ],
-      github: 'https://github.com/dmitryduy/clocks',
-      link: 'https://dmitryduy.github.io/clocks/'
-    },
-    {
-      id: 6,
-      title: {
-        en: 'Tinkoff Stocks',
-        ru: 'Биржа акций Тинькофф'
-      },
-      subtitle: {
-        en: 'Application',
-        ru: 'Приложение'
-      },
-      description: {
-        en: 'The stock exchange application written on the react. The user can buy and put up for sale shares. The interaction of purchase and sale is implemented on sockets. Test users: admin, user.',
-        ru: 'Приложение биржи акция, написанное на реакте. Пользователь может покупать и выставлять на продажу акции. Взаимодейтсвие купли-продажи реализовано на сокетах. Тестовые пользователи: admin, user.'
-      },
-      skills: ['React', 'Typescript', 'Redux', 'Socket', 'express', 'Styled-components'],
-      images: [
-        'https://github.com/dmitryduy/portfolio/blob/master/src/images/investings-0.png?raw=true',
-        'https://github.com/dmitryduy/portfolio/blob/master/src/images/investings-1.png?raw=true',
-        'https://github.com/dmitryduy/portfolio/blob/master/src/images/investings-2.png?raw=true',
-        'https://github.com/dmitryduy/portfolio/blob/master/src/images/investings-3.png?raw=true',
-        'https://github.com/dmitryduy/portfolio/blob/master/src/images/investings-4.png?raw=true',
-      ],
-      github: 'https://github.com/dmitryduy/investing',
-      link: 'https://dmitryduy.github.io/investing/'
-    },
-    {
-      id: 7,
-      title: {
-        en: 'Tetris',
-        ru: 'Тетрис'
-      },
-      subtitle: {
-        en: 'Game',
-        ru: 'Игра'
-      },
-      description: {
-        en: 'A Tetris game written in pure javascript with canvas. Control of the arrows on the keyboard.',
-        ru: 'Игра тетрис, написанная на чистом javascript с канвасом. Управление стрелочками на клавиатуре.'
-      },
-      skills: ['Javascript', 'Canvas', 'Css'],
-      images: [
-        'https://github.com/dmitryduy/portfolio/blob/master/src/images/tetris-0.png?raw=true',
-      ],
-      github: 'https://github.com/dmitryduy/tetris',
-      link: 'https://dmitryduy.github.io/tetris/'
-    },
-    {
-      id: 8,
       title: {
         en: 'Cases',
         ru: 'Кейсы'
@@ -284,6 +143,171 @@ export const data: {
       link: 'https://dmitryduy.github.io/cases/'
     },
     {
+      id: 2,
+      title: {
+        en: 'Tinkoff Stocks',
+        ru: 'Биржа акций Тинькофф'
+      },
+      subtitle: {
+        en: 'Application',
+        ru: 'Приложение'
+      },
+      description: {
+        en: 'The stock exchange application written on the react. The user can buy and put up for sale shares. The interaction of purchase and sale is implemented on sockets. Test users: admin, user.',
+        ru: 'Приложение биржи акция, написанное на реакте. Пользователь может покупать и выставлять на продажу акции. Взаимодейтсвие купли-продажи реализовано на сокетах. Тестовые пользователи: admin, user.'
+      },
+      skills: ['React', 'Typescript', 'Redux', 'Socket', 'express', 'Styled-components'],
+      images: [
+        'https://github.com/dmitryduy/portfolio/blob/master/src/images/investing-0.png?raw=true',
+        'https://github.com/dmitryduy/portfolio/blob/master/src/images/investing-1.png?raw=true',
+        'https://github.com/dmitryduy/portfolio/blob/master/src/images/investing-2.png?raw=true',
+        'https://github.com/dmitryduy/portfolio/blob/master/src/images/investing-3.png?raw=true',
+        'https://github.com/dmitryduy/portfolio/blob/master/src/images/investing-4.png?raw=true',
+      ],
+      github: 'https://github.com/dmitryduy/investing',
+      link: 'https://dmitryduy.github.io/investing/'
+    },
+    {
+      id: 3,
+      title: {
+        en: 'Dodo clone',
+        ru: 'Клон доо пицца'
+      },
+      subtitle: {
+        en: 'Application',
+        ru: 'Приложение'
+      },
+      description: {
+        en: 'Dodo pizza website written in typescript and react. It is possible to choose the city from which you want to order delivery. A list of pizzas with the ability to collect them is available.',
+        ru: 'Сайт додопиццы, написанный на typescript и реакт. Есть возможность выбрать город, с которого хотите заказать, доставку. Доступен список пицц с возможностю собирать их.'
+      },
+      skills: ['Typescript', 'React', 'redux', 'Styled-Components', 'Flexbox'],
+      images: [
+        'https://github.com/dmitryduy/portfolio/blob/master/src/images/dodo-0.png?raw=true',
+        'https://github.com/dmitryduy/portfolio/blob/master/src/images/dodo-1.png?raw=true',
+        'https://github.com/dmitryduy/portfolio/blob/master/src/images/dodo-2.png?raw=true',
+      ],
+      github: 'https://github.com/dmitryduy/dodo',
+      link: 'https://dmitryduy.github.io/dodo/#'
+    },
+    {
+      id: 4,
+      title: {
+        en: 'Healthy food Site',
+        ru: 'Сайт Healthy food'
+      },
+      subtitle: {
+        en: 'Site',
+        ru: 'Верстка'
+      },
+      description: {
+        en: 'A full-fledged one-page website with an adaptive design. Implemented its own slider, applied BEM methodology for naming classes. Styles are written on the scss preprocessor. Semantic layout. The project is assembled with gulp',
+        ru: 'Полноценный одностраничный сайт с адаптивным дизайном. Реализован свой слайдер, применена методология БЕМ для наименования классов. Стили написаны на препроцессоре scss. Семантическая верстка. Проект собирается при помощи галпа'
+      },
+      skills: ['HTML', 'SCSS', 'JS', 'Gulp', 'Flexbox', 'Grid'],
+      images: [
+        'https://github.com/dmitryduy/portfolio/blob/master/src/images/healthy-0.png?raw=true',
+        'https://github.com/dmitryduy/portfolio/blob/master/src/images/healthy-1.png?raw=true',
+        'https://github.com/dmitryduy/portfolio/blob/master/src/images/healthy-2.png?raw=true',
+        'https://github.com/dmitryduy/portfolio/blob/master/src/images/healthy-3.png?raw=true',
+      ],
+      github: 'https://github.com/dmitryduy/healthyFood',
+      link: 'https://dmitryduy.github.io/healthyFood/app/'
+    },
+    {
+      id: 5,
+      title: {
+        en: 'Junno site',
+        ru: 'Сайт Junno'
+      },
+      subtitle: {
+        en: 'Application, e-commerce',
+        ru: 'Приложение, e-commerce'
+      },
+      description: {
+        en: 'The first full-fledged application on the react-redux stack. Styles are written in Styled-Components. Added a list of products, there is a possibility' +
+          'mark your favorite products, add to the wishlist, as well as delete from it',
+        ru: 'Первое полноценное приложение на стеке реакте-редакс. стили написаны на Styled-Components. Добавлен список товаров, есть возможность' +
+          ' отмечать понравившиеся товары, добавлять в список желаний, а также удалять из него.'
+      },
+      skills: ['React', 'Redux', 'Styled-Components', 'Redux-thunk'],
+      images: [
+        'https://github.com/dmitryduy/portfolio/blob/master/src/images/junno-0.png?raw=true',
+        'https://github.com/dmitryduy/portfolio/blob/master/src/images/junno-1.png?raw=true',
+        'https://github.com/dmitryduy/portfolio/blob/master/src/images/junno-2.png?raw=true',
+        'https://github.com/dmitryduy/portfolio/blob/master/src/images/junno-3.png?raw=true',
+      ],
+      github: 'https://github.com/dmitryduy/junno',
+      link: 'https://dmitryduy.github.io/junno/'
+    },
+    {
+      id: 6,
+      title: {
+        en: 'Tetris',
+        ru: 'Тетрис'
+      },
+      subtitle: {
+        en: 'Game',
+        ru: 'Игра'
+      },
+      description: {
+        en: 'A Tetris game written in pure javascript with canvas. Control of the arrows on the keyboard.',
+        ru: 'Игра тетрис, написанная на чистом javascript с канвасом. Управление стрелочками на клавиатуре.'
+      },
+      skills: ['Javascript', 'Canvas', 'Css'],
+      images: [
+        'https://github.com/dmitryduy/portfolio/blob/master/src/images/tetris-0.png?raw=true',
+      ],
+      github: 'https://github.com/dmitryduy/tetris',
+      link: 'https://dmitryduy.github.io/tetris/'
+    },
+    {
+      id: 7,
+      title: {
+        en: 'Porten Site',
+        ru: 'Сайт Porten'
+      },
+      subtitle: {
+        en: 'Site',
+        ru: 'Верстка'
+      },
+      description: {
+        en: 'Layout of a simple website without adaptive with flexbox and scss preprocessor.I learned how to use the preprocessor',
+        ru: 'Верстка простого сайта без адаптива на флексах и препроцессоре scss. На этой верстке учился пользоваться препроцессором'
+      },
+      skills: ['HTML', 'Flexbox', 'SCSS'],
+      images: [
+        'https://github.com/dmitryduy/portfolio/blob/master/src/images/porten-0.png?raw=true',
+        'https://github.com/dmitryduy/portfolio/blob/master/src/images/porten-1.png?raw=true',
+        'https://github.com/dmitryduy/portfolio/blob/master/src/images/porten-2.png?raw=true',
+        'https://github.com/dmitryduy/portfolio/blob/master/src/images/porten-3.png?raw=true',
+        'https://github.com/dmitryduy/portfolio/blob/master/src/images/porten-4.png?raw=true',
+      ],
+      github: 'https://github.com/dmitryduy/html_code/tree/main/portain',
+      link: 'https://dmitryduy.github.io/html_code/portain/index.html'
+    },
+    {
+      id: 8,
+      title: {
+        en: 'Clock',
+        ru: 'Часы'
+      },
+      subtitle: {
+        en: 'Decoration',
+        ru: 'Декорации'
+      },
+      description: {
+        en: 'Custom watches written in pure js',
+        ru: 'Кастомные часы, написанные на чистом js'
+      },
+      skills: ['Javascript', 'HTML', 'CSS'],
+      images: [
+        'https://github.com/dmitryduy/portfolio/blob/master/src/images/clock-1.png?raw=true',
+      ],
+      github: 'https://github.com/dmitryduy/clocks',
+      link: 'https://dmitryduy.github.io/clocks/'
+    },
+    {
       id: 9,
       title: {
         en: 'Telegram clone',
@@ -299,9 +323,9 @@ export const data: {
       },
       skills: ['React', 'Redux-toolkit', 'Styled-Components', 'Typescript', 'Socket', 'Nestjs', 'Storybook'],
       images: [
+        'https://github.com/dmitryduy/portfolio/blob/master/src/images/telegram-3.png?raw=true',
         'https://github.com/dmitryduy/portfolio/blob/master/src/images/telegram-1.png?raw=true',
         'https://github.com/dmitryduy/portfolio/blob/master/src/images/telegram-2.png?raw=true',
-        'https://github.com/dmitryduy/portfolio/blob/master/src/images/telegram-3.png?raw=true',
         'https://github.com/dmitryduy/portfolio/blob/master/src/images/telegram-4.png?raw=true',
         'https://github.com/dmitryduy/portfolio/blob/master/src/images/telegram-5.png?raw=true',
         'https://github.com/dmitryduy/portfolio/blob/master/src/images/telegram-6.png?raw=true',
@@ -564,13 +588,6 @@ export interface IProject {
   link?: string
 }
 
-
-export enum Page {
-  HEADER,
-  EXPERIENCE,
-  SKILLS,
-  PORTFOLIO
-}
 
 export const TOUCH_CONTAINER_PADDING = 10;
 
