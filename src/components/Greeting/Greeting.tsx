@@ -10,9 +10,9 @@ const iconsList: {
   name: keyof typeof icons
   link: string
 }[] = [
-  {id: 1, name: 'telegram', link: 'link'},
-  {id: 2, name: 'github', link: 'link'},
-  {id: 3, name: 'mail', link: 'link'}
+  {id: 1, name: 'telegram', link: 'https://t.me/dimitrial'},
+  {id: 2, name: 'github', link: 'https://github.com/dmitryduy'},
+  {id: 3, name: 'mail', link: 'mailto:deryugindmitrya@gmail.com'}
 ]
 
 const Greeting = () => {
@@ -23,7 +23,7 @@ const Greeting = () => {
       <ul className={styles.social}>
         {iconsList.map(icon =>
           <li key={icon.id}>
-            <a href={icon.link}>
+            <a href={icon.link} target='_blank'>
               {icons[icon.name]}
             </a>
           </li>)}

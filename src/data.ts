@@ -116,6 +116,32 @@ export const data: {
 
   portfolio: [
     {
+      id: 0,
+      title: {
+        en: 'Documentation',
+        ru: 'Документация'
+      },
+      subtitle: {
+        en: 'Application',
+        ru: 'Приложение'
+      },
+      description: {
+        en: 'Application with own editor based on markdown. There is registration, the ability to add, change and delete articles. You can search articles.',
+        ru: 'Приложение с собственным редактором на основе markdown. Есть регистрация, возможность добавления, изменение и удаление статьи. Можно искать статьи.'
+      },
+      skills: ['typescript', 'React', 'Redux-toolkit', 'Styled-Components', 'React-markdown', 'nodejs', 'mongodb'],
+      images: [
+        'https://github.com/dmitryduy/portfolio/blob/master/src/images/docs-0.png?raw=true',
+        'https://github.com/dmitryduy/portfolio/blob/master/src/images/docs-1.png?raw=true',
+        'https://github.com/dmitryduy/portfolio/blob/master/src/images/docs-2.png?raw=true',
+        'https://github.com/dmitryduy/portfolio/blob/master/src/images/docs-3.png?raw=true',
+        'https://github.com/dmitryduy/portfolio/blob/master/src/images/docs-4.png?raw=true',
+        'https://github.com/dmitryduy/portfolio/blob/master/src/images/docs-5.png?raw=true',
+      ],
+      github: 'https://github.com/dmitryduy/Documentation',
+      link: 'https://dmitryduy.github.io/Documentation'
+    },
+    {
       id: 1,
       title: {
         en: 'Cases',
