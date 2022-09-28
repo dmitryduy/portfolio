@@ -1,7 +1,6 @@
 import React, { FC } from 'react';
 import styles from "./ImageSlider.module.scss";
 import useThrottle from "../../hooks/useThrottle";
-import { icons } from "../../icons";
 
 interface IImageSliderProps {
   images: string[]

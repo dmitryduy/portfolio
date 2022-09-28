@@ -131,12 +131,11 @@ export const data: {
       },
       skills: ['typescript', 'React', 'Redux-toolkit', 'Styled-Components', 'React-markdown', 'nodejs', 'mongodb'],
       images: [
+        'https://github.com/dmitryduy/portfolio/blob/master/src/images/docs-2.png?raw=true',
         'https://github.com/dmitryduy/portfolio/blob/master/src/images/docs-0.png?raw=true',
         'https://github.com/dmitryduy/portfolio/blob/master/src/images/docs-1.png?raw=true',
-        'https://github.com/dmitryduy/portfolio/blob/master/src/images/docs-2.png?raw=true',
         'https://github.com/dmitryduy/portfolio/blob/master/src/images/docs-3.png?raw=true',
         'https://github.com/dmitryduy/portfolio/blob/master/src/images/docs-4.png?raw=true',
-        'https://github.com/dmitryduy/portfolio/blob/master/src/images/docs-5.png?raw=true',
       ],
       github: 'https://github.com/dmitryduy/Documentation',
       link: 'https://dmitryduy.github.io/Documentation'
