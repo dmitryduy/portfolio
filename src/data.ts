@@ -22,7 +22,10 @@ export enum SkillTags {
 
 export const data: {
   headerTitle: i18n
-  headerSubtitle: i18n
+  headerSubtitle: i18n,
+  skillsTitle: i18n,
+  experienceTitle: i18n,
+  portfolioTitle: i18n,
   portfolio: IProject[]
   menu: {
     ru: string
@@ -46,6 +49,18 @@ export const data: {
     color: string
   }[],
 } = {
+  skillsTitle: {
+    ru: 'Навыки',
+    en: 'Skills'
+  },
+  experienceTitle: {
+    ru: 'Опыт',
+    en: 'Experience',
+  },
+  portfolioTitle: {
+    ru: 'Потфолио',
+    en:'Portfolio'
+  },
   headerTitle: {
     ru: 'frontend developer',
     en: 'frontend developer.'
@@ -476,6 +491,30 @@ export const data: {
       title: 'Nest.js',
       icon: 'nestjs',
       color: '#d9224c',
+      description: {
+        ru: 'Какой-то скилл',
+        en: 'This is paragrahpa sometshi else'
+      }
+    },
+    {
+      id: 19,
+      type: SkillTags.BACKEND,
+      position: 6,
+      title: 'MongoDB',
+      icon: 'mongodb',
+      color: '#69a746',
+      description: {
+        ru: 'Какой-то скилл',
+        en: 'This is paragrahpa sometshi else'
+      }
+    },
+    {
+      id: 20,
+      type: SkillTags.BACKEND,
+      position: 8,
+      title: 'PostgresSQL',
+      icon: 'postgres',
+      color: '#336791',
       description: {
         ru: 'Какой-то скилл',
         en: 'This is paragrahpa sometshi else'
