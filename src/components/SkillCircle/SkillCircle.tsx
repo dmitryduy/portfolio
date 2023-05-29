@@ -8,7 +8,7 @@ import cn from "../../utils/cn";
 import { data, SkillTags } from "../../data";
 import { useAppSelector } from "../../hooks/useAppSelector";
 
-const skillTags = ['Frontend', 'Backend', 'Other', 'Not Web']
+const skillTags = ['Frontend', 'Backend', 'Other', 'Languages']
 
 const SkillCircle = () => {
   const [activeSkills, setActiveSkills] = useState(SkillTags.FRONTEND);

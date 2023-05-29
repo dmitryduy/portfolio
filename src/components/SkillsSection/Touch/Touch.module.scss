@@ -13,7 +13,7 @@
                 "redux            redux            redux            html         typeScript     typeScript  typeScript"
                 "express          nestjs           nestjs           html         typeScript     typeScript  typeScript"
                 "npm              npm              angular          kotlin       cpp            python      python"
-                "postgres         postgres         postgres         postgres     mongodb        mongodb     mongodb";
+                "postgres         postgres         postgres         postgres     mongodb        mongodb     solidity";
   @media (max-width: 1000px) {
     grid-template-columns: repeat(6, 1fr);
     grid-template-areas:
@@ -26,7 +26,7 @@
                 "nodejs           git              jquery           jquery       jquery         jquery"
                 "nodejs           git              angular          bem          bem            cpp"
                 "npm              npm              kotlin           kotlin       python         python"
-                "postgres         postgres         postgres         mongodb      mongodb        mongodb";
+                "postgres         postgres         postgres         mongodb      mongodb        solidity";
   }
 
   @media (max-width: 700px) {
@@ -41,8 +41,8 @@
                 "nodejs           git              typeScript typeScript typeScript"
                 "nodejs           git              angular    jquery     jquery"
                 "npm              git              bem        bem        bem"
-                "kotlin           git              python     python     cpp"
-                "postgres         postgres         mongodb     mongodb   cpp";
+                "kotlin           solidity         python     python     cpp"
+                "postgres         postgres         mongodb    mongodb    cpp";
   };
 
   @media (max-width: 400px) {
@@ -58,7 +58,7 @@
                 "nodejs           git              typeScript             typeScript"
                 "nodejs           git              angular                jquery"
                 "npm              bem              bem                    jquery"
-                "kotlin           kotlin           python                 python"
+                "kotlin           solidity         python                 python"
                 "postgres         postgres         mongodb                mongodb";
   }
 }

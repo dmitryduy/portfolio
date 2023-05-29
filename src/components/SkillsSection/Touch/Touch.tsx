@@ -20,13 +20,13 @@ const skillTags = [{
     skillType: SkillTags.OTHER
   },
   {
-    tag: 'Not Web',
-    skillType: SkillTags.NOT_WEB
+    tag: 'Languages',
+    skillType: SkillTags.LANGUAGES
   }];
 
 
 const Touch = () => {
-  const [activeTags, setActiveTags] = useState([SkillTags.OTHER, SkillTags.NOT_WEB, SkillTags.BACKEND, SkillTags.FRONTEND]);
+  const [activeTags, setActiveTags] = useState([SkillTags.OTHER, SkillTags.LANGUAGES, SkillTags.BACKEND, SkillTags.FRONTEND]);
 
   const tagsHandler = (tag: number) => {
     if (activeTags.includes(tag)) {

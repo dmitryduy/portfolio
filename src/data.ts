@@ -17,7 +17,7 @@ export enum SkillTags {
   FRONTEND,
   BACKEND,
   OTHER,
-  NOT_WEB
+  LANGUAGES
 }
 
 export const data: {
@@ -131,7 +131,7 @@ export const data: {
 
   portfolio: [
     {
-      id: -1,
+      id: 0,
       title: {
         en: 'Particles',
         ru: 'Частицы'
@@ -146,14 +146,14 @@ export const data: {
       },
       skills: ['JavaScript', 'OOP', 'Canvas', 'Algorithms'],
       images: [
-        'https://github.com/dmitryduy/portfolio/blob/master/src/images/particles-0.png?raw=true',
         'https://github.com/dmitryduy/portfolio/blob/master/src/images/particles-1.png?raw=true',
+        'https://github.com/dmitryduy/portfolio/blob/master/src/images/particles-0.png?raw=true',
       ],
       github: 'https://github.com/dmitryduy/canvasAnimvation',
       link: 'https://dmitryduy.github.io/canvasAnimvation/'
     },
     {
-      id: 0,
+      id: 1,
       title: {
         en: 'Documentation',
         ru: 'Документация'
@@ -178,7 +178,7 @@ export const data: {
       link: 'https://dmitryduy.github.io/Documentation'
     },
     {
-      id: 1,
+      id: 2,
       title: {
         en: 'Cases',
         ru: 'Кейсы'
@@ -205,7 +205,7 @@ export const data: {
       link: 'https://dmitryduy.github.io/cases/'
     },
     {
-      id: 2,
+      id: 3,
       title: {
         en: 'Tinkoff Stocks',
         ru: 'Биржа акций Тинькофф'
@@ -230,7 +230,7 @@ export const data: {
       link: 'https://dmitryduy.github.io/investing/'
     },
     {
-      id: 3,
+      id: 4,
       title: {
         en: 'Dodo clone',
         ru: 'Клон доо пицца'
@@ -253,7 +253,7 @@ export const data: {
       link: 'https://dmitryduy.github.io/dodo/#'
     },
     {
-      id: 4,
+      id: 5,
       title: {
         en: 'Healthy food Site',
         ru: 'Сайт Healthy food'
@@ -277,7 +277,7 @@ export const data: {
       link: 'https://dmitryduy.github.io/healthyFood/app/'
     },
     {
-      id: 5,
+      id: 6,
       title: {
         en: 'Junno site',
         ru: 'Сайт Junno'
@@ -303,7 +303,7 @@ export const data: {
       link: 'https://dmitryduy.github.io/junno/'
     },
     {
-      id: 6,
+      id: 7,
       title: {
         en: 'Tetris',
         ru: 'Тетрис'
@@ -324,7 +324,7 @@ export const data: {
       link: 'https://dmitryduy.github.io/tetris/'
     },
     {
-      id: 7,
+      id: 8,
       title: {
         en: 'Porten Site',
         ru: 'Сайт Porten'
@@ -349,7 +349,7 @@ export const data: {
       link: 'https://dmitryduy.github.io/html_code/portain/index.html'
     },
     {
-      id: 8,
+      id: 9,
       title: {
         en: 'Clock',
         ru: 'Часы'
@@ -370,7 +370,7 @@ export const data: {
       link: 'https://dmitryduy.github.io/clocks/'
     },
     {
-      id: 9,
+      id: 10,
       title: {
         en: 'Telegram clone',
         ru: 'Клон телеграма'
@@ -617,7 +617,7 @@ export const data: {
     {
       id: 16,
       position: 1,
-      type: SkillTags.NOT_WEB,
+      type: SkillTags.LANGUAGES,
       title: 'Python',
       icon: 'python',
       color: '#686868',
@@ -629,7 +629,7 @@ export const data: {
     {
       id: 17,
       position: 5,
-      type: SkillTags.NOT_WEB,
+      type: SkillTags.LANGUAGES,
       title: 'C++',
       icon: 'cpp',
       color: '#6195cb',
@@ -641,7 +641,7 @@ export const data: {
     {
       id: 18,
       position: 7,
-      type: SkillTags.NOT_WEB,
+      type: SkillTags.LANGUAGES,
       title: 'Kotlin',
       icon: 'kotlin',
       color: '#e87c2b',
@@ -653,7 +653,7 @@ export const data: {
     {
       id: 19,
       position: 3,
-      type: SkillTags.NOT_WEB,
+      type: SkillTags.LANGUAGES,
       title: 'Solidity',
       icon: 'solidity',
       color: '#666666',
