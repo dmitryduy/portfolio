@@ -99,8 +99,8 @@ export const data: {
     {
       id: 1,
       date: {
-        ru: 'Март 2022 - Июль 2022',
-        en: 'March 2022 - July 2022'
+        ru: 'Март 2022',
+        en: 'March 2022'
       },
       title: {
         ru: 'Разработчик поисковых интерфесков. Яндекс',
@@ -130,6 +130,28 @@ export const data: {
   ],
 
   portfolio: [
+    {
+      id: -1,
+      title: {
+        en: 'Particles',
+        ru: 'Частицы'
+      },
+      subtitle: {
+        en: 'Application',
+        ru: 'Приложение'
+      },
+      description: {
+        en: 'Application that implements particle animation.',
+        ru: 'Приложение, в котором реализована анимация частиц.'
+      },
+      skills: ['JavaScript', 'OOP', 'Canvas', 'Algorithms'],
+      images: [
+        'https://github.com/dmitryduy/portfolio/blob/master/src/images/particles-0.png?raw=true',
+        'https://github.com/dmitryduy/portfolio/blob/master/src/images/particles-1.png?raw=true',
+      ],
+      github: 'https://github.com/dmitryduy/canvasAnimvation',
+      link: 'https://dmitryduy.github.io/canvasAnimvation/'
+    },
     {
       id: 0,
       title: {
@@ -452,7 +474,7 @@ export const data: {
       id: 6,
       type: SkillTags.FRONTEND,
       position: 8,
-      title: 'Redux',
+      title: 'Redux/RTK',
       icon: 'redux',
       color: '#7248b6',
       description: {
@@ -620,9 +642,21 @@ export const data: {
       id: 18,
       position: 7,
       type: SkillTags.NOT_WEB,
-      title: 'kotlin',
+      title: 'Kotlin',
       icon: 'kotlin',
       color: '#e87c2b',
+      description: {
+        ru: 'Какой-то скилл',
+        en: 'This is paragrahpa sometshi else'
+      }
+    },
+    {
+      id: 19,
+      position: 3,
+      type: SkillTags.NOT_WEB,
+      title: 'Solidity',
+      icon: 'solidity',
+      color: '#666666',
       description: {
         ru: 'Какой-то скилл',
         en: 'This is paragrahpa sometshi else'

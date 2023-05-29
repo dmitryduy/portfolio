@@ -74,11 +74,28 @@ export const icons = {
       </g>
       <g fill="#fff" className="D">
         <path d="M10.322 8.145c-.017.117.215.43.516.472s.558-.202.575-.32-.215-.246-.516-.288-.56.02-.575.136z"
-              stroke-width=".239"/>
+              strokeWidth=".239"/>
         <path d="M19.486 7.906c.016.117-.215.43-.516.472s-.56-.202-.575-.32.215-.246.516-.288.56.02.575.136z"
-              stroke-width=".119"/>
+              strokeWidth=".119"/>
       </g>
       <path d="M20.562 7.095c.05.92-.198 1.545-.23 2.524-.046 1.422.678 3.05-.413 4.68" className="B C E"/>
     </g>
   </svg>,
+  solidity: <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" width="1300px" height="1300px" viewBox="0 0 1300 1300" enableBackground="new 0 0 1300 1300"
+                 xmlSpace="preserve">
+<title>Vector 1</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1">
+	<g id="solidity" transform="translate(402.000000, 118.000000)" >
+		<g id="Group">
+			<path id="Shape" opacity="0.45" enableBackground="new    " d="M371.772,135.308L241.068,367.61H-20.158l130.614-232.302     H371.772"/>
+      <path id="Shape_1_" opacity="0.6" enableBackground="new    " d="M241.068,367.61h261.318L371.772,135.308H110.456     L241.068,367.61z"/>
+      <path id="Shape_2_" opacity="0.8" enableBackground="new    " d="M110.456,599.822L241.068,367.61L110.456,135.308     L-20.158,367.61L110.456,599.822z"/>
+      <path id="Shape_3_" opacity="0.45" enableBackground="new    " d="M111.721,948.275l130.704-232.303h261.318L373.038,948.275     H111.721"/>
+      <path id="Shape_4_" opacity="0.6" enableBackground="new    " d="M242.424,715.973H-18.893l130.613,232.303h261.317     L242.424,715.973z"/>
+      <path id="Shape_5_" opacity="0.8" enableBackground="new    " d="M373.038,483.761L242.424,715.973l130.614,232.303     l130.704-232.303L373.038,483.761z"/>
+		</g>
+	</g>
+</g>
+</svg>,
 }
